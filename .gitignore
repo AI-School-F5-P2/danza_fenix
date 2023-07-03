@@ -1,0 +1,7 @@
+/danza_fenix_env
+/__pycache__
+/classes/__pycache__
+danza_fenix.code-workspace
+/.pytest_cache
+/docs
+requirements.txt
