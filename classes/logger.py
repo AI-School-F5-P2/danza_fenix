@@ -1,7 +1,6 @@
 import logging
 import colorlog
-import os
-from dotenv import load_dotenv
+import json
 
 # Configurar el logger
 class Logger:
@@ -52,9 +51,11 @@ class Logger:
             # Para la salida en fichero las combinaciones de colores son más límitadas, 
             # y sólo quedan bien si se aplican al nivel de log.
             
-            load_dotenv() # Cargamos las variables de entorno
-            log_file_path = os.getenv('LOG_FILE_PATH', 'loggin.log') # La ruta del archivo de logs
-            output = int(os.getenv('OUTPUT', 0)) # La dirección de salida de los logs
+            # Cargamos las variables de entorno
+            with open('datos.json', 'r') as jsonfile:
+                data = json.load(jsonfile)
+            log_file_path = data["LOG_FILE_PATH"] # La ruta del archivo de logs
+            output = data["OUTPUT"] # La dirección de salida de los logs
             # 0 = archivo
             # 1 = terminal
             # 2 = archivo y terminal
@@ -98,8 +99,10 @@ class Logger:
 
 
 # Ejemplos de registros
+'''
 Logger.debug("Esto es un mensaje de depuración")
 Logger.info("Esto es un mensaje de información")
 Logger.warning("Esto es un mensaje de advertencia")
 Logger.error("Esto es un mensaje de error")
 Logger.critical("Esto es un mensaje crítico")
+'''
