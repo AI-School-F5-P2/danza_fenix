@@ -165,12 +165,13 @@ class Usuario(Base):
     created_at = Column("created_at", DateTime, nullable = False)
     updated_at = Column("updated_at", DateTime)
 
-    def __init__(self, login, email, password, rol_id, activo):
+    def __init__(self, login, email, password, rol_id, created_at, updated_at):
         self.login = login
         self.email = email
         self.password = password
         self.rol_id = rol_id
-        self.activo = activo
+        self.created_at = created_at
+        self.updated_at = updated_at
     
     def __repr__(self):
         return f"Usuario {self.id} tiene el login {self.login}."

@@ -1,13 +1,14 @@
 from sqlalchemy import create_engine, or_, func
 from sqlalchemy.orm import sessionmaker
-from classes.models import Alumno, Curso, Descuento, Grupo, Nivel, Profesor, Usuario, Rol
+from classes.models import Alumno, Curso, Descuento, Grupo, Nivel, Profesor, Usuario, Rol, Base
+from classes.validations import UserValidator
 from classes.encryption import Encryption
 from datetime import datetime
-import logging
-logging.getLogger('sqlalchemy').setLevel(logging.ERROR)
+import json
 
 # Creamos la referencia al motor de base de datos
 engine = create_engine('mysql+mysqlconnector://root:@localhost/danza_fenix', echo = True)
+Base.metadata.create_all(bind=engine)
 
 # Creamos la sesión para luego poder pasar las consultas.
 Session = sessionmaker(bind = engine)
@@ -115,15 +116,21 @@ def qw_delete_rol_by_name(nombre_rol):
 
 ############## USUARIOS #################
 # Crear un nuevo usuario
-def qw_create_usuario(login, email, password, nombre_rol):
-    rol = session.query(Rol).filter(Rol.nombre_rol == nombre_rol).first() # Buscar el rol por su nombre
+def qw_create_usuario(usuario):
+    rol = session.query(Rol).filter(Rol.nombre_rol == usuario.nombre_rol).first() # Buscar el rol por su nombre
     # Si no existe el rol se obtienen un mensaje de error.
     if not rol:
         return "El rol especificado no existe."
     rol_id = rol.id # Obtener el ID del rol
     # Crear el nuevo objeto de Usuario con el ID del rol
-    pw = Encryption.encrypt(password)
-    nuevo_usuario = Usuario(login = login, email = email, password = pw, rol_id = rol_id, created_at = datetime.now())
+    pw = Encryption.encrypt(usuario.password)
+    login_existe = session.query(Usuario).filter(Usuario.login == usuario.login).first()
+    if login_existe:
+        return "El login ya existe."
+    email_existe = session.query(Usuario).filter(Usuario.email == usuario.email).first()
+    if login_existe:
+        return "El email ya existe."
+    nuevo_usuario = Usuario(login = usuario.login, email = usuario.email, password = pw, rol_id = rol_id, created_at = datetime.now(), updated_at = datetime.now())
     session.add(nuevo_usuario) # Agregar el nuevo usuario a la sesión
     session.flush()
     session.commit() # Realizar el commit para persistir los cambios
@@ -135,7 +142,16 @@ def qw_list_usuarios():
     usuarios = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).all()
     if len(usuarios) == 0:
         return "No hay usuarios registrados."
-    return usuarios
+    result = []
+    for usuario, nombre_rol in usuarios:
+        usuario_dict = {
+            "id": usuario.id,
+            "login": usuario.login,
+            "email": usuario.email,
+            "rol": nombre_rol
+        }
+        result.append(usuario_dict)
+    return result
 
 # Listar los datos de un usuario localizado a partir de un dato, que puede 
 # ser el id, el login o el email.
@@ -227,5 +243,5 @@ def qw_delete_usuario(dato, valor):
 # Si queremos unir las claúsulas mediante or en vez de and, lo haremos así:
 #alumnos = session.query(Alumno).filter(or_(Alumno.email.like('%@gmail.com%'), Alumno.descuento_familiar == True)).all()
 '''
-print(qw_delete_rol_by_id(21))
-      
+
+

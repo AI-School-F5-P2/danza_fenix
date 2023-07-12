@@ -1,9 +1,9 @@
 from fastapi import FastAPI
-from fastapi.routing import APIRoute
+from starlette.responses import RedirectResponse
 from fastapi.openapi.utils import get_openapi
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
 from classes.queries import *
-from classes.validations import RolValidator
+from classes.validations import RolValidator, UserValidator
 
 tags_metadata = [
     {
@@ -17,10 +17,12 @@ tags_metadata = [
 ]
 app = FastAPI(openapi_tags = tags_metadata)
 
+#################### MAIN #################
 @app.get("/", tags = ["main"])
 def main():
-    return "Bienvenido a Danza Fenix"
+    return RedirectResponse(url = "/docs")
 
+################### ROLES #################
 @app.get("/roles/listar", tags = ["roles"])
 def roles_listar():
     return qw_list_roles()
@@ -52,4 +54,16 @@ def roles_borrar(id:int):
 @app.delete("/roles/borrar_by_name", tags = ["roles"])
 def roles_borrar(name:str):
     return qw_delete_rol_by_name(name)
+
+############### USUARIOS #########################
+@app.get("/usuarios/listar", tags = ["usuarios"])
+def usuarios_listar():
+    return qw_list_usuarios()
+
+@app.post("/usuarios/insertar", tags = ["usuarios"])
+def usuarios_insertar(usuario:UserValidator):
+    return qw_create_usuario(usuario)
+
+
+
 
