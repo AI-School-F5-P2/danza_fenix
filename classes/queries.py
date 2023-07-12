@@ -1,10 +1,11 @@
 from sqlalchemy import create_engine, or_, func
 from sqlalchemy.orm import sessionmaker
+from datetime import datetime
+import json
+
 from classes.models import Alumno, Curso, Descuento, Grupo, Nivel, Profesor, Usuario, Rol, Base
 from classes.validations import UserValidator
 from classes.encryption import Encryption
-from datetime import datetime
-import json
 
 # Creamos la referencia al motor de base de datos
 engine = create_engine('mysql+mysqlconnector://root:@localhost/danza_fenix', echo = True)
@@ -33,10 +34,18 @@ def qw_create_rol(rol_input):
     return out
 
 # Localizar un rol por su id
-def qw_get_rol_by_id(id):
-    rol = session.query(Rol).get(id)
-    if rol is None:
-        return "Error: El rol especificado no existe."
+def qw_get_rol(dato, valor):
+    if dato == "id":
+        id = int(valor)
+        rol = session.query(Rol).get(id)
+        if rol is None:
+            return "Error: El rol especificado no existe."
+    elif dato == "nombre":
+        rol = session.query(Rol).filter(Rol.nombre_rol == valor).first() # Obtener el rol correspondiente    
+        if rol is None:
+            return "Error: El rol especificado no existe."
+    else:
+        return "El tipo de dato especificado no existe."
     return rol
 
 # Localizar roles por parte de su nombre
@@ -56,12 +65,20 @@ def qw_list_roles():
         rol.num_usuarios = num_usuarios
     return roles
 
-# Actualizar un rol por id
-def qw_update_rol_by_id(id, nuevo_nombre):
-    rol = session.query(Rol).get(id) # Obtener el rol correspondiente    
-    # Verificar si el rol existe
-    if rol is None:
-        return "Error: El rol especificado no existe."    
+# Actualizar un rol por id o por su nombre actual.
+def qw_update_rol(dato, valor, nuevo_nombre):
+    if dato == "id":
+        id = int(valor)
+        rol = session.query(Rol).get(id)
+        if rol is None:
+            return "Error: El rol especificado no existe."
+    elif dato == "nombre":
+        rol = session.query(Rol).filter(Rol.nombre_rol == valor).first() # Obtener el rol correspondiente    
+        if rol is None:
+            return "Error: El rol especificado no existe."
+        id = rol.id
+    else:
+        return "El tipo de dato especificado no existe."
     # Actualizar el nombre del rol
     rol.nombre_rol = nuevo_nombre
     rol.updated_at = datetime.now()
@@ -69,42 +86,21 @@ def qw_update_rol_by_id(id, nuevo_nombre):
     session.commit() # Guardar los cambios en la base de datos
     return "El rol ha sido actualizado."
 
-# Actualizar un rol por nombre
-def qw_update_rol_by_name(nombre, nuevo_nombre):
-    rol = session.query(Rol).filter(Rol.nombre_rol == nombre).first() # Obtener el rol correspondiente    
-    # Verificar si el rol existe
-    if rol is None:
-        return "Error: El rol especificado no existe."    
-    # Actualizar el nombre del rol
-    rol.nombre_rol = nuevo_nombre
-    rol.updated_at = datetime.now()
-    session.flush()
-    session.commit() # Guardar los cambios en la base de datos
-    return "El rol ha sido actualizado."
-
-# Borrar un rol por su id si ningún usuario lo tiene asignado
-def qw_delete_rol_by_id(id):
+# Borrar un rol por su id o por su nombre si ningún usuario lo tiene asignado
+def qw_delete_rol(dato, valor):
+    if dato == "id":
+        id = int(valor)
+        rol = session.query(Rol).get(id)
+        if rol is None:
+            return "Error: El rol especificado no existe."
+    elif dato == "nombre":
+        rol = session.query(Rol).filter(Rol.nombre_rol == valor).first() # Obtener el rol correspondiente    
+        if rol is None:
+            return "Error: El rol especificado no existe."
+        id = rol.id
+    else:
+        return "El tipo de dato especificado no existe."
     # Verificar si existen usuarios con el rol especificado
-    usuarios_con_rol = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == id).scalar()
-    if usuarios_con_rol > 0:
-        return "Error: No se puede borrar el rol porque existen usuarios relacionados."
-    # Si no hay usuarios relacionados, proceder a borrar el rol
-    rol = session.query(Rol).get(id)
-    if rol is None:
-        return "Error: El rol especificado no existe."
-    session.delete(rol)
-    session.flush()
-    session.commit()
-    return "El rol ha sido eliminado."
-
-# Borrar un rol por su nombre si ningún usuario lo tiene asignado
-def qw_delete_rol_by_name(nombre_rol):
-    # Buscar el rol por su nombre
-    rol = session.query(Rol).filter(Rol.nombre_rol == nombre_rol).first()
-    if rol is None:
-        return "Error: No se encontró el rol especificado."
-    # Verificar si existen usuarios con el rol especificado
-    id = rol.id
     usuarios_con_rol = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == id).scalar()
     if usuarios_con_rol > 0:
         return "Error: No se puede borrar el rol porque existen usuarios relacionados."
@@ -157,43 +153,51 @@ def qw_list_usuarios():
 # ser el id, el login o el email.
 def qw_show_usuario(dato, valor):
     if dato == "id":
+        valor = int(valor)
         resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.id == valor).first()
     elif dato == "login":
-        resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.login.ilike(f"%{valor}%")).all()
+        resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.login.ilike(f"%{valor}%")).first()
     elif dato == "email":
-        resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.email.ilike(f"%{valor}%")).all()
+        resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.email.ilike(f"%{valor}%")).first()
     else:
         return "Dato no válido."
     if not resultado:
         return "No se han encontrado usuarios."
-    return resultado
+    usuario, rol = resultado
+    usuario_dict = {
+        "id": usuario.id,
+        "login": usuario.login,
+        "email": usuario.email,
+        "rol": rol
+    }
+    return usuario_dict
 
 # Actualizar los datos de un usuario localizado a partir de un dato, que puede 
 # ser el id, el login o el email.
-def qw_update_usuario(dato, valor, login, email, password, activo, nombre_rol):
+def qw_update_usuario(dato, valor, usuario):
     if dato == "id":
-        usuario = session.query(Usuario).filter(Usuario.id == valor).first()
+        usuario_encontrado = session.query(Usuario).filter(Usuario.id == valor).first()
     elif dato == "login":
-        usuario = session.query(Usuario).filter(Usuario.login.ilike(f"%{valor}%")).first()
+        usuario_encontrado = session.query(Usuario).filter(Usuario.login.ilike(f"%{valor}%")).first()
     elif dato == "email":
-        usuario = session.query(Usuario).filter(Usuario.email.ilike(f"%{valor}%")).first()
+        usuario_encontrado = session.query(Usuario).filter(Usuario.email.ilike(f"%{valor}%")).first()
     else:
         return "Dato no válido."
-    if not usuario:
+    if not usuario_encontrado:
         return "No se ha encontrado el usuario."
     # Verificamos si existe el rol
-    rol = session.query(Rol).filter(Rol.nombre_rol == nombre_rol).first() # Buscar el rol por su nombre
+    rol = session.query(Rol).filter(Rol.nombre_rol == usuario.nombre_rol).first() # Buscar el rol por su nombre
     # Si no existe el rol se obtiene un mensaje de error.
     if not rol:
         return "El rol especificado no existe."
     rol_id = rol.id # Obtener el ID del rol
-    pw = Encryption.encrypt(password) # Encriptamos la contraseña
-    usuario.login = login
-    usuario.email = email
-    usuario.password = pw
-    usuario.rol_id = rol_id
-    usuario.activo = activo
-    usuario.updated_at = datetime.now()
+    pw = Encryption.encrypt(usuario.password) # Encriptamos la contraseña
+    usuario_encontrado.login = usuario.login
+    usuario_encontrado.email = usuario.email
+    usuario_encontrado.password = pw
+    usuario_encontrado.rol_id = rol_id
+    usuario_encontrado.activo = usuario.activo
+    usuario_encontrado.updated_at = datetime.now()
     session.flush()
     session.commit()
     return "El usuario ha sido actualizado."
@@ -243,5 +247,4 @@ def qw_delete_usuario(dato, valor):
 # Si queremos unir las claúsulas mediante or en vez de and, lo haremos así:
 #alumnos = session.query(Alumno).filter(or_(Alumno.email.like('%@gmail.com%'), Alumno.descuento_familiar == True)).all()
 '''
-
 

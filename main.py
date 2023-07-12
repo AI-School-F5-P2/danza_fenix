@@ -4,66 +4,31 @@ from fastapi.openapi.utils import get_openapi
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
 from classes.queries import *
 from classes.validations import RolValidator, UserValidator
+from apis.roles import router as roles_router
+from apis.usuarios import router as usuarios_router
 
 tags_metadata = [
     {
-        "name":"main",
-        "description":"Main area"
+        "name": "main",
+        "description": "Main area"
     },
     {
-        "name":"roles",
+        "name": "roles",
         "description": "Operaciones con roles"
+    },
+    {
+        "name": "usuarios",
+        "description": "Operaciones con usuarios"
     }
 ]
-app = FastAPI(openapi_tags = tags_metadata)
+
+app = FastAPI(openapi_tags=tags_metadata)
+
+# Registrar enrutadores
+app.include_router(roles_router, prefix="/roles")
+app.include_router(usuarios_router, prefix="/usuarios")
 
 #################### MAIN #################
-@app.get("/", tags = ["main"])
+@app.get("/", tags=["main"])
 def main():
-    return RedirectResponse(url = "/docs")
-
-################### ROLES #################
-@app.get("/roles/listar", tags = ["roles"])
-def roles_listar():
-    return qw_list_roles()
-
-@app.get("/roles/ver_id/{id}", tags = ["roles"])
-def roles_ver_por_id(id):
-    return qw_get_rol_by_id(id)
-
-@app.get("/roles/ver_nombre/{nombre}", tags = ["roles"])
-def roles_ver_por_nombre(nombre):
-    return qw_get_roles_by_name(nombre)
-
-@app.post("/roles/insertar", tags = ["roles"])
-def roles_insertar(rol:RolValidator):
-    return qw_create_rol(rol.dict())
-
-@app.put("/roles/actualizar_by_id", tags = ["roles"])
-def roles_actualizar(id:int, nuevo_nombre:str):
-    return qw_update_rol_by_id(id, nuevo_nombre)
-
-@app.put("/roles/actualizar_by_name", tags = ["roles"])
-def roles_actualizar(nombre:str, nuevo_nombre:str):
-    return qw_update_rol_by_name(nombre, nuevo_nombre)
-
-@app.delete("/roles/borrar_by_id", tags = ["roles"])
-def roles_borrar(id:int):
-    return qw_delete_rol_by_id(id)
-
-@app.delete("/roles/borrar_by_name", tags = ["roles"])
-def roles_borrar(name:str):
-    return qw_delete_rol_by_name(name)
-
-############### USUARIOS #########################
-@app.get("/usuarios/listar", tags = ["usuarios"])
-def usuarios_listar():
-    return qw_list_usuarios()
-
-@app.post("/usuarios/insertar", tags = ["usuarios"])
-def usuarios_insertar(usuario:UserValidator):
-    return qw_create_usuario(usuario)
-
-
-
-
+    return RedirectResponse(url="/docs")
