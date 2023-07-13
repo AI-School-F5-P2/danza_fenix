@@ -1,6 +1,9 @@
 /danza_fenix_env
 /__pycache__
 /classes/__pycache__
+/apis/__pycache__
+/queries/__pycache__
+/connection/__pycache__
 danza_fenix.code-workspace
 /.pytest_cache
 /docs

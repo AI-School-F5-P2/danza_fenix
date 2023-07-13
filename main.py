@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 from fastapi.openapi.utils import get_openapi
 from fastapi.openapi.docs import get_redoc_html, get_swagger_ui_html
-from classes.queries import *
+#from classes.queries import *
 from classes.validations import RolValidator, UserValidator
 from apis.roles import router as roles_router
 from apis.usuarios import router as usuarios_router
