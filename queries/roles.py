@@ -35,13 +35,6 @@ def qw_get_rol(dato, valor):
         return "El tipo de dato especificado no existe."
     return rol
 
-# Localizar roles por parte de su nombre
-def qw_get_roles_by_name(name_part):
-    roles = session.query(Rol).filter(Rol.nombre_rol.ilike('%' + name_part  + '%')).all()
-    if len(roles) == 0:
-        return "No se han encontrado coincidencias."
-    return roles
-
 # Listar todos los roles.
 def qw_list_roles():
     roles = session.query(Rol).all()
