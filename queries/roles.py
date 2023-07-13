@@ -1,8 +1,9 @@
 from sqlalchemy import func
 from datetime import datetime
 
-from classes.models import Rol, Usuario
 from connection.connection import *
+from models.roles import Rol
+from models.usuarios import Usuario
 
 ############## ROLES #################
 # Crear un nuevo rol
