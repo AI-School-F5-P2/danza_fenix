@@ -4,6 +4,7 @@
 /apis/__pycache__
 /queries/__pycache__
 /connection/__pycache__
+/models/__pycache__
 danza_fenix.code-workspace
 /.pytest_cache
 /docs
