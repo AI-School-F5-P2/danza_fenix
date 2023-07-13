@@ -15,3 +15,8 @@ class UserValidator(BaseModel):
 
 
 
+class CursoValidator(BaseModel):
+    nombre_curso : str
+    precio : float
+    id_grupo : int
+    

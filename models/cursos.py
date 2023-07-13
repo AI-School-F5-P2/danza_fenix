@@ -10,7 +10,7 @@ class Curso(Base): # Tabla de cursos
     id = Column("id", Integer, primary_key = True, nullable = False)
     nombre_curso = Column("nombre_curso", String, nullable = False)
     precio = Column("precio", Float(precision = 5, asdecimal = True, decimal_return_scale = 2), nullable = False)
-    id_grupo = Column("id_grupo", Integer, ForeignKey("grupos.id"), nullable = False)
+    id_grupo = Column("id_grupo", Integer, nullable = False)
     created_at = Column("created_at", DateTime, nullable = False)
     updated_at = Column("updated_at", DateTime)
     

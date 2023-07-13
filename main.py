@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 from apis.roles import router as roles_router
 from apis.usuarios import router as usuarios_router
+from apis.cursos import router as cursos_router
 
 tags_metadata = [
     {
@@ -15,16 +16,23 @@ tags_metadata = [
     {
         "name": "usuarios",
         "description": "Operaciones con usuarios"
+    },
+    {
+        "name": "cursos",
+        "description": "Operaciones con cursos"
     }
 ]
 
-app = FastAPI(openapi_tags=tags_metadata)
+app = FastAPI(openapi_tags=tags_metadata, description="API para la gestión de la escuela de danza Fenix")
 
 # Registrar enrutadores
 app.include_router(roles_router, prefix="/roles")
 app.include_router(usuarios_router, prefix="/usuarios")
+app.include_router(cursos_router, prefix="/cursos")
+
 
 #################### MAIN #################
+
 @app.get("/", tags=["main"])
 def main():
     return RedirectResponse(url="/docs")
