@@ -10,6 +10,7 @@ class Alumno(Base): # Tabla de alumnos
     nombre = Column("nombre", String, nullable = False)
     apellidos = Column("apellidos", String, nullable = False)
     dni = Column("dni", String, nullable = False)
+    telefono = Column("telefono", String)
     email = Column("email", String, nullable = False)
     nacimiento = Column("nacimiento", DateTime, nullable = False)
     descuento_familiar = Column("descuento_familiar", Integer,\
@@ -21,10 +22,11 @@ class Alumno(Base): # Tabla de alumnos
     #cursos = relationship("Curso", secondary = estudios, backref = "alumnos_cursos")
     #profesores = relationship("Profesor", secondary = estudios, backref = "alumnos_profesores")
     
-    def __init__(self, nombre, apellidos, dni, email, nacimiento, descuento_familiar, created_at = datetime.now(), updated_at = datetime.now()):
+    def __init__(self, nombre, apellidos, dni, telefono, email, nacimiento, descuento_familiar, created_at = datetime.now(), updated_at = datetime.now()):
         self.nombre = nombre
         self.apellidos = apellidos
         self.dni = dni
+        self.telefono = telefono
         self.email = email
         self.nacimiento = nacimiento
         self.descuento_familiar = descuento_familiar
