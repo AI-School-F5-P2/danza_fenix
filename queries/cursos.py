@@ -20,7 +20,7 @@ def qw_create_curso(curso_input):
     return out
 
 
-# mostrar todos los cursos
+# mostrar todos lo  s cursos
 def qw_get_cursos():
     cursos = session.query(Curso).all()
     if len(cursos) == 0:
@@ -55,7 +55,7 @@ def qw_delete_curso(nombre_del_curso):
         if curso is None:
             return "Error: El curso especificado no existe."
         session.delete(curso)
-        session.commit()
+        session.commit()    
     except Exception as e:
         return f"No se ha podido borrar el curso.{e}"
     return "El curso ha sido borrado."

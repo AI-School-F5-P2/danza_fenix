@@ -14,9 +14,15 @@ class UserValidator(BaseModel):
     activo: Optional [int] = 1
 
 
-
 class CursoValidator(BaseModel):
     nombre_curso : str
     precio : float
     id_grupo : int
     
+
+class InscripcionValidator(BaseModel):
+    dni_usuario : str
+    check_familiar: int
+    cursos : str
+    nivel : str
+    profesor : str
