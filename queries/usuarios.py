@@ -13,16 +13,16 @@ def qw_create_usuario(usuario):
     # Si no existe el rol se obtienen un mensaje de error.
     if not rol:
         return "El rol especificado no existe."
-    rol_id = rol.id # Obtener el ID del rol
-    # Crear el nuevo objeto de Usuario con el ID del rol
-    pw = Encryption.encrypt(usuario.password)
+    id_de_rol = rol.id # Obtener el ID del rol
     login_existe = session.query(Usuario).filter(Usuario.login == usuario.login).first()
     if login_existe:
         return "El login ya existe."
     email_existe = session.query(Usuario).filter(Usuario.email == usuario.email).first()
-    if login_existe:
+    if email_existe:
         return "El email ya existe."
-    nuevo_usuario = Usuario(login = usuario.login, email = usuario.email, password = pw, rol_id = rol_id, created_at = datetime.now(), updated_at = datetime.now())
+    pw = Encryption.encrypt(usuario.password)
+    # Crear el nuevo objeto de Usuario con el ID del rol
+    nuevo_usuario = Usuario(login = usuario.login, email = usuario.email, password = pw, rol_id = id_de_rol, created_at = datetime.now(), updated_at = datetime.now())
     session.add(nuevo_usuario) # Agregar el nuevo usuario a la sesión
     session.flush()
     session.commit() # Realizar el commit para persistir los cambios

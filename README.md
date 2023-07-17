@@ -21,7 +21,7 @@ Cuando hay que crear el CRUD de una tabla debemos actuar sobre los siguientes pu
 En los tres directorios mencionados se creará un archivo por cada CRUD, con el nombre de la tabla a la que se refiere dicho CRUD.
 
 Además, para crear las API's de un CRUD hay que tocar los siguientes arcivos:
-- **/classes/models.py**. Aquí importaremos el model de la tabla.
+- **/classes/models.py**. Aquí importaremos el modelo de la tabla.
 - **/classes/queries.py**. Aquí importaremos el archivo de consultas de la tabla.
 - **/classes/validations.py**. Aquí incluimos los esquemas de tipos de datos de PyDantic relativos a la tabla con la que estamos trabajando.
 - **main.py**. En este archivo se importa la API de cada tabla.
