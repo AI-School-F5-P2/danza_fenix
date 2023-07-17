@@ -13,5 +13,6 @@ class UserValidator(BaseModel):
     nombre_rol: str
     activo: Optional [int] = 1
 
-
+class ProfesorValidator(BaseModel):
+    nombre_profesor : str 
 

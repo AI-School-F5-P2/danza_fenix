@@ -12,6 +12,7 @@ from models.profesores import Profesor
 from models.roles import Rol
 from models.usuarios import Usuario
 
+
 Base = declarative_base()
 
 '''
