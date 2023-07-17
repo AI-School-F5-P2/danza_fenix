@@ -28,7 +28,7 @@ def qw_get_cursos():
     return cursos
 
 # funcion para mostrar un solo curso
-def qw_get_curso(nombre_del_curso):
+def qw_mostrar_curso(nombre_del_curso):
     curso = session.query(Curso).filter(Curso.nombre_curso == nombre_del_curso).first()
     if curso is None:
         return "Error: El curso especificado no existe."
