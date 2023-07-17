@@ -14,4 +14,10 @@ class UserValidator(BaseModel):
     activo: Optional [int] = 1
 
 
+class NivelValidator(BaseModel):
+    nivel: str
+    
+
+
+
 

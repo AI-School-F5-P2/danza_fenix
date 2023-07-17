@@ -8,6 +8,7 @@ class Alumno(Base): # Tabla de alumnos
     __tablename__ = "alumnos"
     id = Column("id", Integer, primary_key = True, nullable = False)
     nombre = Column("nombre", String, nullable = False)
+    apellido = Column("apellido", String, nullable = False)
     dni = Column("dni", String, nullable = False)
     email = Column("email", String, nullable = False)
     nacimiento = Column("nacimiento", DateTime, nullable = False)
