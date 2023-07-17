@@ -7,6 +7,7 @@ from apis.niveles import router as niveles_router
 from apis.profesores import router as profesores_router
 from apis.cursos import router as cursos_router
 from apis.compile import router as compile_router
+from apis.grupos import router as grupos_router
 
 tags_metadata = [
     {
@@ -42,6 +43,10 @@ tags_metadata = [
     {
         "name": "inscripcion",
         "description": "Operaciones con inscripciones"
+    },
+    {
+        "name": "grupos",
+        "description": "Operaciones con grupos"
     }
 ]
 
@@ -56,6 +61,7 @@ app.include_router(niveles_router, prefix = "/niveles")
 app.include_router(profesores_router, prefix="/profesores")
 app.include_router(cursos_router, prefix="/cursos")
 app.include_router(compile_router, prefix="/compile")
+app.include_router(grupos_router, prefix="/grupos")
 
 #################### MAIN #################
 

@@ -9,7 +9,7 @@ class Usuario(Base):
     login = Column("login", String, nullable = False)
     email = Column("email", String, nullable = False)
     password = Column("password", String, nullable = False)
-    rol_id = Column("rol_id", Integer, ForeignKey("roles.id"), nullable = False)
+    rol_id = Column("rol_id", Integer, nullable = False)
     activo = Column("activo", Integer,\
                                 CheckConstraint('activo IN (0, 1)',\
                                 name = 'valid_activo'), default = 1)
@@ -22,7 +22,7 @@ class Usuario(Base):
         self.password = password
         self.rol_id = rol_id
         self.created_at = created_at
-        self.updated_at = updated_at
+        self.updated_at = updated_at        
     
     def __repr__(self):
         return f"Usuario {self.id} tiene el login {self.login}."

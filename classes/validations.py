@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, Union
 from datetime import datetime
 
+from typing import Optional
 
 class RolValidator(BaseModel):
     nombre_rol: str
@@ -12,8 +13,6 @@ class UserValidator(BaseModel):
     password: str
     nombre_rol: str
     activo: Optional [int] = 1
-
-
 class AlumnoValidator(BaseModel):
     nombre: str
     apellidos: str
@@ -25,8 +24,8 @@ class AlumnoValidator(BaseModel):
 class NivelValidator(BaseModel):
     nivel: str
     
-
-
+class GrupoValidator(BaseModel):
+    nombre_grupo: str
 
 class ProfesorValidator(BaseModel):
     nombre_profesor : str 
@@ -35,7 +34,6 @@ class CursoValidator(BaseModel):
     precio : float
     id_grupo : int
     
-
 class InscripcionValidator(BaseModel):
     dni_usuario : str
     check_familiar: int

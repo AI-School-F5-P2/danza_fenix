@@ -54,5 +54,4 @@ estudios_descuentos = Table('estudios_descuentos', Base.metadata,
     Column('updated_at', DateTime)
 )
 '''
-# DEFINIMOS LAS CLASES DE LAS TABLAS MAESTRAS.
    

@@ -24,7 +24,9 @@ class Alumno(Base): # Tabla de alumnos
     
     def __init__(self, nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at = datetime.now(), updated_at = datetime.now()):
         self.nombre = nombre
+        self.apellidos = apellidos
         self.dni = dni
+        self.telefono = telefono
         self.email = email
         self.nacimiento = nacimiento
         self.apellidos = apellidos
