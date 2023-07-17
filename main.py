@@ -4,6 +4,7 @@ from apis.roles import router as roles_router
 from apis.usuarios import router as usuarios_router
 from apis.alumnos import router as alumnos_router 
 from apis.niveles import router as niveles_router
+from apis.profesores import router as profesores_router
 
 tags_metadata = [
     {
@@ -22,14 +23,21 @@ tags_metadata = [
     {
         "name": "alumnos",
         "description": "Operaciones de alumnos"
-    }
+    },
 
     {
         "name": "niveles",
         "description": "Operaciones con niveles"
     },
-]
 
+    {
+
+        "name": "profesores",
+        "description" : "Operaciones con profesores"
+
+    }
+
+]
 
 app = FastAPI(openapi_tags=tags_metadata)
 
@@ -39,6 +47,8 @@ app.include_router(usuarios_router, prefix="/usuarios")
 app.include_router(alumnos_router, prefix ="/alumnos")
 
 app.include_router(niveles_router, prefix = "/niveles")
+app.include_router(profesores_router, prefix="/profesores")
+
 #################### MAIN #################
 @app.get("/", tags=["main"])
 def main():

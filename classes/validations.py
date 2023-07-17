@@ -28,4 +28,6 @@ class NivelValidator(BaseModel):
 
 
 
+class ProfesorValidator(BaseModel):
+    nombre_profesor : str 
 
