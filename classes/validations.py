@@ -22,5 +22,10 @@ class AlumnoValidator(BaseModel):
     email: str
     telefono: str
     nacimiento: datetime
+class NivelValidator(BaseModel):
+    nivel: str
+    
+
+
 
 

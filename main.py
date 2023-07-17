@@ -3,6 +3,7 @@ from starlette.responses import RedirectResponse
 from apis.roles import router as roles_router
 from apis.usuarios import router as usuarios_router
 from apis.alumnos import router as alumnos_router 
+from apis.niveles import router as niveles_router
 
 tags_metadata = [
     {
@@ -13,6 +14,7 @@ tags_metadata = [
         "name": "roles",
         "description": "Operaciones con roles"
     },
+    
     {
         "name": "usuarios",
         "description": "Operaciones con usuarios"
@@ -21,7 +23,13 @@ tags_metadata = [
         "name": "alumnos",
         "description": "Operaciones de alumnos"
     }
+
+    {
+        "name": "niveles",
+        "description": "Operaciones con niveles"
+    },
 ]
+
 
 app = FastAPI(openapi_tags=tags_metadata)
 
@@ -30,6 +38,7 @@ app.include_router(roles_router, prefix="/roles")
 app.include_router(usuarios_router, prefix="/usuarios")
 app.include_router(alumnos_router, prefix ="/alumnos")
 
+app.include_router(niveles_router, prefix = "/niveles")
 #################### MAIN #################
 @app.get("/", tags=["main"])
 def main():
