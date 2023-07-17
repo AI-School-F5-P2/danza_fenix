@@ -8,3 +8,5 @@ from queries.profesores import *
 
 
 
+from queries.cursos import *
+from queries.compile import * 

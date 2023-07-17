@@ -5,6 +5,8 @@ from apis.usuarios import router as usuarios_router
 from apis.alumnos import router as alumnos_router 
 from apis.niveles import router as niveles_router
 from apis.profesores import router as profesores_router
+from apis.cursos import router as cursos_router
+from apis.compile import router as compile_router
 
 tags_metadata = [
     {
@@ -15,7 +17,6 @@ tags_metadata = [
         "name": "roles",
         "description": "Operaciones con roles"
     },
-    
     {
         "name": "usuarios",
         "description": "Operaciones con usuarios"
@@ -29,17 +30,22 @@ tags_metadata = [
         "name": "niveles",
         "description": "Operaciones con niveles"
     },
-
     {
 
         "name": "profesores",
         "description" : "Operaciones con profesores"
-
+    },
+    {
+        "name": "cursos",
+        "description": "Operaciones con cursos"
+    },
+    {
+        "name": "inscripcion",
+        "description": "Operaciones con inscripciones"
     }
-
 ]
 
-app = FastAPI(openapi_tags=tags_metadata)
+app = FastAPI(openapi_tags=tags_metadata, description="API para la gestión de la escuela de danza Fenix")
 
 # Registrar enrutadores
 app.include_router(roles_router, prefix="/roles")
@@ -48,8 +54,11 @@ app.include_router(alumnos_router, prefix ="/alumnos")
 
 app.include_router(niveles_router, prefix = "/niveles")
 app.include_router(profesores_router, prefix="/profesores")
+app.include_router(cursos_router, prefix="/cursos")
+app.include_router(compile_router, prefix="/compile")
 
 #################### MAIN #################
+
 @app.get("/", tags=["main"])
 def main():
     return RedirectResponse(url="/docs")
