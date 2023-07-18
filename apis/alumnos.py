@@ -17,13 +17,11 @@ def mostrar_alumno(dni_alumno: str):
 def insertar_alumnos(alumno: AlumnoValidator):
     return qw_post_alumnos(alumno.dict())
 
-@router.put("/actualizar/{dni_alumno}/{alumno}", tags = ["Alumnos"])
+@router.put("/actualizar/{dni_alumno}", tags = ["Alumnos"])
 def actualizar_alumnos(dni_alumno:str,alumno: AlumnoValidator):
     return qw_put_alumnos(dni_alumno, alumno.dict())
 
-
-
-@router.delete("/eliminar", tags = ["Alumnos"])
+@router.delete("/eliminar/{dni_eliminar_alumno}", tags = ["Alumnos"])
 def eliminar_alumno(dni_eliminar_alumno:str):
     return qw_delete_alumno(dni_eliminar_alumno)
 

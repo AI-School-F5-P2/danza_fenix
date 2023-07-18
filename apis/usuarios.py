@@ -23,7 +23,7 @@ def usuarios_ver(dato: str, valor: str):
 def usuarios_insertar(usuario: UserValidator):
     return qw_create_usuario(usuario)
 
-@router.put("/actualizar/{dato}/{valor}/{usuario}", tags=["Usuarios"])
+@router.put("/actualizar/{dato}/{valor}", tags=["Usuarios"])
 def usuarios_actualizar(dato: str, valor: str, usuario: UserValidator):
     return qw_update_usuario(dato, valor, usuario)
 

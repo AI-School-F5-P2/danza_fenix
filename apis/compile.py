@@ -14,8 +14,7 @@ def insertar_inscripcion(rol: InscripcionValidator):
 def mostrar_inscripcion():
     return qw_mostrar_compile()
 
-
 # funcion para mostrar un solo grupo
-@router.get("/mostrar/{nombre_del_curso}", tags=["Inscripcion"])
+@router.get("/mostrar/{dni_alumno}", tags=["Inscripcion"])
 def mostrar_inscripcion(dni_alumno: str):
     return qw_get_curso(dni_alumno)
