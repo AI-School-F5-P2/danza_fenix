@@ -8,7 +8,7 @@ router = APIRouter()
 def usuarios_listar():
     return qw_list_usuarios()
 
-@router.get("/ver/", tags=["Usuarios"])
+@router.get("/ver/{dato}/{valor}", tags=["Usuarios"])
 def usuarios_ver(dato: str, valor: str):
     """
     El dato puede ser "id", "login" o "email".\n
@@ -23,10 +23,10 @@ def usuarios_ver(dato: str, valor: str):
 def usuarios_insertar(usuario: UserValidator):
     return qw_create_usuario(usuario)
 
-@router.put("/actualizar/", tags=["Usuarios"])
+@router.put("/actualizar/{dato}/{valor}/{usuario}", tags=["Usuarios"])
 def usuarios_actualizar(dato: str, valor: str, usuario: UserValidator):
     return qw_update_usuario(dato, valor, usuario)
 
-@router.delete("/eliminar/", tags=["Usuarios"])
+@router.delete("/eliminar/{dato}/{valor}", tags=["Usuarios"])
 def usuarios_borrar(dato: str, valor: str):
     return qw_delete_usuario(dato, valor)

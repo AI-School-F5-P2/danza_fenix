@@ -7,17 +7,17 @@ router = APIRouter()
 def mostrar_niveles():
     return qw_get_niveles()
 
-@router.get("/busqueda_nivel", tags=["Niveles"])
+@router.get("/busqueda_nivel/{nombre_nivel}", tags=["Niveles"])
 def busqueda_nivel(nombre_nivel: str):
     return qw_get_nivel(nombre_nivel)
 
 
-@router.delete("/apagar_niveles", tags = ["Niveles"])
+@router.delete("/apagar_niveles/{nombre_nivel}", tags = ["Niveles"])
 def apagar_niveles(nombre_nivel):
     return qw_delete_niveles(nombre_nivel)
 
 
-@router.put("/actualizar_niveles", tags=["Niveles"])
+@router.put("/actualizar_niveles/{nombre_nivel}/{nuevo_nivel}", tags=["Niveles"])
 def actualizar_niveles(nombre_nivel: str, nuevo_nivel: str):
     return qw_put_niveles(nombre_nivel, nuevo_nivel)
 

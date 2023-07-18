@@ -8,7 +8,7 @@ router = APIRouter()
 def grupos_listar():
     return qw_list_grupos()
 
-@router.get("/ver", tags=["Grupos"])
+@router.get("/ver/{dato}/{valor}", tags=["Grupos"])
 def grupos_ver(dato, valor):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n
@@ -20,7 +20,7 @@ def grupos_ver(dato, valor):
 def grupos_insertar(grupo: GrupoValidator):
     return qw_create_grupo(grupo.dict())
 
-@router.put("/actualizar", tags=["Grupos"])
+@router.put("/actualizar/{dato}/{valor}/{nuevo_nombre}", tags=["Grupos"])
 def grupos_actualizar(dato: str, valor: str, nuevo_nombre: str):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n
@@ -28,7 +28,7 @@ def grupos_actualizar(dato: str, valor: str, nuevo_nombre: str):
     """
     return qw_update_grupo(dato, valor, nuevo_nombre)
 
-@router.delete("/borrar", tags=["Grupos"])
+@router.delete("/borrar/{dato}/{valor}", tags=["Grupos"])
 def grupos_borrar(dato: str, valor: str):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n

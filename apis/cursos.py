@@ -20,11 +20,10 @@ def insertar_cursos(rol: CursoValidator):
     return qw_create_curso(rol.dict())
 
 # funcion para modificar un curso
-@router.put("/actualizar", tags=["Cursos"])
+@router.put("/actualizar/{nombre_del_curso}/{nuevo_nombre}/{nuevo_precio}", tags=["Cursos"])
 def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float):
     return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio)
 
-
-@router.delete("/borrar", tags=["Cursos"])
+@router.delete("/borrar/{nombre}", tags=["Cursos"])
 def borrar_curso(nombre: str):
     return qw_delete_curso(nombre)

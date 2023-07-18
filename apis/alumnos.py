@@ -9,19 +9,15 @@ def mostrar_alumnos():
     return qw_get_alumnos()
 
 
-@router.get("/mostrar_alumno", tags = ["Alumnos"])
+@router.get("/mostrar_alumno{dni_alumno}", tags = ["Alumnos"])
 def mostrar_alumno(dni_alumno: str):
     return qw_get_alumno(dni_alumno)
-
-
 
 @router.post("/insertar", tags = ["Alumnos"])
 def insertar_alumnos(alumno: AlumnoValidator):
     return qw_post_alumnos(alumno.dict())
 
-
-
-@router.put("/actualizar", tags = ["Alumnos"])
+@router.put("/actualizar/{dni_alumno}/{alumno}", tags = ["Alumnos"])
 def actualizar_alumnos(dni_alumno:str,alumno: AlumnoValidator):
     return qw_put_alumnos(dni_alumno, alumno.dict())
 

@@ -12,10 +12,10 @@ def mostrar_profesores ():
 def insertar_profesor(profesor: ProfesorValidator):
     return qw_post_profesores(profesor.dict())
 
-@router.put("/actualizar", tags = ["Profesores"])
+@router.put("/actualizar/{profesor}/{nuevo_profesor}", tags = ["Profesores"])
 def actualizar_profesor(profesor: str, nuevo_profesor: str):
     return qw_put_profesores(profesor, nuevo_profesor)
 
-@router.delete("/eliminar", tags = ["Profesores"])
+@router.delete("/eliminar/{profesor}", tags = ["Profesores"])
 def eliminar_profesor(profesor: str):
     return qw_delete_profesores(profesor)
