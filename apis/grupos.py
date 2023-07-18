@@ -4,11 +4,11 @@ from classes.validations import GrupoValidator
 
 router = APIRouter()
 
-@router.get("/listar", tags=["grupos"])
+@router.get("/listar", tags=["Grupos"])
 def grupos_listar():
     return qw_list_grupos()
 
-@router.get("/ver", tags=["grupos"])
+@router.get("/ver", tags=["Grupos"])
 def grupos_ver(dato, valor):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n
@@ -16,11 +16,11 @@ def grupos_ver(dato, valor):
     """
     return qw_get_grupo(dato, valor)
 
-@router.post("/insertar", tags=["grupos"])
+@router.post("/insertar", tags=["Grupos"])
 def grupos_insertar(grupo: GrupoValidator):
     return qw_create_grupo(grupo.dict())
 
-@router.put("/actualizar", tags=["grupos"])
+@router.put("/actualizar", tags=["Grupos"])
 def grupos_actualizar(dato: str, valor: str, nuevo_nombre: str):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n
@@ -28,7 +28,7 @@ def grupos_actualizar(dato: str, valor: str, nuevo_nombre: str):
     """
     return qw_update_grupo(dato, valor, nuevo_nombre)
 
-@router.delete("/borrar", tags=["grupos"])
+@router.delete("/borrar", tags=["Grupos"])
 def grupos_borrar(dato: str, valor: str):
     """
     El dato puede ser "id", para localizar un grupo por su clave primaria\n

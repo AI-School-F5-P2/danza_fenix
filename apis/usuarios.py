@@ -4,11 +4,11 @@ from classes.validations import UserValidator
 
 router = APIRouter()
 
-@router.get("/listar", tags=["usuarios"])
+@router.get("/listar", tags=["Usuarios"])
 def usuarios_listar():
     return qw_list_usuarios()
 
-@router.get("/ver/", tags=["usuarios"])
+@router.get("/ver/", tags=["Usuarios"])
 def usuarios_ver(dato: str, valor: str):
     """
     El dato puede ser "id", "login" o "email".\n
@@ -19,14 +19,14 @@ def usuarios_ver(dato: str, valor: str):
     """
     return qw_show_usuario(dato, valor)
 
-@router.post("/insertar", tags=["usuarios"])
+@router.post("/insertar", tags=["Usuarios"])
 def usuarios_insertar(usuario: UserValidator):
     return qw_create_usuario(usuario)
 
-@router.put("/actualizar/", tags=["usuarios"])
+@router.put("/actualizar/", tags=["Usuarios"])
 def usuarios_actualizar(dato: str, valor: str, usuario: UserValidator):
     return qw_update_usuario(dato, valor, usuario)
 
-@router.delete("/eliminar/", tags=["usuarios"])
+@router.delete("/eliminar/", tags=["Usuarios"])
 def usuarios_borrar(dato: str, valor: str):
     return qw_delete_usuario(dato, valor)
