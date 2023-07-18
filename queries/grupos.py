@@ -19,6 +19,8 @@ def qw_create_grupo(grupo_input):
 # Localizar un grupo por su id o nombre
 def qw_get_grupo(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:
@@ -44,6 +46,8 @@ def qw_list_grupos():
 # Actualizar un grupo por id o por su nombre actual.
 def qw_update_grupo(dato, valor, nuevo_nombre):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:
@@ -65,6 +69,8 @@ def qw_update_grupo(dato, valor, nuevo_nombre):
 # Borrar un grupo por su id o por su nombre si ningún curso lo tiene asignado
 def qw_delete_grupo(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:

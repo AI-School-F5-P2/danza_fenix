@@ -7,6 +7,8 @@ from connection.connection import *
 ############## ROLES #################
 # Crear un nuevo rol
 def qw_create_rol(rol_input):
+    if rol_input["nombre_rol"].strip() == "":
+        return "El nombre de rol no puede estar vacío."
     try:
         rol = Rol(**rol_input)
         session.add(rol)
@@ -23,6 +25,8 @@ def qw_create_rol(rol_input):
 # Localizar un rol por su id
 def qw_get_rol(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
@@ -48,6 +52,8 @@ def qw_list_roles():
 # Actualizar un rol por id o por su nombre actual.
 def qw_update_rol(dato, valor, nuevo_nombre):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
@@ -69,6 +75,8 @@ def qw_update_rol(dato, valor, nuevo_nombre):
 # Borrar un rol por su id o por su nombre si ningún usuario lo tiene asignado
 def qw_delete_rol(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:

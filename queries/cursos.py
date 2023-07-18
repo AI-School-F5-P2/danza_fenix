@@ -19,7 +19,6 @@ def qw_create_curso(curso_input):
             out = f"No se ha podido grabar el curso.{e}"
     return out
 
-
 # mostrar todos lo  s cursos
 def qw_get_cursos():
     cursos = session.query(Curso).all()
@@ -33,7 +32,6 @@ def qw_mostrar_curso(nombre_del_curso):
     if curso is None:
         return "Error: El curso especificado no existe."
     return curso
-
 
 # funcion para modificar un curso
 def qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio):

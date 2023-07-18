@@ -25,7 +25,6 @@ def qw_get_alumno(dni_alumno):
     except Exception as e:
         return f"Error al consultar alumno.{e}"    
     
-
 def qw_post_alumnos(datos_alumno):
     try:
         alumno = Alumno(**datos_alumno)
@@ -63,8 +62,6 @@ def qw_put_alumnos(dni_alumno,alumno):
         else:
             out = f"No se ha podido grabar el alumno.{e}"
     return out
-
-
 
 def qw_delete_alumno(dni_eliminar_alumno):
     try:
