@@ -49,6 +49,8 @@ def qw_list_usuarios():
 # ser el id, el login o el email.
 def qw_show_usuario(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser un dato numérico."
         valor = int(valor)
         resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.id == valor).first()
     elif dato == "login":
