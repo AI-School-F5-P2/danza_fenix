@@ -1,21 +1,20 @@
 from fastapi import APIRouter
 from classes.validations import InscripcionValidator
-from classes.queries import qw_create_compile, qw_mostrar_compile, qw_get_curso
+from classes.queries import qw_create_compile, qw_mostrar_compile, wq_get_descuento
 
 router = APIRouter()
 
 # funcion para insertar un nuevo curso
-@router.post("/insertar", tags=["inscripcion"])
+@router.post("/inscribir", tags=["inscripcion"])
 def insertar_inscripcion(rol: InscripcionValidator):
     return qw_create_compile(rol.dict())
 
-# funcion para mostrar todos los grupos
-@router.get("/mostrar", tags=["inscripcion"])
+# esta funcion es para mostrar toda la informacion en al bbdd
+@router.get("/listar_alumnos", tags=["inscripcion"])
 def mostrar_inscripcion():
     return qw_mostrar_compile()
 
-
 # funcion para mostrar un solo grupo
-@router.get("/mostrar/{nombre_del_curso}", tags=["inscripcion"])
+@router.get("/descuento", tags=["inscripcion"])
 def mostrar_inscripcion(dni_alumno: str):
-    return qw_get_curso(dni_alumno)
+    return wq_get_descuento(dni_alumno)

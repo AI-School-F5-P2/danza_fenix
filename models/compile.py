@@ -9,15 +9,16 @@ class Compile(Base):
     __tablename__ = "compile"
     id = Column("id", Integer, primary_key = True, nullable = False)
     dni_usuario = Column("dni_usuario", String, nullable = False)
-    check_familiar = Column("check_familiar", Integer, nullable = False)
+    # check_familiar = Column("check_familiar", Integer, nullable = False)
     cursos = Column("cursos", String, nullable = False)
     nivel = Column("nivel", String, nullable = False)
     profesor = Column("profesor", String, nullable = False)
+    precio = Column("precio", Float, nullable = False)
 
 
-    def __init__(self, dni_usuario, check_familiar, cursos, nivel, profesor):
+    def __init__(self, dni_usuario, cursos, nivel, profesor):
         self.dni_usuario = dni_usuario
-        self.check_familiar = check_familiar
+        # self.check_familiar = check_familiar
         self.cursos = cursos
         self.nivel = nivel
         self.profesor = profesor

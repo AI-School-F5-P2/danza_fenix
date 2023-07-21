@@ -60,7 +60,7 @@ app.include_router(alumnos_router, prefix ="/alumnos")
 app.include_router(niveles_router, prefix = "/niveles")
 app.include_router(profesores_router, prefix="/profesores")
 app.include_router(cursos_router, prefix="/cursos")
-app.include_router(compile_router, prefix="/compile")
+app.include_router(compile_router, prefix="/generar_descuentos")
 app.include_router(grupos_router, prefix="/grupos")
 
 #################### MAIN #################
