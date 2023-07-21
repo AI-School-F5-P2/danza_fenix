@@ -28,8 +28,9 @@ def qw_list_profesores():
 
 
 def qw_post_profesores(datos_profesor):
-    profesor = Profesor(**datos_profesor)
-    profesor_existe = session.query(Profesor).filter(Profesor.nombre_profesor == profesor.nombre_profesor).first()
+    try:
+        profesor = Profesor(**datos_profesor)
+        profesor_existe = session.query(Profesor).filter(Profesor.nombre_profesor == profesor.nombre_profesor).first()
         if profesor_existe is not None:
             return JSONResponse(content={"message": "El profesor/a ya existe."}, status_code=404)
         session.add(profesor)

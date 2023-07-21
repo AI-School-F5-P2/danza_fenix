@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from classes.queries import qw_get_profesores, qw_post_profesores, qw_put_profesores, qw_delete_profesores
+from classes.queries import qw_get_profesores, qw_post_profesores, qw_put_profesores, qw_delete_profesores, qw_list_profesores
 from classes.validations import ProfesorValidator
 
 
