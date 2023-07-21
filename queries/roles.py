@@ -7,7 +7,7 @@ from connection.connection import *
 ############## ROLES #################
 # Crear un nuevo rol
 def qw_create_rol(rol_input):
-    if rol_input["nombre_rol"].strip() == "":
+    if str(rol_input["nombre_rol"]).strip() == "":
         return "El nombre de rol no puede estar vacío."
     try:
         rol = Rol(**rol_input)
@@ -24,6 +24,8 @@ def qw_create_rol(rol_input):
 
 # Localizar un rol por su id
 def qw_get_rol(dato, valor):
+    if str(valor).strip() == "":
+        return "El valor no puede ser una cadena vacía."
     if dato == "id":
         if not valor.isdigit():
             return "El id debe ser numérico."

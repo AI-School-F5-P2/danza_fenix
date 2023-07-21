@@ -52,7 +52,6 @@ app = FastAPI(openapi_tags=tags_metadata, description="API para la gestión de l
 app.include_router(roles_router, prefix="/Roles")
 app.include_router(usuarios_router, prefix="/Usuarios")
 app.include_router(alumnos_router, prefix ="/Alumnos")
-
 app.include_router(niveles_router, prefix = "/Niveles")
 app.include_router(profesores_router, prefix="/Profesores")
 app.include_router(cursos_router, prefix="/Cursos")
@@ -60,8 +59,8 @@ app.include_router(compile_router, prefix="/Compile")
 app.include_router(grupos_router, prefix="/Grupos")
 
 #################### MAIN #################
-'''
-@app.get("/", tags=["main"])
+
+@app.get("/")
 def main():
     return RedirectResponse(url="/docs")
-'''
+
