@@ -37,7 +37,6 @@ class CursoValidator(BaseModel):
     
 class InscripcionValidator(BaseModel):
     dni_usuario : str
-    check_familiar: int
     cursos : str
     nivel : str
     profesor : str
