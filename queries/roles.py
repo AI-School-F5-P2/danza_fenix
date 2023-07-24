@@ -2,6 +2,7 @@ from sqlalchemy import func
 from datetime import datetime
 
 from classes.models import Rol, Usuario
+from classes.logger import Logger
 from connection.connection import *
 
 ############## ROLES #################
@@ -15,11 +16,14 @@ def qw_create_rol(rol_input):
         session.flush()
         session.commit()
         out = "El rol ha sido grabado."
+        Logger.info(f"Se ha grabado el rol {rol.nombre_rol}")
     except Exception as e:
         if str(type(e)) == "<class 'sqlalchemy.exc.IntegrityError'>":
             out = "El rol ya existe previamente."
+            Logger.error(f"El rol {rol.nombre_rol} se ha intentado grabar, pero ya existía")
         else:
             out = f"No se ha podido grabar el rol.{e}"
+        session.rollback()
     return out
 
 # Localizar un rol por su id

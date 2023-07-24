@@ -49,7 +49,7 @@ tags_metadata = [
 app = FastAPI(openapi_tags=tags_metadata, description="API para la gestión de la escuela de danza Fenix")
 
 # Registrar enrutadores
-<<<<<<< HEAD
+
 app.include_router(roles_router, prefix="/Roles")
 app.include_router(usuarios_router, prefix="/Usuarios")
 app.include_router(alumnos_router, prefix ="/Alumnos")
@@ -58,17 +58,6 @@ app.include_router(profesores_router, prefix="/Profesores")
 app.include_router(cursos_router, prefix="/Cursos")
 app.include_router(compile_router, prefix="/Compile")
 app.include_router(grupos_router, prefix="/Grupos")
-=======
-app.include_router(roles_router, prefix="/roles")
-app.include_router(usuarios_router, prefix="/usuarios")
-app.include_router(alumnos_router, prefix ="/alumnos")
-
-app.include_router(niveles_router, prefix = "/niveles")
-app.include_router(profesores_router, prefix="/profesores")
-app.include_router(cursos_router, prefix="/cursos")
-app.include_router(compile_router, prefix="/generar_descuentos")
-app.include_router(grupos_router, prefix="/grupos")
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 
 #################### MAIN #################
 

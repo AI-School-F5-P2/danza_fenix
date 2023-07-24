@@ -1,19 +1,12 @@
 from fastapi import APIRouter
-<<<<<<< HEAD
-from classes.queries import qw_create_curso, qw_mostrar_curso, qw_get_cursos, qw_update_curso, qw_delete_curso, qw_get_curso
-=======
-from classes.queries import qw_create_curso, qw_get_cursos, qw_update_curso, qw_delete_curso, qw_get_curso_unique # qw_get_curso
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
+from classes.queries import qw_create_curso, qw_get_cursos, qw_update_curso, qw_delete_curso, qw_get_curso_unique, qw_mostrar_curso
 from classes.validations import CursoValidator
 
 router = APIRouter()
 
 # funcion para mostrar todos los grupos
-<<<<<<< HEAD
 @router.get("/ver", tags=["Cursos"])
-=======
 @router.get("/listar", tags=["cursos"])
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 def mostrar_cursos():
     """
     <h1>METODO PARA LISTAR TODOS LOS CURSOS</h1>
@@ -22,11 +15,9 @@ def mostrar_cursos():
     return qw_get_cursos()
 
 # funcion para mostrar un solo curso
-<<<<<<< HEAD
 @router.get("/mostrar/{nombre_del_curso}", tags=["Cursos"])
 def mostrar_curso(nombre_del_curso: str):
     return qw_mostrar_curso(nombre_del_curso)
-=======
 @router.get("/ver", tags=["cursos"])
 def mostrar_curso(nombre_del_curso: str):
     """
@@ -36,7 +27,6 @@ def mostrar_curso(nombre_del_curso: str):
     </p>
     """
     return qw_get_curso_unique(nombre_del_curso)
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 
 # funcion para insertar un nuevo curso
 @router.post("/insertar", tags=["Cursos"])
@@ -49,11 +39,9 @@ def insertar_cursos(rol: CursoValidator):
     return qw_create_curso(rol.dict())
 
 # funcion para modificar un curso
-<<<<<<< HEAD
 @router.put("/actualizar/{nombre_del_curso}/{nuevo_nombre}/{nuevo_precio}", tags=["Cursos"])
 def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float):
     return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio)
-=======
 @router.put("/actualizar", tags=["cursos"])
 def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float, nombre_grupo: str):
     """
@@ -65,7 +53,6 @@ def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: flo
     </p>
     """
     return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio, nombre_grupo)
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 
 @router.delete("/borrar/{nombre}", tags=["Cursos"])
 def borrar_curso(nombre: str):

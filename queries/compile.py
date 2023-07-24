@@ -31,9 +31,7 @@ def qw_mostrar_compile():
         return "No se han encontrado alumnos."
     return information
 
-<<<<<<< HEAD
 from sqlalchemy import func
-=======
 
 
 
@@ -57,7 +55,6 @@ def qw_create_compile(compile_input):
     except Exception as e:
         return f"No se ha podido grabar el alumno.{e}"
     return out
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 
 
 

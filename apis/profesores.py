@@ -11,9 +11,12 @@ def mostrar_profesores ():
     ''' <p>Este método devuelve el profesor buscado</p>'''
     return qw_get_profesores()
 
-<<<<<<< HEAD
 @router.post("/insertar", tags = ["Profesores"])
-=======
+def insertar_profesor(profesor: ProfesorValidator):
+    ''' <h1>Método para insertar a un profesor</h1>'''
+    ''' <p>Este método inserta un profesor</p>'''
+    return qw_post_profesores(profesor.dict())
+
 @router.get("/busqueda_profesor", tags=["profesores"])
 def busqueda_profesor (profesores: str):
     ''' <h1>Método para buscar rofesores</h1>'''
@@ -21,7 +24,6 @@ def busqueda_profesor (profesores: str):
     return qw_list_profesores(profesores)
 
 @router.post("/insertar", tags = ["profesores"])
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 def insertar_profesor(profesor: ProfesorValidator):
     ''' <h1>Método para insertar a un profesor</h1>'''
     ''' <p>Este método inserta un profesor</p>'''

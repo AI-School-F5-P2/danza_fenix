@@ -1,11 +1,8 @@
 from sqlalchemy import func
 from datetime import datetime
 from connection.connection import *
-<<<<<<< HEAD
 from classes.models import Curso, Grupo
-=======
 from classes.models import Curso
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
 from fastapi.responses import JSONResponse
 
 ############## CURSOS #################
@@ -24,7 +21,6 @@ def qw_create_curso(curso_input):
         return JSONResponse(content={"message": f"No se ha podido crear el curso.{e}"}, status_code=400)
     return JSONResponse(content={"message": "El curso ha sido creado."}, status_code=202)
 
-<<<<<<< HEAD
 # mostrar todos los cursos
 def qw_get_cursos():
     cursos = session.query(Curso).all()
@@ -49,7 +45,6 @@ def qw_mostrar_curso(nombre_del_curso):
     curso = session.query(Curso).filter(Curso.nombre_curso == nombre_del_curso).first()
     if curso is None:
         return "Error: El curso especificado no existe."
-=======
 
 # mostrar todos los cursos
 def qw_get_cursos():
@@ -70,7 +65,6 @@ def qw_get_curso_unique(nombre_del_curso):
             return JSONResponse(content={"message": "Error: El curso especificado no existe."}, status_code=404)
     except Exception as e:
         return JSONResponse(content={"message": f"No se ha podido mostrar el curso.{e}"}, status_code=400)
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
     return curso
 
 # funcion para modificar un curso
@@ -92,10 +86,7 @@ def qw_delete_curso(nombre_del_curso):
     try:
         curso = session.query(Curso).filter(Curso.nombre_curso == nombre_del_curso).first()
         if curso is None:
-<<<<<<< HEAD
-						# segundo paso en el return metemos el JSONResponse() dentro el mensaje y despues del status code
-=======
->>>>>>> 015b98ac494e577d03dd6bc68573e4742f48fda8
+			# segundo paso en el return metemos el JSONResponse() dentro el mensaje y despues del status code
             return JSONResponse(content={"message": "Error: El curso especificado no existe."}, status_code=404)
         session.delete(curso)
         session.commit()    
