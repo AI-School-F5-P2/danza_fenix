@@ -36,23 +36,28 @@ def qw_get_rol(dato, valor):
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
+            Logger.error(f"Se ha intentado mostrar el rol {valor}, pero no existe.")
             return "Error: El rol especificado no existe."
     elif dato == "nombre":
         rol = session.query(Rol).filter(Rol.nombre_rol == valor).first() # Obtener el rol correspondiente    
         if rol is None:
+            Logger.error(f"Se ha intentado mostrar el rol {valor}, pero no existe.")
             return "Error: El rol especificado no existe."
     else:
         return "El tipo de dato especificado no existe."
+    Logger.info(f"Se ha mostrado el rol {valor}.")
     return rol
 
 # Listar todos los roles.
 def qw_list_roles():
     roles = session.query(Rol).all()
     if len(roles) == 0:
+        Logger.error("Se han intentado mostrar los roles, pero no ay ninguno.")
         return "No se han encontrado roles."
     for rol in roles:
         num_usuarios = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == rol.id).scalar()
         rol.num_usuarios = num_usuarios
+    Logger.info("Se hanlistado los roles.")
     return roles
 
 # Actualizar un rol por id o por su nombre actual.
@@ -70,12 +75,14 @@ def qw_update_rol(dato, valor, nuevo_nombre):
             return "Error: El rol especificado no existe."
         id = rol.id
     else:
+        Logger.error("Se ha producido un error en la actualización de roles.")
         return "El tipo de dato especificado no existe."
     # Actualizar el nombre del rol
     rol.nombre_rol = nuevo_nombre
     rol.updated_at = datetime.now()
     session.flush()
     session.commit() # Guardar los cambios en la base de datos
+    Logger.info(f"Se ha actualizado el rol {valor}.")
     return "El rol ha sido actualizado."
 
 # Borrar un rol por su id o por su nombre si ningún usuario lo tiene asignado
@@ -93,14 +100,17 @@ def qw_delete_rol(dato, valor):
             return "Error: El rol especificado no existe."
         id = rol.id
     else:
+        Logger.error(f"No existe el rol {valor}.")
         return "El tipo de dato especificado no existe."
     # Verificar si existen usuarios con el rol especificado
     usuarios_con_rol = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == id).scalar()
     if usuarios_con_rol > 0:
+        Logger.error(f"Se ha intentado borrar el rol {valor}, pero tiene usuarios asociados.")
         return "Error: No se puede borrar el rol porque existen usuarios relacionados."
     # Si no hay usuarios relacionados, proceder a borrar el rol
     session.delete(rol)
     session.flush()
     session.commit()
+    Logger.info(f"Se ha elimado el rol {valor}.")
     return "El rol ha sido eliminado."
 
