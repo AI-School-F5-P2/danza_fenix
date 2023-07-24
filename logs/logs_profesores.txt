@@ -1,0 +1,110 @@
+2023-07-24 12:49:01,347 - INFO - El profesor/a ha sido Encontrado.[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía.]
+2023-07-24 12:49:56,273 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 12:49:56,278 - INFO - [generated in 0.00584s] {'nombre_profesor_1': 'sddg', 'param_1': 1}
+2023-07-24 12:49:56,290 - INFO - INSERT INTO profesores (nombre_profesor, created_at, updated_at) VALUES (%(nombre_profesor)s, %(created_at)s, %(updated_at)s)
+2023-07-24 12:49:56,291 - INFO - [generated in 0.00336s] {'nombre_profesor': 'sddg', 'created_at': datetime.datetime(2023, 7, 24, 12, 48, 33, 586687), 'updated_at': datetime.datetime(2023, 7, 24, 12, 48, 33, 586687)}
+2023-07-24 12:49:56,297 - INFO - COMMIT
+2023-07-24 12:49:56,301 - INFO - BEGIN (implicit)
+2023-07-24 12:49:56,304 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.id = %(pk_1)s
+2023-07-24 12:49:56,306 - INFO - [generated in 0.00194s] {'pk_1': 15}
+2023-07-24 12:49:56,308 - INFO - El profesor/a ha sido grabado.Profesor 15 se llama sddg.
+2023-07-24 12:50:02,833 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 12:50:02,835 - INFO - [cached since 6.563s ago] {'nombre_profesor_1': 'sddg', 'param_1': 1}
+2023-07-24 12:50:02,841 - WARNING - El profesor/a ya existe.Profesor None se llama sddg.
+2023-07-24 12:52:57,485 - INFO - El profesor/a ha sido Encontrado.[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía., Profesor 15 se llama sddg.]
+2023-07-24 12:55:19,116 - INFO - El profesor/a ha sido grabado.Profesor 16 se llama string.
+2023-07-24 12:59:52,743 - WARNING - El profesor/a ya existe.Profesor None se llama string.
+2023-07-24 13:02:33,950 - WARNING - El profesor/a ya existe. Profesor None se llama string.
+2023-07-24 13:02:52,925 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:02:52,926 - INFO - [cached since 18.98s ago] {'nombre_profesor_1': 'Hola que tal', 'param_1': 1}
+2023-07-24 13:02:52,934 - INFO - INSERT INTO profesores (nombre_profesor, created_at, updated_at) VALUES (%(nombre_profesor)s, %(created_at)s, %(updated_at)s)
+2023-07-24 13:02:52,935 - INFO - [generated in 0.00321s] {'nombre_profesor': 'Hola que tal', 'created_at': datetime.datetime(2023, 7, 24, 13, 1, 49, 406301), 'updated_at': datetime.datetime(2023, 7, 24, 13, 1, 49, 406301)}
+2023-07-24 13:02:52,945 - INFO - COMMIT
+2023-07-24 13:02:52,951 - INFO - BEGIN (implicit)
+2023-07-24 13:02:52,955 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.id = %(pk_1)s
+2023-07-24 13:02:52,956 - INFO - [generated in 0.00242s] {'pk_1': 17}
+2023-07-24 13:02:52,959 - INFO - El profesor/a ha sido grabado. El/la Profesor 17 se llama Hola que tal.
+2023-07-24 13:09:50,304 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:09:50,315 - INFO - [cached since 436.4s ago] {'nombre_profesor_1': 'hola que tal', 'param_1': 1}
+2023-07-24 13:09:50,319 - INFO - El profesor/a ha sido añadir. Profesor 17 se llama Hola que tal.
+2023-07-24 13:10:49,226 - WARNING - El profesor ya existe. None
+2023-07-24 13:11:06,030 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:11:06,032 - INFO - [cached since 16.81s ago] {'nombre_profesor_1': 'hola', 'param_1': 1}
+2023-07-24 13:11:06,035 - WARNING - El profesor ya existe. None
+2023-07-24 13:12:13,062 - WARNING - El profesor especificado no existe. None
+2023-07-24 13:12:40,506 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:12:40,510 - INFO - [cached since 27.45s ago] {'nombre_profesor_1': 'hola que tal', 'param_1': 1}
+2023-07-24 13:12:40,519 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-24 13:12:40,521 - INFO - [generated in 0.00467s] {'id': 17}
+2023-07-24 13:12:40,530 - INFO - COMMIT
+2023-07-24 13:12:40,535 - INFO - El profesor/a ha sido borrado. Profesor 17 se llama Hola que tal.
+2023-07-24 13:13:38,447 - INFO - BEGIN (implicit)
+2023-07-24 13:13:38,449 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:13:38,452 - INFO - [cached since 85.39s ago] {'nombre_profesor_1': 'sddg', 'param_1': 1}
+2023-07-24 13:13:38,454 - INFO - El profesor/a ha sido añadir. Profesor 15 se llama sddg.
+2023-07-24 13:18:56,801 - WARNING - El profesor ya existe. None
+2023-07-24 13:19:11,557 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:19:11,560 - INFO - [cached since 14.76s ago] {'nombre_profesor_1': 'borrar', 'param_1': 1}
+2023-07-24 13:19:11,584 - WARNING - El profesor ya existe. None
+2023-07-24 13:20:30,991 - INFO - El profesor/a ha sido añadir. Profesor 15 se llama borrar.
+2023-07-24 13:20:50,863 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:20:50,864 - INFO - [cached since 19.91s ago] {'nombre_profesor_1': 'string', 'param_1': 1}
+2023-07-24 13:20:50,884 - INFO - UPDATE profesores SET nombre_profesor=%(nombre_profesor)s WHERE profesores.id = %(profesores_id)s
+2023-07-24 13:20:50,886 - INFO - [cached since 19.91s ago] {'nombre_profesor': 'borrar', 'profesores_id': 16}
+2023-07-24 13:20:50,895 - INFO - COMMIT
+2023-07-24 13:20:50,900 - INFO - BEGIN (implicit)
+2023-07-24 13:20:50,904 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.id = %(pk_1)s
+2023-07-24 13:20:50,906 - INFO - [cached since 19.92s ago] {'pk_1': 16}
+2023-07-24 13:20:50,910 - INFO - El profesor/a ha sido añadir. Profesor 16 se llama borrar.
+2023-07-24 13:21:11,008 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:21:11,010 - INFO - [cached since 40.06s ago] {'nombre_profesor_1': 'borrar', 'param_1': 1}
+2023-07-24 13:21:11,013 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-24 13:21:11,013 - INFO - [generated in 0.00118s] {'id': 15}
+2023-07-24 13:21:11,015 - INFO - COMMIT
+2023-07-24 13:21:11,019 - INFO - El profesor/a ha sido borrado. Profesor 15 se llama borrar.
+2023-07-24 13:21:20,310 - INFO - BEGIN (implicit)
+2023-07-24 13:21:20,312 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:21:20,313 - INFO - [cached since 49.36s ago] {'nombre_profesor_1': 'borrar', 'param_1': 1}
+2023-07-24 13:21:20,316 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-24 13:21:20,317 - INFO - [cached since 9.305s ago] {'id': 16}
+2023-07-24 13:21:20,324 - INFO - COMMIT
+2023-07-24 13:21:20,327 - INFO - El profesor/a ha sido borrado. Profesor 16 se llama borrar.
