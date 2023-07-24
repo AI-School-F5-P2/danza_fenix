@@ -3,6 +3,7 @@ from datetime import datetime
 from connection.connection import *
 from classes.models import Alumno
 from fastapi.responses import JSONResponse
+from classes.logger import Logger
 
 
 #qw_get_alumnos, qw_post_alumnos, qw_put_alumnos, qw_delete_alumnos
@@ -35,13 +36,16 @@ def qw_post_alumnos(datos_alumno):
         session.add(alumno)
         session.flush()
         session.commit()
+        Logger.info(f"se a grabado el log {datos_alumno}")
         return JSONResponse({"mensaje": "Alumno creado correctamente"}, status_code=200)
     except Exception as e:
         if str(type(e)) == "<class 'sqlalchemy.exc.IntegrityError'>":
-            return JSONResponse({"mensaje": "Alumno ya existe"}, status_code=401)
+            return JSONResponse({"mensaje": "Alumno ya existe"}, status_code=401) 
         else:
+            Logger.error(f"el alumno {datos_alumno} se ha intentado grabar pero ya existia")
             return JSONResponse(content={"message": f"error al insertar alumnos. {e}"}, status_code=400) 
-    
+        
+        
     
 
 def qw_put_alumnos(dni_alumno,alumno):
