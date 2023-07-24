@@ -52,7 +52,7 @@ class Logger:
             # y sólo quedan bien si se aplican al nivel de log.
             
             # Cargamos las variables de entorno
-            with open('./conf/logs_usuarios.json', 'r') as jsonfile:
+            with open('./conf/logs.json', 'r') as jsonfile:
                 data = json.load(jsonfile)
             log_file_path = data["LOG_FILE_PATH"] # La ruta del archivo de logs
             output = data["OUTPUT"] # La dirección de salida de los logs
@@ -71,7 +71,6 @@ class Logger:
                 console_handler.setFormatter(formatter)
                 # Agregar el controlador de consola al logger
                 cls.logger.addHandler(console_handler)
-
 
     @classmethod
     def debug(cls, msg):
@@ -98,11 +97,12 @@ class Logger:
         cls.setup_logger(cls)
         cls.logger.critical(msg)
 
+
 # Ejemplos de registros
 '''
-Logger.debug("Esto es un mensaje de depuración")
-Logger.info("Esto es un mensaje de información")
-Logger.warning("Esto es un mensaje de advertencia")
-Logger.error("Esto es un mensaje de error")
-Logger.critical("Esto es un mensaje crítico")
+Logger.debug("Esto es un mensaje de depuración", "./logs/roles.txt")
+Logger.info("Esto es un mensaje de información", "./logs/roles.txt")
+Logger.warning("Esto es un mensaje de advertencia", "./logs/roles.txt")
+Logger.error("Esto es un mensaje de error", "./logs/roles.txt")
+Logger.critical("Esto es un mensaje crítico", "./logs/roles.txt")
 '''

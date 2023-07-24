@@ -52,7 +52,7 @@ def qw_get_rol(dato, valor):
 def qw_list_roles():
     roles = session.query(Rol).all()
     if len(roles) == 0:
-        Logger.error("Se han intentado mostrar los roles, pero no ay ninguno.")
+        Logger.error("Se han intentado mostrar los roles, pero no hay ninguno.")
         return "No se han encontrado roles."
     for rol in roles:
         num_usuarios = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == rol.id).scalar()

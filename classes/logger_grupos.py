@@ -52,7 +52,7 @@ class Logger:
             # y sólo quedan bien si se aplican al nivel de log.
             
             # Cargamos las variables de entorno
-            with open('./conf/logs.json', 'r') as jsonfile:
+            with open('./conf/logs_grupos.json', 'r') as jsonfile:
                 data = json.load(jsonfile)
             log_file_path = data["LOG_FILE_PATH"] # La ruta del archivo de logs
             output = data["OUTPUT"] # La dirección de salida de los logs

@@ -1,2 +1,5 @@
-2023-07-24 09:17:15,010 - INFO - Se ha grabado el log La quinta prueba
-2023-07-24 09:20:36,446 - ERROR - El rol La quinta prueba se ha intentado grabar, pero ya existía
+2023-07-24 14:27:14,194 - INFO - Se han listado los usuarios.
+2023-07-24 14:27:15,836 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id
+2023-07-24 14:27:15,836 - INFO - [cached since 1.645s ago] {}
+2023-07-24 14:27:15,838 - INFO - Se han listado los usuarios.

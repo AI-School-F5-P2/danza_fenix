@@ -72,6 +72,7 @@ class Logger:
                 # Agregar el controlador de consola al logger
                 cls.logger.addHandler(console_handler)
 
+
     @classmethod
     def debug(cls, msg):
         cls.setup_logger(cls)
