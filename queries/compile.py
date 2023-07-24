@@ -4,11 +4,8 @@ from connection.connection import *
 from classes.models import Compile
 from classes.models import Alumno
 from classes.models import Curso
-# funcion para inscribir a un nuevo alumno
-
 from fastapi.responses import JSONResponse
 from fastapi import status
-
 
 def qw_create_compile(compile_input):
     try:
@@ -31,10 +28,6 @@ def qw_mostrar_compile():
         return "No se han encontrado alumnos."
     return information
 
-from sqlalchemy import func
-
-
-
 def qw_create_compile(compile_input):
     try:
         information = Compile(**compile_input)
@@ -56,16 +49,11 @@ def qw_create_compile(compile_input):
         return f"No se ha podido grabar el alumno.{e}"
     return out
 
-
-
 def qw_mostrar_compile():
     information = session.query(Compile).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
-
-
-
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
 def wq_get_descuento(dni_alumno):

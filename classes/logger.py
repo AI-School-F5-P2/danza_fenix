@@ -5,7 +5,7 @@ import json
 # Configurar el logger
 class Logger:
     logger = None
-    def setup_logger(cls):
+    def setup_logger(cls, archivo = "./logs/logs.json"):
         if cls.logger is None:
             cls.logger = logging.getLogger() # Se crea un objeto de la clase Logging de la biblioteca logging
             # Para crearlo es necesario hacerlo a través del método getLogger().
@@ -54,7 +54,7 @@ class Logger:
             # Cargamos las variables de entorno
             with open('./conf/logs.json', 'r') as jsonfile:
                 data = json.load(jsonfile)
-            log_file_path = data["LOG_FILE_PATH"] # La ruta del archivo de logs
+            log_file_path = archivo # La ruta del archivo de logs
             output = data["OUTPUT"] # La dirección de salida de los logs
             # 0 = archivo
             # 1 = terminal
@@ -71,30 +71,32 @@ class Logger:
                 console_handler.setFormatter(formatter)
                 # Agregar el controlador de consola al logger
                 cls.logger.addHandler(console_handler)
-
+            else:
+                log_file_path = archivo
+                
     @classmethod
-    def debug(cls, msg):
-        cls.setup_logger(cls)
+    def debug(cls, msg, archivo):
+        cls.setup_logger(cls, archivo)
         cls.logger.debug(msg)
 
     @classmethod
-    def info(cls, msg):
-        cls.setup_logger(cls)
+    def info(cls, msg, archivo):
+        cls.setup_logger(cls, archivo)
         cls.logger.info(msg)
 
     @classmethod
-    def warning(cls, msg):
-        cls.setup_logger(cls)
+    def warning(cls, msg, archivo):
+        cls.setup_logger(cls, archivo)
         cls.logger.warning(msg)
 
     @classmethod
-    def error(cls, msg):
-        cls.setup_logger(cls)
+    def error(cls, msg, archivo):
+        cls.setup_logger(cls, archivo)
         cls.logger.error(msg)
 
     @classmethod
-    def critical(cls, msg):
-        cls.setup_logger(cls)
+    def critical(cls, msg, archivo):
+        cls.setup_logger(cls, archivo)
         cls.logger.critical(msg)
 
 

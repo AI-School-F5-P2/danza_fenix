@@ -1,1 +1,7 @@
 
+2023-07-24 14:54:24,729 - INFO - Se han listado los grupos.
+2023-07-24 14:54:24,732 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-24 14:54:24,733 - INFO - [cached since 0.01163s ago] {'id_grupo_1': 5}
+2023-07-24 14:54:24,736 - INFO - Se han listado los grupos.

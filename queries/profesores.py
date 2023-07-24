@@ -36,8 +36,6 @@ def qw_post_profesores(datos_profesor):
         return JSONResponse(content={"message": f"El profesor no ha podido ser grabado.{e}"}, status_code=400)
     return JSONResponse(content={"message": "El profesor/a ha sido grabado."}, status_code=202)
     
-
-
 def qw_put_profesores(nombre_profesor, nuevo_profesor):
     try:
         profesor = session.query(Profesor).filter(Profesor.nombre_profesor == nombre_profesor).first()
@@ -47,7 +45,6 @@ def qw_put_profesores(nombre_profesor, nuevo_profesor):
         return JSONResponse(content={"message": f"No se ha podido añadir el profesor/a.{e}"}, status_code=400)
     return JSONResponse(content={"message": "El profesor/a ha sido añadir."}, status_code=202)
 
-   
 def qw_delete_profesores(borrar_profesor):
     try:
         profesor = session.query(Profesor).filter(Profesor.nombre_profesor == borrar_profesor).first()
