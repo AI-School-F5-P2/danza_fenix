@@ -57,7 +57,7 @@ def qw_list_roles():
     for rol in roles:
         num_usuarios = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == rol.id).scalar()
         rol.num_usuarios = num_usuarios
-    Logger.info("Se hanlistado los roles.")
+    Logger.info("Se han listado los roles.")
     return roles
 
 # Actualizar un rol por id o por su nombre actual.
