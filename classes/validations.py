@@ -35,7 +35,7 @@ class CursoValidator(BaseModel):
     id_grupo : int
     
 class InscripcionValidator(BaseModel):
-    dni_usuario : str
-    cursos : str
+    dni_alumno : str
+    nombre_curso : str
     nivel : str
     profesor : str

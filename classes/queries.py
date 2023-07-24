@@ -5,4 +5,4 @@ from queries.niveles import *
 from queries.alumnos import *
 from queries.profesores import *
 from queries.cursos import *
-from queries.compile import * 
+from queries.estudios import * 

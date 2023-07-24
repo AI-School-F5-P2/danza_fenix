@@ -1,19 +1,17 @@
 from sqlalchemy import func
 from datetime import datetime
 from connection.connection import *
-from classes.models import Compile
+from classes.models import Estudios
 from classes.models import Alumno
 from classes.models import Curso
-# funcion para inscribir a un nuevo alumno
-
 from fastapi.responses import JSONResponse
 from fastapi import status
 
 
 def qw_create_compile(compile_input):
     try:
-        information = Compile(**compile_input)
-        dni_select = information.dni_usuario
+        information = Estudios(**compile_input)
+        dni_select = information.dni_alumno
         alumno = session.query(Alumno).filter(Alumno.dni == dni_select).first()
         if alumno is None:
             return "El alumno no existe."
@@ -28,39 +26,42 @@ def qw_create_compile(compile_input):
 
 
 def qw_mostrar_compile():
-    information = session.query(Compile).all()
+    information = session.query(Estudios).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
 
 
 
-
+# funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
 def qw_create_compile(compile_input):
     try:
-        information = Compile(**compile_input)
-        dni_select = information.dni_usuario
+        information = Estudios(**compile_input)
+        dni_select = information.dni_alumno
         alumno = session.query(Alumno).filter(Alumno.dni == dni_select).first()
         if alumno is None:
             return "El alumno no existe."
-        curso_actual = information.cursos
+        curso_actual = information.nombre_curso
         curso = session.query(Curso).filter(Curso.nombre_curso == curso_actual).first()
+        grupo_select = session.query(Curso).filter(Curso.nombre_curso == information.nombre_curso).first()
+        # return grupo_select.id_grupo
         if curso is None:
             return "El curso no existe."
         precio_clase = curso.precio
         information.precio = precio_clase
+        information.grupo = grupo_select.id_grupo
         session.add(information)
         session.flush()
         session.commit()
         out = f"El alumno ha sido grabado. Precio de la clase: {precio_clase}"
     except Exception as e:
-        return f"No se ha podido grabar el alumno.{e}"
+        return JSONResponse(content={"message": f"No se ha podido grabar el alumno. {e}"}, status_code=status.HTTP_404_NOT_FOUND)
     return out
 
 
 
 def qw_mostrar_compile():
-    information = session.query(Compile).all()
+    information = session.query(Estudios).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
@@ -70,8 +71,51 @@ def qw_mostrar_compile():
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
 def wq_get_descuento(dni_alumno):
+
+    count_group_one = 0
+    count_group_two = 0
+    count_group_three = 0
+    descuentos = ["0,5", "0,25"]
+    # convertimos de string a int
+
     # comprobacion de que el alumno existe
-    information = session.query(Compile).filter(Compile.dni_usuario == dni_alumno).all()
+    information = session.query(Estudios).filter(Estudios.dni_alumno == dni_alumno).all()
+    check_grupo = session.query(Curso).all()
+
+
+            #     return check_grupo
+            #     {
+            #     "precio": 35,
+            #     "created_at": "2023-07-13T16:45:10",
+            #     "id": 1,
+            #     "id_grupo": "Relax",
+            #     "nombre_curso": "Bachata",
+            #     "updated_at": "2023-07-13T16:45:10"
+            #   },
+
+            #     return information
+            # {
+            #     "nombre_curso": "Bachata",
+            #     "id": 3,
+            #     "profesor": "Mar",
+            #     "precio": 35,
+            #     "created_at": null,
+            #     "dni_alumno": "cata",
+            #     "nivel": "Medio",
+            #     "fecha_inicio": "2023-07-21T16:18:14",
+            #     "fecha_fin": null,
+            #     "updated_at": null
+            #   },
+
+    
+    for info in information:
+        if (info.nombre_curso == "Bachata" or info.nombre_curso == "Salsa" or info.nombre_curso == 'Kizomba' or info.nombre_curso == "Role Rotation") and (info.grupo == "Relax"):
+            count_group_one += 1
+
+    return count_group_one
+
+
+
     # si el alumno no existe, se devuelve un mensaje de error
     if information is None or len(information) == 0:
         return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "No se han encontrado alumnos."})
@@ -82,6 +126,17 @@ def wq_get_descuento(dni_alumno):
     # se calcula el precio total de los cursos
     for info in information:
         total_precio += info.precio
+
+
+
+
+
+
+
+
+
+
+
 
     # si el alumno tiene descuento familiar, se le aplica un 10% de descuento
     if check_familiar.descuento_familiar == 1:
