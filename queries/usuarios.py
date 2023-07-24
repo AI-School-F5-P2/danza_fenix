@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from classes.models import Usuario, Rol
-from classes.logger import Logger
+from classes.logger_usuarios import Logger
 from classes.encryption import Encryption
 
 from connection.connection import *

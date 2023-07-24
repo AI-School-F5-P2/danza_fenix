@@ -2,7 +2,7 @@ from sqlalchemy import func
 from datetime import datetime
 
 from classes.models import Rol, Usuario
-from classes.logger import Logger
+from classes.logger_roles import Logger
 from connection.connection import *
 
 ############## ROLES #################

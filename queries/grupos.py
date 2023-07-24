@@ -2,7 +2,7 @@ from sqlalchemy import func
 from datetime import datetime
 
 from classes.models import Grupo, Curso
-from classes.logger import Logger
+from classes.logger_grupos import Logger
 from connection.connection import *
 
 ############## GRUPOS #################
