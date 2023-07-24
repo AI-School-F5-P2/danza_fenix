@@ -100,8 +100,8 @@ class Logger:
 
 # Ejemplos de registros
 '''
-Logger.info("Esto es un mensaje de información")
 Logger.debug("Esto es un mensaje de depuración")
+Logger.info("Esto es un mensaje de información")
 Logger.warning("Esto es un mensaje de advertencia")
 Logger.error("Esto es un mensaje de error")
 Logger.critical("Esto es un mensaje crítico")

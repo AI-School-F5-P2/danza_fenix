@@ -24,6 +24,8 @@ def mostrar_inscripcion():
 @router.get("/mostrar/{dni_alumno}", tags=["Inscripcion"])
 def mostrar_inscripcion(dni_alumno: str):
     return qw_mostrar_curso(dni_alumno)
+
+
 @router.get("/descuento", tags=["inscripcion"])
 def mostrar_inscripcion(dni_alumno: str):
     return wq_get_descuento(dni_alumno)

@@ -111,10 +111,6 @@ def wq_get_descuento(dni_alumno):
         if (info.nombre_curso == "Bachata" or info.nombre_curso == "Salsa" or info.nombre_curso == 'Kizomba' or info.nombre_curso == "Role Rotation") and (info.grupo == "Relax"):
             count_group_one += 1
 
-    return count_group_one
-
-
-
     # si el alumno no existe, se devuelve un mensaje de error
     if information is None or len(information) == 0:
         return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "No se han encontrado alumnos."})
@@ -125,17 +121,6 @@ def wq_get_descuento(dni_alumno):
     # se calcula el precio total de los cursos
     for info in information:
         total_precio += info.precio
-
-
-
-
-
-
-
-
-
-
-
 
     # si el alumno tiene descuento familiar, se le aplica un 10% de descuento
     if check_familiar.descuento_familiar == 1:
