@@ -1,10 +1,11 @@
 from fastapi import APIRouter
-from classes.queries import qw_create_curso, qw_get_cursos, qw_update_curso, qw_delete_curso, qw_get_curso_unique # qw_get_curso
+from classes.queries import qw_create_curso, qw_get_cursos, qw_update_curso, qw_delete_curso, qw_get_curso_unique, qw_mostrar_curso
 from classes.validations import CursoValidator
 
 router = APIRouter()
 
 # funcion para mostrar todos los grupos
+@router.get("/ver", tags=["Cursos"])
 @router.get("/listar", tags=["cursos"])
 def mostrar_cursos():
     """
@@ -14,6 +15,9 @@ def mostrar_cursos():
     return qw_get_cursos()
 
 # funcion para mostrar un solo curso
+@router.get("/mostrar/{nombre_del_curso}", tags=["Cursos"])
+def mostrar_curso(nombre_del_curso: str):
+    return qw_mostrar_curso(nombre_del_curso)
 @router.get("/ver", tags=["cursos"])
 def mostrar_curso(nombre_del_curso: str):
     """
@@ -25,7 +29,7 @@ def mostrar_curso(nombre_del_curso: str):
     return qw_get_curso_unique(nombre_del_curso)
 
 # funcion para insertar un nuevo curso
-@router.post("/insertar", tags=["cursos"])
+@router.post("/insertar", tags=["Cursos"])
 def insertar_cursos(rol: CursoValidator):
     """
     <h1 style="text-align: center;" >METODO PARA INSERTAR UN NUEVO CURSO  </h1>
@@ -35,6 +39,9 @@ def insertar_cursos(rol: CursoValidator):
     return qw_create_curso(rol.dict())
 
 # funcion para modificar un curso
+@router.put("/actualizar/{nombre_del_curso}/{nuevo_nombre}/{nuevo_precio}", tags=["Cursos"])
+def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float):
+    return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio)
 @router.put("/actualizar", tags=["cursos"])
 def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float, nombre_grupo: str):
     """
@@ -47,8 +54,7 @@ def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: flo
     """
     return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio, nombre_grupo)
 
-
-@router.delete("/borrar", tags=["cursos"])
+@router.delete("/borrar/{nombre}", tags=["Cursos"])
 def borrar_curso(nombre: str):
     """
     <h1 style="text-align: center;" >METODO PARA BORRAR UN CURSO  </h1>

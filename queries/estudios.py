@@ -23,14 +23,13 @@ def qw_create_compile(compile_input):
         return f"No se ha podido grabar el alumno.{e}"
     return out
 
-
-
 def qw_mostrar_compile():
     information = session.query(Estudios).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
 
+from sqlalchemy import func
 
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion

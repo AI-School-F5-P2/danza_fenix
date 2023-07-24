@@ -28,7 +28,6 @@ def qw_get_alumno(dni_alumno):
     except Exception as e:
         return JSONResponse(content={"message": f"error al consultar alumnos. {e}"}, status_code=400) 
     
-
 def qw_post_alumnos(datos_alumno):
     try:
         alumno = Alumno(**datos_alumno)
@@ -66,8 +65,6 @@ def qw_put_alumnos(dni_alumno,alumno):
         else:
             return JSONResponse(content={"message": f"error al actualizar alumno. {e}"}, status_code=400) 
     
-
-
 
 def qw_delete_alumno(dni_eliminar_alumno):
     try:

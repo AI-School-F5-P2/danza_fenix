@@ -40,7 +40,6 @@ def qw_put_niveles(nombre_nivel, nivel_nuevo):
     except Exception as e:
         return JSONResponse(content={"message":f"Error al actualizar los niveles .{e}"}, status_code=400)
 
-
 def qw_delete_niveles(nombre_nivel):
     try:
         nivel_existe = session.query(Nivel).filter(Nivel.nivel == nombre_nivel).first()

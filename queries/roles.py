@@ -2,27 +2,37 @@ from sqlalchemy import func
 from datetime import datetime
 
 from classes.models import Rol, Usuario
+from classes.logger import Logger
 from connection.connection import *
 
 ############## ROLES #################
 # Crear un nuevo rol
 def qw_create_rol(rol_input):
+    if str(rol_input["nombre_rol"]).strip() == "":
+        return "El nombre de rol no puede estar vacío."
     try:
         rol = Rol(**rol_input)
         session.add(rol)
         session.flush()
         session.commit()
         out = "El rol ha sido grabado."
+        Logger.info(f"Se ha grabado el rol {rol.nombre_rol}")
     except Exception as e:
         if str(type(e)) == "<class 'sqlalchemy.exc.IntegrityError'>":
             out = "El rol ya existe previamente."
+            Logger.error(f"El rol {rol.nombre_rol} se ha intentado grabar, pero ya existía")
         else:
             out = f"No se ha podido grabar el rol.{e}"
+        session.rollback()
     return out
 
 # Localizar un rol por su id
 def qw_get_rol(dato, valor):
+    if str(valor).strip() == "":
+        return "El valor no puede ser una cadena vacía."
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
@@ -48,6 +58,8 @@ def qw_list_roles():
 # Actualizar un rol por id o por su nombre actual.
 def qw_update_rol(dato, valor, nuevo_nombre):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
@@ -69,6 +81,8 @@ def qw_update_rol(dato, valor, nuevo_nombre):
 # Borrar un rol por su id o por su nombre si ningún usuario lo tiene asignado
 def qw_delete_rol(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         rol = session.query(Rol).get(id)
         if rol is None:
