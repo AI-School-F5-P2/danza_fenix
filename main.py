@@ -11,41 +11,37 @@ from apis.grupos import router as grupos_router
 
 tags_metadata = [
     {
-        "name": "main",
-        "description": "Main area"
-    },
-    {
-        "name": "roles",
+        "name": "Roles",
         "description": "Operaciones con roles"
     },
     {
-        "name": "usuarios",
+        "name": "Usuarios",
         "description": "Operaciones con usuarios"
     },
     {
-        "name": "alumnos",
+        "name": "Alumnos",
         "description": "Operaciones de alumnos"
     },
 
     {
-        "name": "niveles",
+        "name": "Niveles",
         "description": "Operaciones con niveles"
     },
     {
 
-        "name": "profesores",
+        "name": "Profesores",
         "description" : "Operaciones con profesores"
     },
     {
-        "name": "cursos",
+        "name": "Cursos",
         "description": "Operaciones con cursos"
     },
     {
-        "name": "inscripcion",
+        "name": "Inscripcion",
         "description": "Operaciones con inscripciones"
     },
     {
-        "name": "grupos",
+        "name": "Grupos",
         "description": "Operaciones con grupos"
     }
 ]
@@ -53,18 +49,19 @@ tags_metadata = [
 app = FastAPI(openapi_tags=tags_metadata, description="API para la gestión de la escuela de danza Fenix")
 
 # Registrar enrutadores
-app.include_router(roles_router, prefix="/roles")
-app.include_router(usuarios_router, prefix="/usuarios")
-app.include_router(alumnos_router, prefix ="/alumnos")
 
-app.include_router(niveles_router, prefix = "/niveles")
-app.include_router(profesores_router, prefix="/profesores")
-app.include_router(cursos_router, prefix="/cursos")
-app.include_router(compile_router, prefix="/compile")
-app.include_router(grupos_router, prefix="/grupos")
+app.include_router(roles_router, prefix="/Roles")
+app.include_router(usuarios_router, prefix="/Usuarios")
+app.include_router(alumnos_router, prefix ="/Alumnos")
+app.include_router(niveles_router, prefix = "/Niveles")
+app.include_router(profesores_router, prefix="/Profesores")
+app.include_router(cursos_router, prefix="/Cursos")
+app.include_router(compile_router, prefix="/Compile")
+app.include_router(grupos_router, prefix="/Grupos")
 
 #################### MAIN #################
 
-@app.get("/", tags=["main"])
+@app.get("/")
 def main():
     return RedirectResponse(url="/docs")
+

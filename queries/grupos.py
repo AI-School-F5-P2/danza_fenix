@@ -8,6 +8,8 @@ from connection.connection import *
 # Crear un nuevo grupo
 def qw_create_grupo(grupo_input):
     grupo = Grupo(**grupo_input)
+    if grupo.nombre_grupo.strip() == "":
+        return "El nombre del grupo no puede estar vacío."
     grupo_existe = session.query(Grupo).filter(Grupo.nombre_grupo == grupo.nombre_grupo).first() # Obtener el rol correspondiente    
     if grupo_existe is not None:
         return "El grupo ya existe previamente."
@@ -18,7 +20,11 @@ def qw_create_grupo(grupo_input):
 
 # Localizar un grupo por su id o nombre
 def qw_get_grupo(dato, valor):
+    if str(valor).strip() == "":
+        return "No se puede procesar un valor vacío."
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:
@@ -44,6 +50,8 @@ def qw_list_grupos():
 # Actualizar un grupo por id o por su nombre actual.
 def qw_update_grupo(dato, valor, nuevo_nombre):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:
@@ -65,6 +73,8 @@ def qw_update_grupo(dato, valor, nuevo_nombre):
 # Borrar un grupo por su id o por su nombre si ningún curso lo tiene asignado
 def qw_delete_grupo(dato, valor):
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser numérico."
         id = int(valor)
         grupo = session.query(Grupo).get(id)
         if grupo is None:

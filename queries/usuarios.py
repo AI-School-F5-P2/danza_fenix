@@ -9,6 +9,11 @@ from connection.connection import *
 ############## USUARIOS #################
 # Crear un nuevo usuario
 def qw_create_usuario(usuario):
+    if str(usuario.login).strip() == ''\
+        or str(usuario.password).strip() == ''\
+        or str(usuario.email).strip() == ''\
+        or str(usuario.nombre_rol).strip() == '':
+            return "Algún dato obligatorio está vacío."
     rol = session.query(Rol).filter(Rol.nombre_rol == usuario.nombre_rol).first() # Buscar el rol por su nombre
     # Si no existe el rol se obtienen un mensaje de error.
     if not rol:
@@ -48,7 +53,11 @@ def qw_list_usuarios():
 # Listar los datos de un usuario localizado a partir de un dato, que puede 
 # ser el id, el login o el email.
 def qw_show_usuario(dato, valor):
+    if str(valor).strip() == "":
+        return "No se puede poner un valor vacío."
     if dato == "id":
+        if not valor.isdigit():
+            return "El id debe ser un dato numérico."
         valor = int(valor)
         resultado = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).filter(Usuario.id == valor).first()
     elif dato == "login":
