@@ -1,0 +1,609 @@
+2023-07-24 11:54:11,105 - INFO - Alumno eliminado correctamente 70701
+2023-07-24 11:54:45,005 - INFO - BEGIN (implicit)
+2023-07-24 11:54:45,014 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos
+2023-07-24 11:54:45,016 - INFO - [generated in 0.00251s] {}
+2023-07-25 18:49:43,092 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 18:52:52,745 - INFO - no se han encontrado alumno.  None
+2023-07-25 18:52:52,746 - ERROR - error None al consultar alumno.
+2023-07-25 18:52:52,747 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 18:52:52,759 - DEBUG - Using proactor: IocpProactor
+2023-07-25 18:52:52,765 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 18:52:52,765 - INFO - [generated in 0.00075s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 18, 52, 52, 206738), 'updated_at': datetime.datetime(2023, 7, 25, 18, 52, 52, 206738)}
+2023-07-25 18:52:52,769 - INFO - COMMIT
+2023-07-25 18:52:52,771 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 18:52:52,773 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 18:58:35,342 - INFO - no se han encontrado alumno.  None
+2023-07-25 18:58:35,342 - ERROR - error None al consultar alumno.
+2023-07-25 18:58:35,342 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 18:58:35,350 - DEBUG - Using proactor: IocpProactor
+2023-07-25 18:58:35,360 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 18:58:35,361 - INFO - [generated in 0.00082s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 18, 58, 34, 954316), 'updated_at': datetime.datetime(2023, 7, 25, 18, 58, 34, 954316)}
+2023-07-25 18:58:35,363 - INFO - COMMIT
+2023-07-25 18:58:35,364 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 18:58:35,367 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:01:09,857 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:01:09,857 - ERROR - error None al consultar alumno.
+2023-07-25 19:01:09,859 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:01:09,871 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:01:09,884 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:01:09,885 - INFO - [generated in 0.00380s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 1, 9, 370974), 'updated_at': datetime.datetime(2023, 7, 25, 19, 1, 9, 370974)}
+2023-07-25 19:01:09,887 - INFO - COMMIT
+2023-07-25 19:01:09,890 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:01:09,892 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:02:48,718 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:02:48,718 - ERROR - error None al consultar alumno.
+2023-07-25 19:02:48,720 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:02:48,728 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:02:48,734 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:02:48,734 - INFO - [generated in 0.00080s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 2, 48, 317395), 'updated_at': datetime.datetime(2023, 7, 25, 19, 2, 48, 317395)}
+2023-07-25 19:02:48,737 - INFO - COMMIT
+2023-07-25 19:02:48,739 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:02:48,741 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:03:23,650 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:03:23,650 - ERROR - error None al consultar alumno.
+2023-07-25 19:03:23,652 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:03:23,657 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:03:23,665 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:03:23,665 - INFO - [generated in 0.00073s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 3, 23, 225928), 'updated_at': datetime.datetime(2023, 7, 25, 19, 3, 23, 225928)}
+2023-07-25 19:03:23,667 - INFO - COMMIT
+2023-07-25 19:03:23,669 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:03:23,670 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:04:04,179 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:04:04,179 - ERROR - error None al consultar alumno.
+2023-07-25 19:04:04,183 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:04:04,192 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:04:04,198 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:04:04,198 - INFO - [generated in 0.00081s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 4, 3, 644000), 'updated_at': datetime.datetime(2023, 7, 25, 19, 4, 3, 644000)}
+2023-07-25 19:04:04,201 - INFO - COMMIT
+2023-07-25 19:04:04,203 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:04:04,205 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:07:55,207 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:07:55,208 - ERROR - error None al consultar alumno.
+2023-07-25 19:07:55,210 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:07:55,219 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:07:55,224 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:07:55,224 - INFO - [generated in 0.00078s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 7, 54, 797187), 'updated_at': datetime.datetime(2023, 7, 25, 19, 7, 54, 797187)}
+2023-07-25 19:07:55,227 - INFO - COMMIT
+2023-07-25 19:07:55,228 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:07:55,229 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:08:42,481 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:08:42,481 - ERROR - error None al consultar alumno.
+2023-07-25 19:08:42,482 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 19:08:42,487 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:08:42,492 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:08:42,492 - INFO - [generated in 0.00074s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 8, 42, 31615), 'updated_at': datetime.datetime(2023, 7, 25, 19, 8, 42, 31615)}
+2023-07-25 19:08:42,494 - INFO - COMMIT
+2023-07-25 19:08:42,496 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:08:42,499 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:11:17,953 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:11:17,955 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:12:56,302 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:12:56,305 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:16:47,699 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:16:47,702 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:17:17,637 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:17:17,638 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:20:24,988 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:20:24,990 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:22:25,400 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:22:25,401 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:25:49,804 - INFO - no se han encontrado alumno.  None
+2023-07-25 19:25:49,804 - ERROR - error None al consultar alumno.
+2023-07-25 19:25:49,808 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno%7Bdni_alumno%7D=1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 19:25:50,023 - DEBUG - Using proactor: IocpProactor
+2023-07-25 19:25:50,028 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 19:25:50,029 - INFO - [generated in 0.00061s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 19, 25, 49, 528998), 'updated_at': datetime.datetime(2023, 7, 25, 19, 25, 49, 528998)}
+2023-07-25 19:25:50,030 - INFO - COMMIT
+2023-07-25 19:25:50,033 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:25:50,035 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:26:25,871 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:26:25,874 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:27:09,721 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:27:09,723 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:32:45,409 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:32:45,410 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:34:47,029 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:34:47,031 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:35:39,590 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:35:39,592 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 19:36:58,913 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 19:36:58,916 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:00:28,315 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:00:28,316 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:00:28,321 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:00:28,327 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/%7Bdni_alumno%7D "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:00:46,746 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:00:46,748 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:00:46,754 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:00:46,756 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/dni_alumno%7D "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:01:23,295 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:01:23,297 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:01:23,305 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:01:23,308 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/dni_alumno "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:13:27,680 - INFO - se han grabado los datos ('1010', alumno None se llama joseg.El dni es 1010g y el email es jose@gmail.com)
+2023-07-25 20:14:01,179 - INFO - no se han encontrado alumno.  None
+2023-07-25 20:14:01,179 - ERROR - error None al consultar alumno.
+2023-07-25 20:14:01,182 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 20:14:01,351 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:14:01,355 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:14:01,355 - INFO - [generated in 0.00082s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 20, 14, 0, 946980), 'updated_at': datetime.datetime(2023, 7, 25, 20, 14, 0, 946980)}
+2023-07-25 20:14:01,357 - INFO - COMMIT
+2023-07-25 20:14:01,358 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:14:01,360 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:14:01,363 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:14:01,367 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:14:39,675 - INFO - no se han encontrado alumno.  None
+2023-07-25 20:14:39,675 - ERROR - error None al consultar alumno.
+2023-07-25 20:14:39,678 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 20:14:39,857 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:14:39,861 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:14:39,861 - INFO - [generated in 0.00077s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 20, 14, 39, 439836), 'updated_at': datetime.datetime(2023, 7, 25, 20, 14, 39, 439836)}
+2023-07-25 20:14:39,863 - INFO - COMMIT
+2023-07-25 20:14:39,864 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:14:39,866 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:14:39,869 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:14:39,873 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:16:46,231 - INFO - no se han encontrado alumno.  None
+2023-07-25 20:16:46,231 - ERROR - error None al consultar alumno.
+2023-07-25 20:16:46,233 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 20:16:46,411 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:16:46,416 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:16:46,417 - INFO - [generated in 0.00122s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 20, 16, 46, 24966), 'updated_at': datetime.datetime(2023, 7, 25, 20, 16, 46, 24966)}
+2023-07-25 20:16:46,418 - INFO - COMMIT
+2023-07-25 20:16:46,420 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:16:46,422 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:16:46,426 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:16:46,429 - INFO - BEGIN (implicit)
+2023-07-25 20:16:46,429 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:16:46,431 - INFO - [cached since 0.2037s ago] {'dni_1': '1010', 'param_1': 1}
+2023-07-25 20:16:46,432 - INFO - se ha encontrado el alumno ('1010', alumno None se llama string.El dni es string y el email es string)
+2023-07-25 20:16:46,434 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 404 Not Found"
+2023-07-25 20:19:40,507 - INFO - no se han encontrado alumno.  None
+2023-07-25 20:19:40,507 - ERROR - error None al consultar alumno.
+2023-07-25 20:19:40,510 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 20:19:40,681 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:19:40,685 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:19:40,685 - INFO - [generated in 0.00055s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 20, 19, 40, 284237), 'updated_at': datetime.datetime(2023, 7, 25, 20, 19, 40, 284237)}
+2023-07-25 20:19:40,687 - INFO - COMMIT
+2023-07-25 20:19:40,688 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:19:40,689 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:19:40,693 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:19:40,696 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:19:40,703 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:19:40,707 - INFO - BEGIN (implicit)
+2023-07-25 20:19:40,708 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:19:40,708 - INFO - [cached since 0.2045s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:19:40,709 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:19:40,712 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:22:39,835 - INFO - no se han encontrado alumno.  None
+2023-07-25 20:22:39,835 - ERROR - error None al consultar alumno.
+2023-07-25 20:22:39,837 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno1010 "HTTP/1.1 400 Bad Request"
+2023-07-25 20:22:40,017 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:22:40,021 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:22:40,021 - INFO - [generated in 0.00059s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 25, 20, 22, 39, 580980), 'updated_at': datetime.datetime(2023, 7, 25, 20, 22, 39, 580980)}
+2023-07-25 20:22:40,023 - INFO - COMMIT
+2023-07-25 20:22:40,024 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:22:40,025 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:22:40,029 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:22:40,032 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:22:40,040 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:22:40,044 - INFO - BEGIN (implicit)
+2023-07-25 20:22:40,045 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:22:40,045 - INFO - [cached since 0.2144s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:22:40,046 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:22:40,047 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:23:35,038 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:23:35,041 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:23:35,054 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:23:35,059 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:23:35,071 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:23:35,077 - INFO - BEGIN (implicit)
+2023-07-25 20:23:35,078 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:23:35,078 - INFO - [cached since 0.3344s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:23:35,080 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:23:35,082 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:24:47,883 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:24:47,885 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:24:47,891 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:24:47,896 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010g "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:24:47,908 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:24:47,910 - INFO - BEGIN (implicit)
+2023-07-25 20:24:47,911 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:24:47,911 - INFO - [cached since 0.2972s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:24:47,912 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:24:47,913 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:27:13,090 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:27:13,092 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:27:13,096 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:27:13,099 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/1010g "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:27:13,107 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:27:13,113 - INFO - BEGIN (implicit)
+2023-07-25 20:27:13,114 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:27:13,115 - INFO - [cached since 0.2507s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:27:13,116 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:27:13,120 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:30:33,445 - INFO - se han grabado los datos ('1010g', alumno None se llama Alexa.El dni es 100 y el email es Ale@gmail.com)
+2023-07-25 20:31:50,264 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:31:50,266 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:31:50,271 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:31:50,275 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/100 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:31:50,291 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:31:50,295 - INFO - BEGIN (implicit)
+2023-07-25 20:31:50,296 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:31:50,296 - INFO - [cached since 0.3214s ago] {'dni_1': '{dni_eliminar_alumno}', 'param_1': 1}
+2023-07-25 20:31:50,302 - INFO - el alumno no se encontro {dni_eliminar_alumno}
+2023-07-25 20:31:50,305 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 404 Not Found"
+2023-07-25 20:35:43,382 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:35:43,385 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-25 20:35:43,540 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:35:43,542 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/100 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:35:43,547 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:35:43,551 - ERROR - error {dni_eliminar_alumno} al eliminar alumno
+2023-07-25 20:35:43,552 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/%7Bdni_eliminar_alumno%7D "HTTP/1.1 400 Bad Request"
+2023-07-25 20:37:19,388 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:37:19,389 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:37:50,096 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:37:50,099 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:37:50,100 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:37:50,104 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/100 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 20:38:50,677 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:38:50,678 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:38:50,682 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:38:50,686 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar "HTTP/1.1 404 Not Found"
+2023-07-25 20:40:21,611 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:40:21,613 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:40:21,617 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:40:21,621 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar?dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-25 20:41:07,402 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:41:07,405 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:41:07,412 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:41:07,414 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-25 20:42:26,678 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:42:26,679 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:42:26,690 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:42:26,693 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-25 20:44:25,656 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 2, 566000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:44:58,735 - INFO - BEGIN (implicit)
+2023-07-25 20:44:58,740 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-25 20:44:58,741 - INFO - [generated in 0.00154s] {'dni_1': 'string', 'param_1': 1}
+2023-07-25 20:44:58,746 - INFO - UPDATE alumnos SET apellidos=%(apellidos)s, nacimiento=%(nacimiento)s WHERE alumnos.id = %(alumnos_id)s
+2023-07-25 20:44:58,746 - INFO - [generated in 0.00079s] {'apellidos': 'atring', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 33, 639000, tzinfo=TzInfo(UTC)), 'alumnos_id': 54}
+2023-07-25 20:44:58,750 - INFO - COMMIT
+2023-07-25 20:44:58,751 - INFO - se han grabado los datos ('string', alumno None se llama string.El dni es string y el email es string)
+2023-07-25 20:45:53,605 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 20:45:53,605 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-25 20:45:53,743 - DEBUG - Using proactor: IocpProactor
+2023-07-25 20:45:53,746 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:40:29,288 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:40:29,290 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:40:29,294 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:40:29,298 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:42:09,857 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:42:09,859 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:42:09,862 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:42:09,865 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:42:48,704 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:42:48,705 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:42:48,710 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:42:48,712 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:44:09,687 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:44:09,689 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:44:09,693 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:44:09,695 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:51:07,729 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:51:07,731 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:51:07,737 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:51:07,740 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/10 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:52:51,332 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:52:51,334 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:52:51,339 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:52:51,343 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/57575 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 21:54:01,312 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 21:54:01,313 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 21:54:01,316 - DEBUG - Using proactor: IocpProactor
+2023-07-25 21:54:01,319 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/dni_alumno "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 22:05:23,590 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 22:05:23,591 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 22:05:23,595 - DEBUG - Using proactor: IocpProactor
+2023-07-25 22:05:23,597 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/3 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 22:05:23,736 - DEBUG - Using proactor: IocpProactor
+2023-07-25 22:05:23,740 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/3 "HTTP/1.1 422 Unprocessable Entity"
+2023-07-25 23:55:31,333 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 23:55:31,335 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-25 23:55:31,342 - DEBUG - Using proactor: IocpProactor
+2023-07-25 23:55:31,345 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-25 23:59:39,222 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-25 23:59:39,222 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-25 23:59:39,383 - DEBUG - Using proactor: IocpProactor
+2023-07-25 23:59:39,387 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:00:09,250 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:00:09,254 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:00:09,254 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:00:09,261 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:00:09,263 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:00:09,268 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar_dni_eliminar_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:00:34,919 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:00:34,923 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:00:34,929 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:00:34,936 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:00:34,940 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:00:34,944 - INFO - BEGIN (implicit)
+2023-07-26 00:00:34,945 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:00:34,945 - INFO - [cached since 0.07241s ago] {'dni_1': 'dni_eliminar_alumno', 'param_1': 1}
+2023-07-26 00:00:34,946 - INFO - el alumno no se encontro dni_eliminar_alumno
+2023-07-26 00:00:34,948 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/dni_eliminar_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:02:07,140 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:02:07,143 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:02:07,148 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:02:07,152 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:02:29,429 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:02:29,434 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:02:29,438 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:02:29,443 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:02:59,608 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:02:59,608 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:02:59,621 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:02:59,625 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:05:34,964 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:05:34,967 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:05:34,971 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:05:34,978 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:05:34,980 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:05:34,985 - INFO - BEGIN (implicit)
+2023-07-26 00:05:34,988 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:05:34,988 - INFO - [cached since 0.04645s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:05:34,992 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:05:34,992 - INFO - [generated in 0.00220s] {'id': 3}
+2023-07-26 00:05:34,992 - INFO - COMMIT
+2023-07-26 00:05:34,996 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:05:34,997 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 00:06:14,831 - INFO - no se han encontrado alumno.  None
+2023-07-26 00:06:14,831 - ERROR - error None al consultar alumno.
+2023-07-26 00:06:14,832 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumno100 "HTTP/1.1 400 Bad Request"
+2023-07-26 00:06:15,000 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:06:15,005 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-26 00:06:15,005 - INFO - [generated in 0.00055s] {'nombre': 'string', 'apellidos': 'string', 'dni': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC)), 'telefono': 'string', 'email': 'string', 'descuento_familiar': 0, 'created_at': datetime.datetime(2023, 7, 26, 0, 6, 14, 586537), 'updated_at': datetime.datetime(2023, 7, 26, 0, 6, 14, 586537)}
+2023-07-26 00:06:15,010 - INFO - ROLLBACK
+2023-07-26 00:06:15,012 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:06:15,013 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-26 00:06:15,018 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:06:15,021 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:06:15,024 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:06:15,024 - ERROR - error string al eliminar alumno
+2023-07-26 00:06:15,024 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 400 Bad Request"
+2023-07-26 00:29:02,992 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:31:58,231 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:31:58,231 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:31:58,236 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:31:58,239 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:31:58,242 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:31:58,244 - INFO - BEGIN (implicit)
+2023-07-26 00:31:58,246 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:31:58,246 - INFO - [cached since 0.1917s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:31:58,247 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:31:58,247 - INFO - [generated in 0.00068s] {'id': 73}
+2023-07-26 00:31:58,251 - INFO - COMMIT
+2023-07-26 00:31:58,253 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:31:58,255 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 00:32:43,040 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:47:51,433 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:47:51,435 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:47:51,442 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:47:51,445 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:47:51,445 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:47:51,449 - INFO - BEGIN (implicit)
+2023-07-26 00:47:51,449 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:47:51,449 - INFO - [cached since 0.1892s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:47:51,452 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:47:51,452 - INFO - [generated in 0.00070s] {'id': 75}
+2023-07-26 00:47:51,452 - INFO - COMMIT
+2023-07-26 00:47:51,456 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:47:51,457 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 202 Accepted"
+2023-07-26 00:48:05,784 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:48:24,712 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:48:24,715 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-26 00:48:24,728 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:48:24,731 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:48:24,733 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:48:24,735 - ERROR - error string al eliminar alumno
+2023-07-26 00:48:24,736 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 400 Bad Request"
+2023-07-26 00:48:50,000 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:48:50,002 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-26 00:48:50,008 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:48:50,016 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:48:50,040 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:48:50,050 - ERROR - error string al eliminar alumno
+2023-07-26 00:48:50,051 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 400 Bad Request"
+2023-07-26 00:49:07,397 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:49:07,398 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:49:07,405 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:49:07,409 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:49:07,412 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:49:07,414 - INFO - BEGIN (implicit)
+2023-07-26 00:49:07,414 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:49:07,414 - INFO - [cached since 0.2252s ago] {'dni_1': 'string', 'param_1': 1}
+2023-07-26 00:49:07,419 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:49:07,419 - INFO - [generated in 0.00070s] {'id': 80}
+2023-07-26 00:49:07,419 - INFO - COMMIT
+2023-07-26 00:49:07,422 - INFO - Alumno eliminado correctamente string
+2023-07-26 00:49:07,423 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 200 OK"
+2023-07-26 00:49:57,155 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:49:57,161 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:49:57,167 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:49:57,179 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:49:57,187 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:49:57,191 - INFO - BEGIN (implicit)
+2023-07-26 00:49:57,193 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:49:57,193 - INFO - [cached since 0.2123s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:49:57,200 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:49:57,200 - INFO - [generated in 0.00232s] {'id': 77}
+2023-07-26 00:49:57,203 - INFO - COMMIT
+2023-07-26 00:49:57,204 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:49:57,209 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 00:50:09,825 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:51:51,768 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:51:51,772 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:51:51,783 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:51:51,789 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:51:51,791 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:51:51,799 - INFO - BEGIN (implicit)
+2023-07-26 00:51:51,799 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:51:51,799 - INFO - [cached since 0.2028s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:51:51,803 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:51:51,807 - INFO - [generated in 0.00108s] {'id': 82}
+2023-07-26 00:51:51,807 - INFO - COMMIT
+2023-07-26 00:51:51,810 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:51:51,812 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 00:52:13,410 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:53:53,123 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:53:53,125 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:53:53,133 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:53:53,135 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:53:53,138 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:53:53,142 - INFO - BEGIN (implicit)
+2023-07-26 00:53:53,146 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:53:53,146 - INFO - [cached since 0.3108s ago] {'dni_1': 'string', 'param_1': 1}
+2023-07-26 00:53:53,150 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:53:53,150 - INFO - [generated in 0.00087s] {'id': 85}
+2023-07-26 00:53:53,154 - INFO - COMMIT
+2023-07-26 00:53:53,155 - INFO - Alumno eliminado correctamente string
+2023-07-26 00:53:53,156 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 200 OK"
+2023-07-26 00:56:12,629 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:56:12,632 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:56:12,640 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:56:12,642 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:56:12,644 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:56:12,648 - INFO - BEGIN (implicit)
+2023-07-26 00:56:12,648 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:56:12,648 - INFO - [cached since 0.1926s ago] {'dni_1': 'string', 'param_1': 1}
+2023-07-26 00:56:12,648 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:56:12,648 - INFO - [generated in 0.00053s] {'id': 86}
+2023-07-26 00:56:12,652 - INFO - COMMIT
+2023-07-26 00:56:12,653 - INFO - Alumno eliminado correctamente string
+2023-07-26 00:56:12,653 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/string "HTTP/1.1 200 OK"
+2023-07-26 00:57:05,024 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:57:05,025 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 00:57:05,029 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:57:05,033 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:57:05,037 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:57:05,041 - INFO - BEGIN (implicit)
+2023-07-26 00:57:05,045 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 00:57:05,045 - INFO - [cached since 0.2399s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 00:57:05,047 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 00:57:05,047 - INFO - [generated in 0.00066s] {'id': 84}
+2023-07-26 00:57:05,049 - INFO - COMMIT
+2023-07-26 00:57:05,051 - INFO - Alumno eliminado correctamente 100
+2023-07-26 00:57:05,051 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 00:59:03,332 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:59:23,874 - INFO - El alumno ya existe {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 00:59:23,876 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 401 Unauthorized"
+2023-07-26 00:59:23,884 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:59:23,888 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 00:59:23,892 - DEBUG - Using proactor: IocpProactor
+2023-07-26 00:59:23,894 - ERROR - error 100 al eliminar alumno
+2023-07-26 00:59:23,897 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 400 Bad Request"
+2023-07-26 01:01:02,582 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 01:01:02,585 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 01:01:02,599 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:01:02,608 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 01:01:02,619 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:01:02,639 - INFO - BEGIN (implicit)
+2023-07-26 01:01:02,646 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 01:01:02,646 - INFO - [cached since 0.2322s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 01:01:02,657 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 01:01:02,657 - INFO - [generated in 0.00346s] {'id': 88}
+2023-07-26 01:01:02,658 - INFO - COMMIT
+2023-07-26 01:01:02,659 - INFO - Alumno eliminado correctamente 100
+2023-07-26 01:01:02,661 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 01:04:50,025 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 01:05:48,421 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 01:05:48,426 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 01:05:48,431 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:05:48,435 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 01:05:48,436 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:05:48,439 - INFO - BEGIN (implicit)
+2023-07-26 01:05:48,439 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 01:05:48,439 - INFO - [cached since 0.203s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 01:05:48,444 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 01:05:48,445 - INFO - [generated in 0.00076s] {'id': 3}
+2023-07-26 01:05:48,445 - INFO - COMMIT
+2023-07-26 01:05:48,446 - INFO - Alumno eliminado correctamente 100
+2023-07-26 01:05:48,446 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
+2023-07-26 01:08:09,711 - INFO - se han grabado los datos {'nombre': 'Alexa', 'apellidos': 'tello', 'descuento_familiar': 0, 'dni': '100', 'email': 'Ale@gmail.com', 'telefono': '0909', 'nacimiento': datetime.datetime(2023, 7, 25, 18, 44, 28, 791000, tzinfo=TzInfo(UTC))}
+2023-07-26 01:10:00,544 - INFO - se han grabado los datos {'nombre': 'string', 'apellidos': 'string', 'descuento_familiar': 0, 'dni': 'string', 'email': 'string', 'telefono': 'string', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=TzInfo(UTC))}
+2023-07-26 01:10:00,547 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 01:10:00,552 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:10:00,553 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar_dni_alumno "HTTP/1.1 404 Not Found"
+2023-07-26 01:10:00,558 - DEBUG - Using proactor: IocpProactor
+2023-07-26 01:10:00,561 - INFO - BEGIN (implicit)
+2023-07-26 01:10:00,562 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 01:10:00,562 - INFO - [cached since 0.1937s ago] {'dni_1': '100', 'param_1': 1}
+2023-07-26 01:10:00,565 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 01:10:00,565 - INFO - [generated in 0.00060s] {'id': 93}
+2023-07-26 01:10:00,565 - INFO - COMMIT
+2023-07-26 01:10:00,570 - INFO - Alumno eliminado correctamente 100
+2023-07-26 01:10:00,572 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/100 "HTTP/1.1 200 OK"
