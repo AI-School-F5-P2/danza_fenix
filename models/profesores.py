@@ -22,6 +22,6 @@ class Profesor(Base): # Tabla de profesores
         self.updated_at = updated_at
     
     def __repr__(self):
-        return f"Profesor {self.id} se llama {self.nombre_profesor}."
+        return f"Profesor/a {self.id} se llama {self.nombre_profesor}."
 
 

@@ -11,28 +11,27 @@ def qw_get_profesores():
     try:
         profesores = session.query(Profesor).all()
         if len(profesores) == 0:
-            Logger.warning(f"El profesor/a especificado no existe. {profesores}")
-            return JSONResponse(content={"message": "Error: El profesor/a especificado no existe."}, status_code=404)
+            Logger.warning(f"No se han encontrado a los profesores. {profesores}")
+            return JSONResponse(content={"message": "Error: No Existe la tabla"}, status_code=404)
         
     except Exception as e:
         Logger.error(f"Error {profesores} al consultar profesores.")
-        return JSONResponse(content={"message": f"No se ha encontrar el profesor/a.{e}"}, status_code=400)
-    Logger.info(f"El profesor/a ha sido Encontrado .{profesores}")
-    return JSONResponse(content={"message": "El profesor/a ha sido Encontrado"}, status_code=202)
+        return JSONResponse(content={"message": f"No se ha encontrado la lista de profesores.{e}"}, status_code=400)
+    Logger.info(f"La lista de profesores ha sido encontrada.{profesores}")
+    return JSONResponse(content={"message": "La Lista de profesores ha sido encontrada"}, status_code=202)
 
 
-def qw_list_profesores():
+def qw_list_profesores(nombre_profe):
     try:            
-        profesores = session.query(Profesor).all()
-        if len(profesores) == 0:
-            Logger.warning(f"No se han encontrado los {profesores}")
+        profesores = session.query(Profesor).filter(Profesor.nombre_profesor == nombre_profe).first()
+        if profesores is None:
+            Logger.warning(f"El profesor/a especificado no existe {profesores}")
             return JSONResponse(content={"message": "Error: El profesor/a especificado no existe."}, status_code=404)
     except Exception as e:
-        Logger.error(f"Error {profesores} al consultar profesores.")
-        return JSONResponse(content={"message": f"No se ha podido borrar el profesor/a.{e}"}, status_code=400)
-    Logger.info(f"El profesor/a ha sido borrado.")
-    return JSONResponse(content={"message": "El profesor/a ha sido borrado."}, status_code=202)
-
+        Logger.error(f"Error {profesores} al consultar el profesor.")
+        return JSONResponse(content={"message": f"No se ha podido encontrar el profesor {e}"}, status_code=400)
+    Logger.info(f"El profesor ha sido encontrado. {profesores}")
+    return JSONResponse(content={"message": f"El Profesor ha sido encontrado"}, status_code=202)
 
 
 def qw_post_profesores(datos_profesor):
@@ -65,7 +64,7 @@ def qw_put_profesores(nombre_profesor, nuevo_profesor):
     except Exception as e:
         Logger.error(f"No se ha podido añadir el profesor/a. {profesor}")
         return JSONResponse(content={"message": f"No se ha podido añadir el profesor/a.{e}"}, status_code=400)
-    Logger.info(f"El profesor/a ha sido añadir. {profesor}")
+    Logger.info(f"El profesor/a ha sido modificado. {profesor}")
     return JSONResponse(content={"message": "El profesor/a ha sido modificado/a"}, status_code=202)
 
    

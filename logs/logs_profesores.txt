@@ -108,3 +108,103 @@ WHERE profesores.nombre_profesor = %(nombre_profesor_1)s
 2023-07-24 13:21:20,317 - INFO - [cached since 9.305s ago] {'id': 16}
 2023-07-24 13:21:20,324 - INFO - COMMIT
 2023-07-24 13:21:20,327 - INFO - El profesor/a ha sido borrado. Profesor 16 se llama borrar.
+2023-07-25 17:41:55,071 - INFO - El profesor/a ha sido grabado. El/la Profesor 18 se llama Maria.
+2023-07-25 17:42:19,646 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores
+2023-07-25 17:42:19,649 - INFO - [generated in 0.00366s] {}
+2023-07-25 17:42:19,656 - INFO - El profesor/a ha sido borrado.
+2023-07-25 18:01:55,630 - INFO - El profesor/a ha sido Encontrado .[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía., Profesor 18 se llama Maria.]
+2023-07-25 18:18:42,326 - INFO - El profesor/a ha sido Encontrado .[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía., Profesor 18 se llama Maria.]
+2023-07-25 18:27:44,265 - INFO - El profesor/a ha sido Encontrado .[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía., Profesor 18 se llama Maria.]
+2023-07-25 18:29:01,436 - INFO - El profesor/a ha sido Encontrado .[Profesor 1 se llama Mar., Profesor 2 se llama Flor., Profesor 3 se llama Nayara., Profesor 4 se llama Marifé., Profesor 5 se llama Álvaro., Profesor 6 se llama Nieves., Profesor 7 se llama Sofía., Profesor 18 se llama Maria.]
+2023-07-25 18:29:49,597 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 18:29:49,600 - INFO - [generated in 0.00292s] {'nombre_profesor_1': 'maria', 'param_1': 1}
+2023-07-25 18:29:49,606 - INFO - UPDATE profesores SET nombre_profesor=%(nombre_profesor)s WHERE profesores.id = %(profesores_id)s
+2023-07-25 18:29:49,608 - INFO - [generated in 0.00197s] {'nombre_profesor': 'mariquita', 'profesores_id': 18}
+2023-07-25 18:29:49,614 - INFO - COMMIT
+2023-07-25 18:29:49,617 - INFO - BEGIN (implicit)
+2023-07-25 18:29:49,623 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.id = %(pk_1)s
+2023-07-25 18:29:49,624 - INFO - [generated in 0.00219s] {'pk_1': 18}
+2023-07-25 18:29:49,630 - INFO - El profesor/a ha sido añadir. Profesor 18 se llama mariquita.
+2023-07-25 18:31:17,530 - INFO - El profesor/a ha sido borrado. Profesor 18 se llama mariquita.
+2023-07-25 18:31:41,165 - INFO - BEGIN (implicit)
+2023-07-25 18:31:41,166 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 18:31:41,168 - INFO - [cached since 23.65s ago] {'nombre_profesor_1': 'mariquita', 'param_1': 1}
+2023-07-25 18:31:41,170 - WARNING - El profesor especificado no existe. None
+2023-07-25 19:08:08,262 - INFO - El profesor/a ha sido Encontrado .[Profesor/a 1 se llama Mar., Profesor/a 2 se llama Flor., Profesor/a 3 se llama Nayara., Profesor/a 4 se llama Marifé., Profesor/a 5 se llama Álvaro., Profesor/a 6 se llama Nieves., Profesor/a 7 se llama Sofía.]
+2023-07-25 19:08:20,415 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:08:20,417 - INFO - [generated in 0.00269s] {'nombre_profesor_1': 'Mar', 'param_1': 1}
+2023-07-25 19:08:20,421 - INFO - Se han consulta
+2023-07-25 19:18:49,279 - INFO - El profesor/a ha sido Encontrado .[Profesor/a 1 se llama Mar., Profesor/a 2 se llama Flor., Profesor/a 3 se llama Nayara., Profesor/a 4 se llama Marifé., Profesor/a 5 se llama Álvaro., Profesor/a 6 se llama Nieves., Profesor/a 7 se llama Sofía.]
+2023-07-25 19:19:02,213 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:19:02,215 - INFO - [generated in 0.00262s] {'nombre_profesor_1': 'Mar', 'param_1': 1}
+2023-07-25 19:19:02,227 - INFO - Se han consulta
+2023-07-25 19:33:14,894 - INFO - La lista de profesores ha sido encontrada.[Profesor/a 1 se llama Mar., Profesor/a 2 se llama Flor., Profesor/a 3 se llama Nayara., Profesor/a 4 se llama Marifé., Profesor/a 5 se llama Álvaro., Profesor/a 6 se llama Nieves., Profesor/a 7 se llama Sofía.]
+2023-07-25 19:33:46,703 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:33:46,706 - INFO - [generated in 0.00282s] {'nombre_profesor_1': 'Mar', 'param_1': 1}
+2023-07-25 19:33:46,708 - INFO - El profesor ha sido encontrado. Profesor/a 1 se llama Mar.
+2023-07-25 19:34:31,261 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:34:31,262 - INFO - [cached since 44.56s ago] {'nombre_profesor_1': 'Mariiii', 'param_1': 1}
+2023-07-25 19:34:31,264 - WARNING - El profesor/a especificado no existe None
+2023-07-25 19:34:43,443 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:34:43,446 - INFO - [cached since 56.74s ago] {'nombre_profesor_1': 'Mar', 'param_1': 1}
+2023-07-25 19:34:43,448 - INFO - El profesor ha sido encontrado. Profesor/a 1 se llama Mar.
+2023-07-25 19:36:23,843 - INFO - El profesor/a ha sido grabado. El/la Profesor/a 19 se llama Alexa.
+2023-07-25 19:36:51,996 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:36:51,996 - INFO - [cached since 28.18s ago] {'nombre_profesor_1': 'Alexa', 'param_1': 1}
+2023-07-25 19:36:52,000 - INFO - UPDATE profesores SET nombre_profesor=%(nombre_profesor)s WHERE profesores.id = %(profesores_id)s
+2023-07-25 19:36:52,001 - INFO - [generated in 0.00134s] {'nombre_profesor': 'Borrar', 'profesores_id': 19}
+2023-07-25 19:36:52,006 - INFO - COMMIT
+2023-07-25 19:36:52,010 - INFO - BEGIN (implicit)
+2023-07-25 19:36:52,012 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.id = %(pk_1)s
+2023-07-25 19:36:52,013 - INFO - [cached since 28.17s ago] {'pk_1': 19}
+2023-07-25 19:36:52,014 - INFO - El profesor/a ha sido modificado. Profesor/a 19 se llama Borrar.
+2023-07-25 19:37:05,123 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:37:05,124 - INFO - [cached since 41.31s ago] {'nombre_profesor_1': 'Alexa', 'param_1': 1}
+2023-07-25 19:37:05,126 - WARNING - El profesor ya existe. None
+2023-07-25 19:37:23,799 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:37:23,800 - INFO - [cached since 59.98s ago] {'nombre_profesor_1': 'Alexa', 'param_1': 1}
+2023-07-25 19:37:23,801 - WARNING - El profesor especificado no existe. None
+2023-07-25 19:37:35,570 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-25 19:37:35,574 - INFO - [cached since 71.76s ago] {'nombre_profesor_1': 'Borrar', 'param_1': 1}
+2023-07-25 19:37:35,578 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-25 19:37:35,578 - INFO - [generated in 0.00120s] {'id': 19}
+2023-07-25 19:37:35,590 - INFO - COMMIT
+2023-07-25 19:37:35,592 - INFO - El profesor/a ha sido borrado. Profesor/a 19 se llama Borrar.
