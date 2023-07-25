@@ -69,7 +69,7 @@ def qw_mostrar_compile():
 
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
-def wq_get_descuento(dni_alumno):
+def wq_get_descuentos(dni_alumno):
 
     count_group_one = 0
     count_group_two = 0

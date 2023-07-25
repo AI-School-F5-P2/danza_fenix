@@ -9,6 +9,7 @@ from apis.cursos import router as cursos_router
 from apis.estudios import router as estudios_router
 from apis.grupos import router as grupos_router
 
+
 tags_metadata = [
     {
         "name": "Roles",
@@ -64,4 +65,5 @@ app.include_router(grupos_router, prefix="/Grupos")
 @app.get("/")
 def main():
     return RedirectResponse(url="/docs")
+
 
