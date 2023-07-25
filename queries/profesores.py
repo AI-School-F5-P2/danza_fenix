@@ -14,14 +14,15 @@ def qw_get_profesores():
         return JSONResponse(content={"message": f"No se ha encontrar el profesor/a.{e}"}, status_code=400)
     return JSONResponse(content={"message": "El profesor/a ha sido Encontrado"}, status_code=202)
 
-def qw_list_profesores():
-    try:            
-        profesores = session.query(Profesor).all()
+def qw_list_profesores(nombre_profesor):
+    try:
+        profesores = session.query(Profesor).filter(Profesor.nombre_profesor.like(f"%{nombre_profesor}%")).all()
         if len(profesores) == 0:
-            return JSONResponse(content={"message": "Error: El profesor/a especificado no existe."}, status_code=404)
+            return "No hay datos"
+        return profesores
     except Exception as e:
-        return JSONResponse(content={"message": f"No se ha podido borrar el profesor/a.{e}"}, status_code=400)
-    return JSONResponse(content={"message": "El profesor/a ha sido borrado."}, status_code=202)
+        return JSONResponse(content={"message": f"No se ha encontrar el profesor/a.{e}"}, status_code=400)
+ 
 
 def qw_post_profesores(datos_profesor):
     try:
