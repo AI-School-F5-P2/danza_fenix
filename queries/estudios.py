@@ -69,51 +69,46 @@ def qw_mostrar_compile():
 
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
+from sqlalchemy.orm import sessionmaker
+
 def wq_get_descuentos(dni_alumno):
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
     count_group_one = 0
     count_group_two = 0
     count_group_three = 0
     descuentos = ["0,5", "0,25"]
-    # convertimos de string a int
 
     # comprobacion de que el alumno existe
     information = session.query(Estudios).filter(Estudios.dni_alumno == dni_alumno).all()
     check_grupo = session.query(Curso).all()
 
-
-            #     return check_grupo
-            #     {
-            #     "precio": 35,
-            #     "created_at": "2023-07-13T16:45:10",
-            #     "id": 1,
-            #     "id_grupo": "Relax",
-            #     "nombre_curso": "Bachata",
-            #     "updated_at": "2023-07-13T16:45:10"
-            #   },
-
-            #     return information
-            # {
-            #     "nombre_curso": "Bachata",
-            #     "id": 3,
-            #     "profesor": "Mar",
-            #     "precio": 35,
-            #     "created_at": null,
-            #     "dni_alumno": "cata",
-            #     "nivel": "Medio",
-            #     "fecha_inicio": "2023-07-21T16:18:14",
-            #     "fecha_fin": null,
-            #     "updated_at": null
-            #   },
-
-    
     for info in information:
         if (info.nombre_curso == "Bachata" or info.nombre_curso == "Salsa" or info.nombre_curso == 'Kizomba' or info.nombre_curso == "Role Rotation") and (info.grupo == "Relax"):
             count_group_one += 1
+        if (info.nombre_curso == "Estilo para todos" or info.nombre_curso == "Zouk") and (info.grupo == "Chicha"):
+            count_group_two += 1
+        if (info.nombre_curso == "Yoga" or info.nombre_curso == "Pilates") and (info.grupo == "Dem"):
+            count_group_three += 1
+
+    # return count_group_one, count_group_two, count_group_three
+
+    if count_group_one == 4 and info.grupo == "Relax":
+        print("hola")
+        information[0].precio = 35
+        information[1].precio = 17.5
+        information[2].precio = 8.75
+        information[3].precio = 8.75
+    
+
+    # Commit the changes to the database
+    session.commit()
 
     # si el alumno no existe, se devuelve un mensaje de error
     if information is None or len(information) == 0:
         return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content={"message": "No se han encontrado alumnos."})
+    
     # se pregunta si el alumno tiene descuento familiar
     check_familiar = session.query(Alumno).filter(Alumno.dni == dni_alumno).first()
     total_precio = 0
