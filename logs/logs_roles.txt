@@ -1,0 +1,212 @@
+2023-07-25 19:37:29,788 - INFO - Se han listado los roles.
+2023-07-25 19:37:29,790 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:38:48,387 - INFO - Se han listado los roles.
+2023-07-25 19:42:07,080 - INFO - Se han listado los roles.
+2023-07-25 19:42:07,082 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:42:07,084 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:42:07,086 - INFO - Se ha mostrado el rol 18.
+2023-07-25 19:42:07,087 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 19:43:02,882 - INFO - Se han listado los roles.
+2023-07-25 19:43:02,884 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:43:02,886 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:43:02,888 - INFO - Se ha mostrado el rol 18.
+2023-07-25 19:43:02,889 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 19:43:24,729 - INFO - Se han listado los roles.
+2023-07-25 19:43:24,731 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:43:24,733 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:43:24,735 - INFO - Se ha mostrado el rol 18.
+2023-07-25 19:43:24,736 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 19:43:40,183 - INFO - Se han listado los roles.
+2023-07-25 19:43:40,184 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:43:40,186 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:43:40,188 - INFO - Se ha mostrado el rol 18.
+2023-07-25 19:43:40,189 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 19:44:25,095 - INFO - Se ha mostrado el rol 18.
+2023-07-25 19:44:40,080 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 19:44:40,080 - INFO - [cached since 14.99s ago] {'pk_1': 34}
+2023-07-25 19:44:40,081 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:45:57,966 - INFO - Se han listado los roles.
+2023-07-25 19:45:57,968 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:45:57,970 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:45:57,971 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:45:57,972 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 19:47:04,511 - INFO - Se han listado los roles.
+2023-07-25 19:47:04,513 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:47:04,515 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:47:04,516 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:47:04,517 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 19:47:52,609 - INFO - Se han listado los roles.
+2023-07-25 19:47:52,610 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:47:52,612 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:47:52,614 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:47:52,615 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 19:54:27,768 - INFO - Se han listado los roles.
+2023-07-25 19:54:27,770 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:54:27,772 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:54:27,774 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:54:27,775 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 19:56:04,309 - INFO - Se han listado los roles.
+2023-07-25 19:56:04,311 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:56:04,313 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:56:04,315 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:56:04,316 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 19:57:02,407 - INFO - Se han listado los roles.
+2023-07-25 19:57:02,408 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 19:57:02,410 - DEBUG - Using selector: KqueueSelector
+2023-07-25 19:57:02,412 - INFO - Se ha mostrado el rol 34.
+2023-07-25 19:57:02,413 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/34 "HTTP/1.1 200 OK"
+2023-07-25 20:00:37,210 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:01:33,554 - INFO - Se han listado los roles.
+2023-07-25 20:01:33,556 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:01:33,558 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:01:33,560 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:01:33,561 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:02:15,113 - INFO - Se han listado los roles.
+2023-07-25 20:02:15,115 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:02:15,117 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:02:15,119 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:02:15,120 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:02:44,814 - INFO - Se han listado los roles.
+2023-07-25 20:02:44,816 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:02:44,818 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:02:44,820 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:02:44,821 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:03:35,820 - INFO - Se han listado los roles.
+2023-07-25 20:03:35,821 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:03:35,823 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:03:35,825 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:03:35,826 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:03:35,829 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:03:35,832 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:03:35,832 - INFO - [generated in 0.00053s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 3, 35, 663282), 'updated_at': datetime.datetime(2023, 7, 25, 20, 3, 35, 663285)}
+2023-07-25 20:03:35,850 - INFO - COMMIT
+2023-07-25 20:03:35,852 - INFO - BEGIN (implicit)
+2023-07-25 20:03:35,853 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:03:35,853 - INFO - [generated in 0.00043s] {'pk_1': 36}
+2023-07-25 20:03:35,854 - INFO - Se ha grabado el rol Nuevo rol
+2023-07-25 20:03:35,855 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:03:39,568 - INFO - Se han listado los roles.
+2023-07-25 20:03:39,569 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:03:39,571 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:03:39,573 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:03:39,574 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:03:39,576 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:03:39,579 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:03:39,580 - INFO - [generated in 0.00060s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 3, 39, 414364), 'updated_at': datetime.datetime(2023, 7, 25, 20, 3, 39, 414367)}
+2023-07-25 20:03:39,580 - INFO - ROLLBACK
+2023-07-25 20:03:39,581 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-25 20:03:39,582 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:03:57,328 - INFO - Se han listado los roles.
+2023-07-25 20:04:46,418 - INFO - Se han listado los roles.
+2023-07-25 20:04:46,420 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:04:46,422 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:04:46,423 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:04:46,424 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:04:46,427 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:04:46,431 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:04:46,431 - INFO - [generated in 0.00055s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 4, 46, 244359), 'updated_at': datetime.datetime(2023, 7, 25, 20, 4, 46, 244362)}
+2023-07-25 20:04:46,432 - INFO - ROLLBACK
+2023-07-25 20:04:46,433 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-25 20:04:46,434 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:04:46,436 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:04:46,438 - INFO - BEGIN (implicit)
+2023-07-25 20:04:46,451 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:04:46,451 - INFO - [generated in 0.01253s] {'pk_1': 2}
+2023-07-25 20:04:46,453 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/2/Escritor "HTTP/1.1 200 OK"
+2023-07-25 20:05:11,613 - INFO - Se han listado los roles.
+2023-07-25 20:05:11,614 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:05:11,616 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:11,618 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:05:11,619 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:05:11,621 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:11,624 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:05:11,624 - INFO - [generated in 0.00046s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 5, 11, 450106), 'updated_at': datetime.datetime(2023, 7, 25, 20, 5, 11, 450109)}
+2023-07-25 20:05:11,625 - INFO - ROLLBACK
+2023-07-25 20:05:11,626 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-25 20:05:11,627 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:05:11,629 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:11,631 - INFO - BEGIN (implicit)
+2023-07-25 20:05:11,632 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:05:11,632 - INFO - [generated in 0.00066s] {'pk_1': 18}
+2023-07-25 20:05:11,651 - INFO - UPDATE roles SET updated_at=%(updated_at)s WHERE roles.id = %(roles_id)s
+2023-07-25 20:05:11,651 - INFO - [generated in 0.01708s] {'updated_at': datetime.datetime(2023, 7, 25, 20, 5, 11, 633417), 'roles_id': 18}
+2023-07-25 20:05:11,652 - INFO - COMMIT
+2023-07-25 20:05:11,653 - INFO - Se ha actualizado el rol 18.
+2023-07-25 20:05:11,654 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/18/Escritor "HTTP/1.1 200 OK"
+2023-07-25 20:05:41,479 - INFO - Se han listado los roles.
+2023-07-25 20:05:41,481 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:05:41,483 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:41,484 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:05:41,486 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:05:41,488 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:41,499 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:05:41,500 - INFO - [generated in 0.00890s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 5, 41, 323126), 'updated_at': datetime.datetime(2023, 7, 25, 20, 5, 41, 323128)}
+2023-07-25 20:05:41,500 - INFO - ROLLBACK
+2023-07-25 20:05:41,501 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-25 20:05:41,503 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:05:41,505 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:41,507 - INFO - BEGIN (implicit)
+2023-07-25 20:05:41,508 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:05:41,508 - INFO - [generated in 0.00048s] {'pk_1': 18}
+2023-07-25 20:05:41,510 - INFO - UPDATE roles SET updated_at=%(updated_at)s WHERE roles.id = %(roles_id)s
+2023-07-25 20:05:41,510 - INFO - [generated in 0.00045s] {'updated_at': datetime.datetime(2023, 7, 25, 20, 5, 41, 509374), 'roles_id': 18}
+2023-07-25 20:05:41,511 - INFO - COMMIT
+2023-07-25 20:05:41,512 - INFO - Se ha actualizado el rol 18.
+2023-07-25 20:05:41,514 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/18/Escritor "HTTP/1.1 200 OK"
+2023-07-25 20:05:41,516 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:05:41,518 - INFO - BEGIN (implicit)
+2023-07-25 20:05:41,518 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:05:41,518 - INFO - [cached since 0.01083s ago] {'pk_1': 18}
+2023-07-25 20:05:41,520 - INFO - SELECT count(usuarios.id) AS count_1 
+FROM usuarios 
+WHERE usuarios.rol_id = %(rol_id_1)s
+2023-07-25 20:05:41,520 - INFO - [cached since 0.05519s ago] {'rol_id_1': 18}
+2023-07-25 20:05:41,520 - ERROR - Se ha intentado borrar el rol 18, pero tiene usuarios asociados.
+2023-07-25 20:05:41,521 - INFO - HTTP Request: DELETE http://testserver/Roles/borrar/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:05:59,619 - ERROR - Se ha intentado borrar el rol 18, pero tiene usuarios asociados.
+2023-07-25 20:06:19,126 - INFO - Se han listado los roles.
+2023-07-25 20:06:19,128 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-25 20:06:19,130 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:06:19,132 - INFO - Se ha mostrado el rol 18.
+2023-07-25 20:06:19,133 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-25 20:06:19,136 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:06:19,150 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-25 20:06:19,150 - INFO - [generated in 0.01219s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 25, 20, 6, 18, 954112), 'updated_at': datetime.datetime(2023, 7, 25, 20, 6, 18, 954115)}
+2023-07-25 20:06:19,151 - INFO - ROLLBACK
+2023-07-25 20:06:19,152 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-25 20:06:19,153 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-25 20:06:19,155 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:06:19,157 - INFO - BEGIN (implicit)
+2023-07-25 20:06:19,158 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:06:19,159 - INFO - [generated in 0.00044s] {'pk_1': 18}
+2023-07-25 20:06:19,161 - INFO - UPDATE roles SET updated_at=%(updated_at)s WHERE roles.id = %(roles_id)s
+2023-07-25 20:06:19,161 - INFO - [generated in 0.00042s] {'updated_at': datetime.datetime(2023, 7, 25, 20, 6, 19, 159857), 'roles_id': 18}
+2023-07-25 20:06:19,162 - INFO - COMMIT
+2023-07-25 20:06:19,163 - INFO - Se ha actualizado el rol 18.
+2023-07-25 20:06:19,164 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/18/Escritor "HTTP/1.1 200 OK"
+2023-07-25 20:06:19,166 - DEBUG - Using selector: KqueueSelector
+2023-07-25 20:06:19,168 - INFO - BEGIN (implicit)
+2023-07-25 20:06:19,169 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-25 20:06:19,169 - INFO - [cached since 0.0108s ago] {'pk_1': 18}
+2023-07-25 20:06:19,170 - INFO - SELECT count(usuarios.id) AS count_1 
+FROM usuarios 
+WHERE usuarios.rol_id = %(rol_id_1)s
+2023-07-25 20:06:19,170 - INFO - [cached since 0.05937s ago] {'rol_id_1': 18}
+2023-07-25 20:06:19,171 - ERROR - Se ha intentado borrar el rol 18, pero tiene usuarios asociados.
+2023-07-25 20:06:19,172 - INFO - HTTP Request: DELETE http://testserver/Roles/borrar/id/18 "HTTP/1.1 200 OK"
