@@ -1,6 +1,7 @@
 from fastapi import APIRouter
 from classes.queries import qw_get_niveles, qw_post_niveles, qw_delete_niveles, qw_put_niveles, qw_get_nivel
 from classes.validations import NivelValidator
+
 router = APIRouter()
 
 @router.get("/mostrar_niveles", tags=["Niveles"])
