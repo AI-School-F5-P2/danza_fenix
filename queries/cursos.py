@@ -65,7 +65,6 @@ def qw_get_cursos():
         return JSONResponse(content={"message": f"No se ha podido mostrar los cursos.{e}"}, status_code=400)
     Logger.info("Se han encontrado cursos.")
     return cursos
-    
 
 # funcion para mostrar un solo curso
 def qw_get_curso_unique(nombre_del_curso):

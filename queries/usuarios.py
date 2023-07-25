@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from classes.models import Usuario, Rol
+from classes.logger import Logger
 from classes.encryption import Encryption
 
 from connection.connection import *
@@ -21,9 +22,11 @@ def qw_create_usuario(usuario):
     id_de_rol = rol.id # Obtener el ID del rol
     login_existe = session.query(Usuario).filter(Usuario.login == usuario.login).first()
     if login_existe:
+        Logger.error(f"Se ha intentado grabar el usuario {usuario.login}, pero ya existe.", "./logs/logs_usuarios.txt")
         return "El login ya existe."
     email_existe = session.query(Usuario).filter(Usuario.email == usuario.email).first()
     if email_existe:
+        Logger.error(f"Se ha intentado grabar el email {usuario.email}, pero ya existe.", "./logs/logs_usuarios.txt")
         return "El email ya existe."
     pw = Encryption.encrypt(usuario.password)
     # Crear el nuevo objeto de Usuario con el ID del rol
@@ -31,6 +34,7 @@ def qw_create_usuario(usuario):
     session.add(nuevo_usuario) # Agregar el nuevo usuario a la sesión
     session.flush()
     session.commit() # Realizar el commit para persistir los cambios
+    Logger.info(f"Se ha grabado el usuario {usuario.login}.", "./logs/logs_usuarios.txt")
     return "Usuario creado exitosamente."
 
 # Listar todos los usuarios, indicando a cada uno el nombre de su rol
@@ -48,6 +52,7 @@ def qw_list_usuarios():
             "rol": nombre_rol
         }
         result.append(usuario_dict)
+    Logger.info("Se han listado los usuarios.", "./logs/logs_usuarios.txt")
     return result
 
 # Listar los datos de un usuario localizado a partir de un dato, que puede 
@@ -67,6 +72,7 @@ def qw_show_usuario(dato, valor):
     else:
         return "Dato no válido."
     if not resultado:
+        Logger.error("Se ha intentado ver un usuario que no existe.", "./logs/logs_usuarios.txt")
         return "No se han encontrado usuarios."
     usuario, rol = resultado
     usuario_dict = {
@@ -75,6 +81,7 @@ def qw_show_usuario(dato, valor):
         "email": usuario.email,
         "rol": rol
     }
+    Logger.info(f"Se ha visto el usuario {usuario.login}", "./logs/logs_usuarios.txt")
     return usuario_dict
 
 # Actualizar los datos de un usuario localizado a partir de un dato, que puede 
@@ -94,6 +101,7 @@ def qw_update_usuario(dato, valor, usuario):
     rol = session.query(Rol).filter(Rol.nombre_rol == usuario.nombre_rol).first() # Buscar el rol por su nombre
     # Si no existe el rol se obtiene un mensaje de error.
     if not rol:
+        Logger.error(f"Se ha intentado actualizar el usuario {valor}, pero no existe.", "./logs/logs_usuarios.txt")
         return "El rol especificado no existe."
     rol_id = rol.id # Obtener el ID del rol
     pw = Encryption.encrypt(usuario.password) # Encriptamos la contraseña
@@ -105,6 +113,7 @@ def qw_update_usuario(dato, valor, usuario):
     usuario_encontrado.updated_at = datetime.now()
     session.flush()
     session.commit()
+    Logger.info(f"Se ha actualizado el usuario {valor}", "./logs/logs_usuarios.txt")
     return "El usuario ha sido actualizado."
 
 # Eliminare un usuario localizado a partir de un dato, que puede 
@@ -119,8 +128,10 @@ def qw_delete_usuario(dato, valor):
     else:
         return "Dato no válido."
     if not usuario:
+        Logger.error(f"El usuario {valor} se ha intntado eliminar, pero no existe.", "./logs/logs_usuarios.txt")
         return "No se ha encontrado el usuario."
     session.delete(usuario)
     session.flush()
     session.commit()
+    Logger.info(f"Se ha eliminado el usuario {valor}.", "./logs/logs_usuarios.txt")
     return "El usuario ha sido eliminado."

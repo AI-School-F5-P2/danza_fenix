@@ -4,9 +4,6 @@ from connection.connection import *
 from classes.models import Alumno
 from fastapi.responses import JSONResponse
 
-
-#qw_get_alumnos, qw_post_alumnos, qw_put_alumnos, qw_delete_alumnos
-
 def qw_get_alumnos():
     try:            
         alumnos = session.query(Alumno).all()
@@ -16,8 +13,7 @@ def qw_get_alumnos():
             return alumnos
     except Exception as e:
         return JSONResponse(content={"message": f"error al consultar alumnos. {e}"}, status_code=400)
-    
-    
+
 def qw_get_alumno(dni_alumno):
     try:            
         alumno = session.query(Alumno).filter(Alumno.dni == dni_alumno).first()
@@ -40,8 +36,6 @@ def qw_post_alumnos(datos_alumno):
             return JSONResponse({"mensaje": "Alumno ya existe"}, status_code=401)
         else:
             return JSONResponse(content={"message": f"error al insertar alumnos. {e}"}, status_code=400) 
-    
-    
 
 def qw_put_alumnos(dni_alumno,alumno):
     try:
@@ -65,7 +59,6 @@ def qw_put_alumnos(dni_alumno,alumno):
         else:
             return JSONResponse(content={"message": f"error al actualizar alumno. {e}"}, status_code=400) 
     
-
 def qw_delete_alumno(dni_eliminar_alumno):
     try:
         eliminar_alumno = session.query(Alumno).filter(Alumno.dni == dni_eliminar_alumno).first()

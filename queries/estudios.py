@@ -7,7 +7,6 @@ from classes.models import Curso
 from fastapi.responses import JSONResponse
 from fastapi import status
 
-
 def qw_create_compile(compile_input):
     try:
         information = Estudios(**compile_input)
@@ -57,16 +56,11 @@ def qw_create_compile(compile_input):
         return JSONResponse(content={"message": f"No se ha podido grabar el alumno. {e}"}, status_code=status.HTTP_404_NOT_FOUND)
     return out
 
-
-
 def qw_mostrar_compile():
     information = session.query(Estudios).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
-
-
-
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
 from sqlalchemy.orm import sessionmaker

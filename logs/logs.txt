@@ -1,2 +1,0 @@
-2023-07-24 09:17:15,010 - INFO - Se ha grabado el log La quinta prueba
-2023-07-24 09:20:36,446 - ERROR - El rol La quinta prueba se ha intentado grabar, pero ya existía
