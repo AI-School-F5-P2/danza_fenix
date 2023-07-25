@@ -1,0 +1,113 @@
+2023-07-24 12:46:07,516 - INFO - Se han encontrado niveles.
+2023-07-24 12:48:55,400 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-24 12:48:55,401 - INFO - [generated in 0.00199s] {'nivel_1': 'cero', 'param_1': 1}
+2023-07-24 13:07:01,012 - INFO - El nivel ha sido encontrado.
+2023-07-24 13:13:03,402 - INFO - El nivel no existe.
+2023-07-24 13:14:35,905 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-24 13:14:35,912 - INFO - [cached since 92.52s ago] {'nivel_1': 'cero', 'param_1': 1}
+2023-07-24 13:14:35,917 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-24 13:14:35,917 - INFO - [generated in 0.00143s] {'id': 1}
+2023-07-24 13:14:35,919 - INFO - ROLLBACKcd
+2023-07-24 13:14:35,922 - ERROR - Error al apagar el nivel cero.
+2023-07-24 13:54:20,394 - ERROR - Error al consultar el nivel cero: (mysql.connector.errors.IntegrityError) 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`danza_fenix`.`cursos_niveles`, CONSTRAINT `cursos_niveles_ibfk_2` FOREIGN KEY (`id_nivel`) REFERENCES `niveles` (`id`))
+[SQL: DELETE FROM niveles WHERE niveles.id = %(id)s]
+[parameters: {'id': 1}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2023-07-24 13:59:47,370 - ERROR - No se puede apagar este Nivel porque est� relacionano con otras tablas.
+2023-07-24 14:01:27,406 - INFO - El nivel ya ha sido grabado.
+2023-07-24 14:02:29,681 - INFO - BEGIN (implicit)
+2023-07-24 14:02:29,682 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-24 14:02:29,683 - INFO - [cached since 62.3s ago] {'nivel_1': 'cero', 'param_1': 1}
+2023-07-24 14:02:29,686 - INFO - El nivel ya existe.
+2023-07-25 08:45:26,709 - INFO - El nivel ha sido actualizado
+2023-07-25 08:47:34,576 - INFO - BEGIN (implicit)
+2023-07-25 08:47:34,576 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:47:34,576 - INFO - [cached since 127.9s ago] {'nivel_1': 'test', 'param_1': 1}
+2023-07-25 08:47:34,587 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-25 08:47:34,587 - INFO - [generated in 0.00203s] {'id': 6}
+2023-07-25 08:47:34,603 - INFO - COMMIT
+2023-07-25 08:47:34,603 - INFO - El nivel ha sido apagado.
+2023-07-25 08:47:42,210 - INFO - BEGIN (implicit)
+2023-07-25 08:47:42,214 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:47:42,217 - INFO - [cached since 135.5s ago] {'nivel_1': 'test', 'param_1': 1}
+2023-07-25 08:47:42,219 - INFO - El nivel no existe.
+2023-07-25 08:49:40,062 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:49:40,066 - INFO - [cached since 253.4s ago] {'nivel_1': 'teste', 'param_1': 1}
+2023-07-25 08:49:40,083 - INFO - INSERT INTO niveles (nivel, created_at, updated_at) VALUES (%(nivel)s, %(created_at)s, %(updated_at)s)
+2023-07-25 08:49:40,083 - INFO - [generated in 0.01135s] {'nivel': 'teste', 'created_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394), 'updated_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394)}
+2023-07-25 08:49:40,099 - INFO - COMMIT
+2023-07-25 08:49:40,099 - INFO - El nivel ya ha sido grabado.
+2023-07-25 08:50:41,082 - INFO - BEGIN (implicit)
+2023-07-25 08:50:41,084 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:50:41,086 - INFO - [cached since 314.4s ago] {'nivel_1': 'teste', 'param_1': 1}
+2023-07-25 08:50:41,088 - INFO - El nivel ya existe.
+2023-07-25 08:51:10,262 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:51:10,262 - INFO - [cached since 343.6s ago] {'nivel_1': 'test', 'param_1': 1}
+2023-07-25 08:51:10,262 - INFO - INSERT INTO niveles (nivel, created_at, updated_at) VALUES (%(nivel)s, %(created_at)s, %(updated_at)s)
+2023-07-25 08:51:10,262 - INFO - [cached since 90.2s ago] {'nivel': 'test', 'created_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394), 'updated_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394)}
+2023-07-25 08:51:10,278 - INFO - COMMIT
+2023-07-25 08:51:10,293 - INFO - El nivel ya ha sido grabado.
+2023-07-25 08:55:43,410 - INFO - BEGIN (implicit)
+2023-07-25 08:55:43,410 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:55:43,416 - INFO - [cached since 616.7s ago] {'nivel_1': 'testando', 'param_1': 1}
+2023-07-25 08:55:43,416 - INFO - INSERT INTO niveles (nivel, created_at, updated_at) VALUES (%(nivel)s, %(created_at)s, %(updated_at)s)
+2023-07-25 08:55:43,416 - INFO - [cached since 363.3s ago] {'nivel': 'testando', 'created_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394), 'updated_at': datetime.datetime(2023, 7, 25, 8, 43, 38, 722394)}
+2023-07-25 08:55:43,432 - INFO - COMMIT
+2023-07-25 08:55:43,432 - INFO - El nivel ya ha sido grabado.
+2023-07-25 08:58:21,719 - INFO - BEGIN (implicit)
+2023-07-25 08:58:21,719 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:58:21,724 - INFO - [cached since 775s ago] {'nivel_1': 'test', 'param_1': 1}
+2023-07-25 08:58:21,726 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-25 08:58:21,732 - INFO - [cached since 647.1s ago] {'id': 8}
+2023-07-25 08:58:21,742 - INFO - COMMIT
+2023-07-25 08:58:21,742 - INFO - El nivel ha sido apagado.
+2023-07-25 08:59:56,513 - INFO - BEGIN (implicit)
+2023-07-25 08:59:56,517 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 08:59:56,517 - INFO - [cached since 869.8s ago] {'nivel_1': 'testando', 'param_1': 1}
+2023-07-25 08:59:56,533 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-25 08:59:56,533 - INFO - [cached since 741.9s ago] {'id': 9}
+2023-07-25 08:59:56,549 - INFO - COMMIT
+2023-07-25 08:59:56,549 - INFO - El nivel ha sido apagado.
+2023-07-25 09:00:29,452 - INFO - BEGIN (implicit)
+2023-07-25 09:00:29,453 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-25 09:00:29,457 - INFO - [cached since 902.8s ago] {'nivel_1': 'teste', 'param_1': 1}
+2023-07-25 09:00:29,464 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-25 09:00:29,464 - INFO - [cached since 774.9s ago] {'id': 7}
+2023-07-25 09:00:29,472 - INFO - COMMIT
+2023-07-25 09:00:29,475 - INFO - El nivel ha sido apagado.
