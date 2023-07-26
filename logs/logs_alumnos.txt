@@ -1,0 +1,671 @@
+2023-07-26 10:29:38,583 - INFO - se han grabado los datos {'nombre': 'Alexander', 'apellidos': 'Perry', 'descuento_familiar': 1, 'dni': 'A12345678', 'email': 'alexander@gmail.com', 'telefono': '11221122', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=datetime.timezone.utc)}
+2023-07-26 10:29:38,583 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,591 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,594 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,598 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,598 - INFO - [cached since 0.0527s ago] {'dni_1': 'A12345678', 'param_1': 1}
+2023-07-26 10:29:38,602 - INFO - UPDATE alumnos SET nombre=%(nombre)s, apellidos=%(apellidos)s, nacimiento=%(nacimiento)s, telefono=%(telefono)s, email=%(email)s WHERE alumnos.id = %(alumnos_id)s
+2023-07-26 10:29:38,602 - INFO - [generated in 0.00090s] {'nombre': 'Pedro', 'apellidos': 'Perez', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000), 'telefono': '123123', 'email': 'pica@gmail.com', 'alumnos_id': 16}
+2023-07-26 10:29:38,605 - INFO - COMMIT
+2023-07-26 10:29:38,606 - INFO - se han grabado los datos ('A12345678', alumno None se llama Pedro.El dni es A12345678 y el email es pica@gmail.com)
+2023-07-26 10:29:38,609 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/A12345678 "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,613 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,618 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,622 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,622 - INFO - [cached since 0.07642s ago] {'dni_1': 'A12345678', 'param_1': 1}
+2023-07-26 10:29:38,626 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 10:29:38,626 - INFO - [generated in 0.00101s] {'id': 16}
+2023-07-26 10:29:38,629 - INFO - COMMIT
+2023-07-26 10:29:38,631 - INFO - Alumno eliminado correctamente A12345678
+2023-07-26 10:29:38,632 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/A12345678 "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,638 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,648 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:38,649 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,653 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,657 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,665 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,669 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos
+2023-07-26 10:29:38,669 - INFO - [generated in 0.00137s] {}
+2023-07-26 10:29:38,673 - INFO - Se han encontrado cursos.
+2023-07-26 10:29:38,673 - INFO - HTTP Request: GET http://testserver/Cursos/mostrar_cursos "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,678 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,686 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,686 - INFO - [generated in 0.00165s] {'nombre_curso_1': 'Bachata', 'param_1': 1}
+2023-07-26 10:29:38,686 - INFO - Se ha encontrado el curso Bachata.
+2023-07-26 10:29:38,694 - INFO - HTTP Request: GET http://testserver/Cursos/mostrar_curso?nombre_del_curso=Bachata "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,699 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,702 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,705 - INFO - [cached since 0.01801s ago] {'nombre_curso_1': 'Reggae', 'param_1': 1}
+2023-07-26 10:29:38,709 - INFO - INSERT INTO cursos (nombre_curso, precio, id_grupo, created_at, updated_at) VALUES (%(nombre_curso)s, %(precio)s, %(id_grupo)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:29:38,709 - INFO - [generated in 0.00115s] {'nombre_curso': 'Reggae', 'precio': 35.0, 'id_grupo': 'Relax', 'created_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 714358), 'updated_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 714358)}
+2023-07-26 10:29:38,712 - INFO - COMMIT
+2023-07-26 10:29:38,714 - INFO - El curso Reggae ha sido creado.
+2023-07-26 10:29:38,717 - INFO - HTTP Request: POST http://testserver/Cursos/insertar "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:38,721 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,726 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,729 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,730 - INFO - [cached since 0.04265s ago] {'nombre_curso_1': 'Reggae', 'param_1': 1}
+2023-07-26 10:29:38,734 - INFO - UPDATE cursos SET nombre_curso=%(nombre_curso)s, precio=%(precio)s WHERE cursos.id = %(cursos_id)s
+2023-07-26 10:29:38,734 - INFO - [generated in 0.00095s] {'nombre_curso': 'chaka', 'precio': 40.0, 'cursos_id': 50}
+2023-07-26 10:29:38,736 - INFO - COMMIT
+2023-07-26 10:29:38,738 - INFO - El curso Reggae ha sido modificado.
+2023-07-26 10:29:38,738 - INFO - HTTP Request: PUT http://testserver/Cursos/actualizar?nombre_del_curso=Reggae&nuevo_nombre=chaka&nuevo_precio=40&nombre_grupo=Relax "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:38,746 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,752 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,755 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,755 - INFO - [cached since 0.0679s ago] {'nombre_curso_1': 'chaka', 'param_1': 1}
+2023-07-26 10:29:38,758 - INFO - DELETE FROM cursos WHERE cursos.id = %(id)s
+2023-07-26 10:29:38,759 - INFO - [generated in 0.00136s] {'id': 50}
+2023-07-26 10:29:38,760 - INFO - COMMIT
+2023-07-26 10:29:38,763 - INFO - El curso chaka ha sido borrado.
+2023-07-26 10:29:38,765 - INFO - HTTP Request: DELETE http://testserver/Cursos/borrar/chaka "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:38,769 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,780 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:38,782 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,785 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,792 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,798 - INFO - BEGIN (implicit)
+2023-07-26 10:29:38,800 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos
+2023-07-26 10:29:38,800 - INFO - [generated in 0.00106s] {}
+2023-07-26 10:29:38,805 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:29:38,806 - INFO - [generated in 0.00151s] {'id_grupo_1': 1}
+2023-07-26 10:29:38,810 - INFO - Se han listado los grupos.
+2023-07-26 10:29:38,810 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:29:38,810 - INFO - [cached since 0.0102s ago] {'id_grupo_1': 2}
+2023-07-26 10:29:38,810 - INFO - Se han listado los grupos.
+2023-07-26 10:29:38,818 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:29:38,818 - INFO - [cached since 0.01384s ago] {'id_grupo_1': 4}
+2023-07-26 10:29:38,818 - INFO - Se han listado los grupos.
+2023-07-26 10:29:38,821 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:29:38,821 - INFO - [cached since 0.01758s ago] {'id_grupo_1': 7}
+2023-07-26 10:29:38,821 - INFO - Se han listado los grupos.
+2023-07-26 10:29:38,827 - INFO - HTTP Request: GET http://testserver/Grupos/listar "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,829 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,837 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:29:38,837 - INFO - [generated in 0.00112s] {'pk_1': 3}
+2023-07-26 10:29:38,845 - INFO - HTTP Request: GET http://testserver/Grupos/ver/id/3 "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,851 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,861 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.nombre_grupo = %(nombre_grupo_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,863 - INFO - [generated in 0.00174s] {'nombre_grupo_1': 'Nuevo grupo', 'param_1': 1}
+2023-07-26 10:29:38,863 - ERROR - Se ha intentado grabar el grupo Nuevo grupo, pero ya existe previamente.
+2023-07-26 10:29:38,866 - INFO - HTTP Request: POST http://testserver/Grupos/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,872 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,877 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:29:38,877 - INFO - [cached since 0.0394s ago] {'pk_1': 3}
+2023-07-26 10:29:38,879 - INFO - HTTP Request: PUT http://testserver/Grupos/actualizar/id/3/Nuevo%20grupo%20de%20prueba "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,883 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,889 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:29:38,889 - INFO - [cached since 0.05143s ago] {'pk_1': 3}
+2023-07-26 10:29:38,893 - INFO - HTTP Request: DELETE http://testserver/Grupos/borrar/id/3 "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,899 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,904 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:38,906 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,908 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,916 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,924 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,926 - INFO - [cached since 0.3797s ago] {'dni_1': 'Cata', 'param_1': 1}
+2023-07-26 10:29:38,927 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,930 - INFO - [cached since 0.2424s ago] {'nombre_curso_1': 'Bachata', 'param_1': 1}
+2023-07-26 10:29:38,930 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:38,933 - INFO - [cached since 0.2453s ago] {'nombre_curso_1': 'Bachata', 'param_1': 1}
+2023-07-26 10:29:38,933 - INFO - INSERT INTO estudios (dni_alumno, nombre_curso, nivel, profesor, precio, fecha_inicio, fecha_final, created_at, updated_at, grupo) VALUES (%(dni_alumno)s, %(nombre_curso)s, %(nivel)s, %(profesor)s, %(precio)s, %(fecha_inicio)s, %(fecha_final)s, %(created_at)s, %(updated_at)s, %(grupo)s)
+2023-07-26 10:29:38,933 - INFO - [generated in 0.00105s] {'dni_alumno': 'Cata', 'nombre_curso': 'Bachata', 'nivel': 'Cero', 'profesor': 'Mar', 'precio': Decimal('35.00'), 'fecha_inicio': None, 'fecha_final': None, 'created_at': None, 'updated_at': None, 'grupo': 'Relax'}
+2023-07-26 10:29:38,933 - INFO - COMMIT
+2023-07-26 10:29:38,941 - INFO - HTTP Request: POST http://testserver/Inscripcion/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:29:38,947 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:38,953 - INFO - HTTP Request: GET http://testserver/Inscripcion/descuento?dni_alumno=cata "HTTP/1.1 404 Not Found"
+2023-07-26 10:29:39,494 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,499 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:39,499 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,509 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,514 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,525 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,525 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles
+2023-07-26 10:29:39,525 - INFO - [generated in 0.00130s] {}
+2023-07-26 10:29:39,535 - INFO - HTTP Request: GET http://testserver/Niveles/mostrar_niveles "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,540 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,549 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,550 - INFO - [generated in 0.00175s] {'nivel_1': 'Cero', 'param_1': 1}
+2023-07-26 10:29:39,554 - INFO - HTTP Request: GET http://testserver/Niveles/busqueda_nivel/Cero "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,556 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,566 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,568 - INFO - [cached since 0.01972s ago] {'nivel_1': 'Nuevo nivel', 'param_1': 1}
+2023-07-26 10:29:39,572 - INFO - INSERT INTO niveles (nivel, created_at, updated_at) VALUES (%(nivel)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:29:39,572 - INFO - [generated in 0.00180s] {'nivel': 'Nuevo nivel', 'created_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 719384), 'updated_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 719384)}
+2023-07-26 10:29:39,580 - INFO - COMMIT
+2023-07-26 10:29:39,582 - INFO - HTTP Request: POST http://testserver/Niveles/insertar_niveles "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,594 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,596 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,596 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,596 - INFO - [cached since 0.0527s ago] {'nivel_1': 'Nuevo nivel', 'param_1': 1}
+2023-07-26 10:29:39,604 - INFO - UPDATE niveles SET nivel=%(nivel)s WHERE niveles.id = %(niveles_id)s
+2023-07-26 10:29:39,604 - INFO - [generated in 0.00125s] {'nivel': 'Rapido', 'niveles_id': 18}
+2023-07-26 10:29:39,604 - INFO - COMMIT
+2023-07-26 10:29:39,613 - INFO - HTTP Request: PUT http://testserver/Niveles/actualizar_niveles/Nuevo%20nivel/Rapido "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,615 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,626 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,626 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,628 - INFO - [cached since 0.0802s ago] {'nivel_1': 'Rapido', 'param_1': 1}
+2023-07-26 10:29:39,633 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-26 10:29:39,633 - INFO - [generated in 0.00117s] {'id': 18}
+2023-07-26 10:29:39,634 - INFO - COMMIT
+2023-07-26 10:29:39,636 - INFO - HTTP Request: DELETE http://testserver/Niveles/apagar_niveles/Rapido "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,648 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,656 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:39,658 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,665 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,669 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,678 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,685 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores
+2023-07-26 10:29:39,685 - INFO - [generated in 0.00141s] {}
+2023-07-26 10:29:39,690 - INFO - HTTP Request: GET http://testserver/Profesores/ver "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,693 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,703 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor LIKE %(nombre_profesor_1)s
+2023-07-26 10:29:39,703 - INFO - [generated in 0.00184s] {'nombre_profesor_1': '%Mar%'}
+2023-07-26 10:29:39,710 - INFO - HTTP Request: GET http://testserver/Profesores/busqueda_profesor?profesores=Mar "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,718 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,726 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,726 - INFO - [generated in 0.00205s] {'nombre_profesor_1': 'Luisa', 'param_1': 1}
+2023-07-26 10:29:39,728 - INFO - INSERT INTO profesores (nombre_profesor, created_at, updated_at) VALUES (%(nombre_profesor)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:29:39,728 - INFO - [generated in 0.00160s] {'nombre_profesor': 'Luisa', 'created_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 728422), 'updated_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 728422)}
+2023-07-26 10:29:39,734 - INFO - COMMIT
+2023-07-26 10:29:39,740 - INFO - HTTP Request: POST http://testserver/Profesores/insertar "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:39,745 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,752 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,754 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,754 - INFO - [cached since 0.03115s ago] {'nombre_profesor_1': 'Luisa', 'param_1': 1}
+2023-07-26 10:29:39,759 - INFO - UPDATE profesores SET nombre_profesor=%(nombre_profesor)s WHERE profesores.id = %(profesores_id)s
+2023-07-26 10:29:39,761 - INFO - [generated in 0.00179s] {'nombre_profesor': 'MariaDB', 'profesores_id': 20}
+2023-07-26 10:29:39,761 - INFO - COMMIT
+2023-07-26 10:29:39,767 - INFO - HTTP Request: PUT http://testserver/Profesores/actualizar/Luisa/MariaDB "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:39,769 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,781 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,781 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:39,783 - INFO - [cached since 0.05815s ago] {'nombre_profesor_1': 'MariaDB', 'param_1': 1}
+2023-07-26 10:29:39,785 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-26 10:29:39,785 - INFO - [generated in 0.00130s] {'id': 20}
+2023-07-26 10:29:39,785 - INFO - COMMIT
+2023-07-26 10:29:39,794 - INFO - HTTP Request: DELETE http://testserver/Profesores/eliminar/MariaDB "HTTP/1.1 202 Accepted"
+2023-07-26 10:29:39,803 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,811 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:39,812 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,818 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,825 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,833 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,833 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles
+2023-07-26 10:29:39,833 - INFO - [generated in 0.00149s] {}
+2023-07-26 10:29:39,844 - INFO - SELECT count(usuarios.id) AS count_1 
+FROM usuarios 
+WHERE usuarios.rol_id = %(rol_id_1)s
+2023-07-26 10:29:39,844 - INFO - [generated in 0.00137s] {'rol_id_1': 1}
+2023-07-26 10:29:39,846 - INFO - Se han listado los roles.
+2023-07-26 10:29:39,851 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,851 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,865 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:29:39,865 - INFO - [generated in 0.00159s] {'pk_1': 18}
+2023-07-26 10:29:39,866 - ERROR - Se ha intentado mostrar el rol 18, pero no existe.
+2023-07-26 10:29:39,866 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,877 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,881 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:29:39,881 - INFO - [generated in 0.00151s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 728422), 'updated_at': datetime.datetime(2023, 7, 26, 10, 29, 37, 728422)}
+2023-07-26 10:29:39,889 - INFO - ROLLBACK
+2023-07-26 10:29:39,893 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-26 10:29:39,896 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,902 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,906 - INFO - BEGIN (implicit)
+2023-07-26 10:29:39,907 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:29:39,910 - INFO - [cached since 0.04698s ago] {'pk_1': 18}
+2023-07-26 10:29:39,914 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/18/Escritor "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,922 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,936 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:29:39,936 - INFO - [cached since 0.07431s ago] {'pk_1': 18}
+2023-07-26 10:29:39,944 - INFO - HTTP Request: DELETE http://testserver/Roles/borrar/id/18 "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,953 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,962 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:29:39,963 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,970 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,975 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:39,981 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id
+2023-07-26 10:29:39,981 - INFO - [generated in 0.00198s] {}
+2023-07-26 10:29:39,990 - INFO - HTTP Request: GET http://testserver/Usuarios/listar "HTTP/1.1 200 OK"
+2023-07-26 10:29:39,996 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:40,006 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:40,008 - INFO - [generated in 0.00164s] {'id_1': 15, 'param_1': 1}
+2023-07-26 10:29:40,008 - ERROR - Se ha intentado ver un usuario que no existe.
+2023-07-26 10:29:40,013 - INFO - HTTP Request: GET http://testserver/Usuarios/ver/id/15 "HTTP/1.1 200 OK"
+2023-07-26 10:29:40,013 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:40,023 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.nombre_rol = %(nombre_rol_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:40,023 - INFO - [generated in 0.00146s] {'nombre_rol_1': 'Escritor', 'param_1': 1}
+2023-07-26 10:29:40,029 - INFO - HTTP Request: POST http://testserver/Usuarios/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:29:40,032 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:40,037 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at 
+FROM usuarios 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:40,037 - INFO - [generated in 0.00104s] {'id_1': '15', 'param_1': 1}
+2023-07-26 10:29:40,041 - INFO - HTTP Request: PUT http://testserver/Usuarios/actualizar/id/15 "HTTP/1.1 200 OK"
+2023-07-26 10:29:40,046 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:29:40,052 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at 
+FROM usuarios 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:29:40,052 - INFO - [cached since 0.01583s ago] {'id_1': '18', 'param_1': 1}
+2023-07-26 10:29:40,054 - ERROR - El usuario 18 se ha intntado eliminar, pero no existe.
+2023-07-26 10:29:40,056 - INFO - HTTP Request: DELETE http://testserver/Usuarios/eliminar/id/18 "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,374 - INFO - no se han encontrado alumno.  None
+2023-07-26 10:30:44,375 - ERROR - error None al consultar alumno.
+2023-07-26 10:30:44,379 - INFO - HTTP Request: GET http://testserver/Alumnos/mostrar_alumnocata "HTTP/1.1 400 Bad Request"
+2023-07-26 10:30:44,724 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,737 - INFO - INSERT INTO alumnos (nombre, apellidos, dni, nacimiento, telefono, email, descuento_familiar, created_at, updated_at) VALUES (%(nombre)s, %(apellidos)s, %(dni)s, %(nacimiento)s, %(telefono)s, %(email)s, %(descuento_familiar)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:30:44,737 - INFO - [generated in 0.00163s] {'nombre': 'Alexander', 'apellidos': 'Perry', 'dni': 'A12345678', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=datetime.timezone.utc), 'telefono': '11221122', 'email': 'alexander@gmail.com', 'descuento_familiar': 1, 'created_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317), 'updated_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317)}
+2023-07-26 10:30:44,755 - INFO - COMMIT
+2023-07-26 10:30:44,756 - INFO - se han grabado los datos {'nombre': 'Alexander', 'apellidos': 'Perry', 'descuento_familiar': 1, 'dni': 'A12345678', 'email': 'alexander@gmail.com', 'telefono': '11221122', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000, tzinfo=datetime.timezone.utc)}
+2023-07-26 10:30:44,760 - INFO - HTTP Request: POST http://testserver/Alumnos/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,764 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,770 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,770 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,770 - INFO - [cached since 0.4069s ago] {'dni_1': 'A12345678', 'param_1': 1}
+2023-07-26 10:30:44,775 - INFO - UPDATE alumnos SET nombre=%(nombre)s, apellidos=%(apellidos)s, nacimiento=%(nacimiento)s, telefono=%(telefono)s, email=%(email)s WHERE alumnos.id = %(alumnos_id)s
+2023-07-26 10:30:44,775 - INFO - [generated in 0.00092s] {'nombre': 'Pedro', 'apellidos': 'Perez', 'nacimiento': datetime.datetime(2023, 7, 25, 16, 47, 50, 160000), 'telefono': '123123', 'email': 'pica@gmail.com', 'alumnos_id': 17}
+2023-07-26 10:30:44,775 - INFO - COMMIT
+2023-07-26 10:30:44,778 - INFO - se han grabado los datos ('A12345678', alumno None se llama Pedro.El dni es A12345678 y el email es pica@gmail.com)
+2023-07-26 10:30:44,780 - INFO - HTTP Request: PUT http://testserver/Alumnos/actualizar/A12345678 "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,780 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,786 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,790 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,790 - INFO - [cached since 0.426s ago] {'dni_1': 'A12345678', 'param_1': 1}
+2023-07-26 10:30:44,792 - INFO - DELETE FROM alumnos WHERE alumnos.id = %(id)s
+2023-07-26 10:30:44,795 - INFO - [generated in 0.00093s] {'id': 17}
+2023-07-26 10:30:44,795 - INFO - COMMIT
+2023-07-26 10:30:44,798 - INFO - Alumno eliminado correctamente A12345678
+2023-07-26 10:30:44,798 - INFO - HTTP Request: DELETE http://testserver/Alumnos/eliminar/A12345678 "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,803 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,811 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:44,811 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,816 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,821 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,826 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,827 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos
+2023-07-26 10:30:44,827 - INFO - [generated in 0.00096s] {}
+2023-07-26 10:30:44,832 - INFO - Se han encontrado cursos.
+2023-07-26 10:30:44,835 - INFO - HTTP Request: GET http://testserver/Cursos/mostrar_cursos "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,836 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,843 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,846 - INFO - [generated in 0.00124s] {'nombre_curso_1': 'Bachata', 'param_1': 1}
+2023-07-26 10:30:44,846 - INFO - Se ha encontrado el curso Bachata.
+2023-07-26 10:30:44,849 - INFO - HTTP Request: GET http://testserver/Cursos/mostrar_curso?nombre_del_curso=Bachata "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,852 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,860 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,860 - INFO - [cached since 0.01639s ago] {'nombre_curso_1': 'Reggae', 'param_1': 1}
+2023-07-26 10:30:44,860 - INFO - INSERT INTO cursos (nombre_curso, precio, id_grupo, created_at, updated_at) VALUES (%(nombre_curso)s, %(precio)s, %(id_grupo)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:30:44,860 - INFO - [generated in 0.00086s] {'nombre_curso': 'Reggae', 'precio': 35.0, 'id_grupo': 'Relax', 'created_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317), 'updated_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317)}
+2023-07-26 10:30:44,860 - INFO - COMMIT
+2023-07-26 10:30:44,868 - INFO - El curso Reggae ha sido creado.
+2023-07-26 10:30:44,872 - INFO - HTTP Request: POST http://testserver/Cursos/insertar "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:44,876 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,881 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,882 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,884 - INFO - [cached since 0.03878s ago] {'nombre_curso_1': 'Reggae', 'param_1': 1}
+2023-07-26 10:30:44,884 - INFO - UPDATE cursos SET nombre_curso=%(nombre_curso)s, precio=%(precio)s WHERE cursos.id = %(cursos_id)s
+2023-07-26 10:30:44,884 - INFO - [generated in 0.00103s] {'nombre_curso': 'chaka', 'precio': 40.0, 'cursos_id': 51}
+2023-07-26 10:30:44,884 - INFO - COMMIT
+2023-07-26 10:30:44,884 - INFO - El curso Reggae ha sido modificado.
+2023-07-26 10:30:44,893 - INFO - HTTP Request: PUT http://testserver/Cursos/actualizar?nombre_del_curso=Reggae&nuevo_nombre=chaka&nuevo_precio=40&nombre_grupo=Relax "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:44,893 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,900 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,900 - INFO - SELECT cursos.id AS cursos_id, cursos.nombre_curso AS cursos_nombre_curso, cursos.precio AS cursos_precio, cursos.id_grupo AS cursos_id_grupo, cursos.created_at AS cursos_created_at, cursos.updated_at AS cursos_updated_at 
+FROM cursos 
+WHERE cursos.nombre_curso = %(nombre_curso_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:44,900 - INFO - [cached since 0.0591s ago] {'nombre_curso_1': 'chaka', 'param_1': 1}
+2023-07-26 10:30:44,900 - INFO - DELETE FROM cursos WHERE cursos.id = %(id)s
+2023-07-26 10:30:44,900 - INFO - [generated in 0.00127s] {'id': 51}
+2023-07-26 10:30:44,908 - INFO - COMMIT
+2023-07-26 10:30:44,908 - INFO - El curso chaka ha sido borrado.
+2023-07-26 10:30:44,908 - INFO - HTTP Request: DELETE http://testserver/Cursos/borrar/chaka "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:44,919 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,926 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:44,926 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,934 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,936 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,944 - INFO - BEGIN (implicit)
+2023-07-26 10:30:44,944 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos
+2023-07-26 10:30:44,949 - INFO - [generated in 0.00148s] {}
+2023-07-26 10:30:44,952 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:30:44,955 - INFO - [generated in 0.00111s] {'id_grupo_1': 1}
+2023-07-26 10:30:44,955 - INFO - Se han listado los grupos.
+2023-07-26 10:30:44,958 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:30:44,960 - INFO - [cached since 0.006305s ago] {'id_grupo_1': 2}
+2023-07-26 10:30:44,960 - INFO - Se han listado los grupos.
+2023-07-26 10:30:44,960 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:30:44,960 - INFO - [cached since 0.009503s ago] {'id_grupo_1': 4}
+2023-07-26 10:30:44,960 - INFO - Se han listado los grupos.
+2023-07-26 10:30:44,966 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-26 10:30:44,966 - INFO - [cached since 0.0125s ago] {'id_grupo_1': 7}
+2023-07-26 10:30:44,966 - INFO - Se han listado los grupos.
+2023-07-26 10:30:44,966 - INFO - HTTP Request: GET http://testserver/Grupos/listar "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,977 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:44,986 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:30:44,986 - INFO - [generated in 0.00178s] {'pk_1': 3}
+2023-07-26 10:30:44,993 - INFO - HTTP Request: GET http://testserver/Grupos/ver/id/3 "HTTP/1.1 200 OK"
+2023-07-26 10:30:44,999 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,008 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.nombre_grupo = %(nombre_grupo_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,010 - INFO - [generated in 0.00207s] {'nombre_grupo_1': 'Nuevo grupo', 'param_1': 1}
+2023-07-26 10:30:45,012 - ERROR - Se ha intentado grabar el grupo Nuevo grupo, pero ya existe previamente.
+2023-07-26 10:30:45,016 - INFO - HTTP Request: POST http://testserver/Grupos/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,016 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,025 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:30:45,025 - INFO - [cached since 0.04366s ago] {'pk_1': 3}
+2023-07-26 10:30:45,034 - INFO - HTTP Request: PUT http://testserver/Grupos/actualizar/id/3/Nuevo%20grupo%20de%20prueba "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,042 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,048 - INFO - SELECT grupos.id AS grupos_id, grupos.nombre_grupo AS grupos_nombre_grupo, grupos.created_at AS grupos_created_at, grupos.updated_at AS grupos_updated_at 
+FROM grupos 
+WHERE grupos.id = %(pk_1)s
+2023-07-26 10:30:45,048 - INFO - [cached since 0.06316s ago] {'pk_1': 3}
+2023-07-26 10:30:45,056 - INFO - HTTP Request: DELETE http://testserver/Grupos/borrar/id/3 "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,060 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,073 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:45,073 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,081 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,081 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,094 - INFO - SELECT alumnos.id AS alumnos_id, alumnos.nombre AS alumnos_nombre, alumnos.apellidos AS alumnos_apellidos, alumnos.dni AS alumnos_dni, alumnos.nacimiento AS alumnos_nacimiento, alumnos.telefono AS alumnos_telefono, alumnos.email AS alumnos_email, alumnos.descuento_familiar AS alumnos_descuento_familiar, alumnos.created_at AS alumnos_created_at, alumnos.updated_at AS alumnos_updated_at 
+FROM alumnos 
+WHERE alumnos.dni = %(dni_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,098 - INFO - [cached since 0.7327s ago] {'dni_1': 'Cata', 'param_1': 1}
+2023-07-26 10:30:45,102 - INFO - HTTP Request: POST http://testserver/Inscripcion/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,109 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,116 - INFO - HTTP Request: GET http://testserver/Inscripcion/descuento?dni_alumno=cata "HTTP/1.1 404 Not Found"
+2023-07-26 10:30:45,126 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,139 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:45,142 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,148 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,148 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,164 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles
+2023-07-26 10:30:45,164 - INFO - [generated in 0.00198s] {}
+2023-07-26 10:30:45,172 - INFO - HTTP Request: GET http://testserver/Niveles/mostrar_niveles "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,180 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,188 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,188 - INFO - [generated in 0.00222s] {'nivel_1': 'Cero', 'param_1': 1}
+2023-07-26 10:30:45,196 - INFO - HTTP Request: GET http://testserver/Niveles/busqueda_nivel/Cero "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,202 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,211 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,212 - INFO - [cached since 0.02413s ago] {'nivel_1': 'Nuevo nivel', 'param_1': 1}
+2023-07-26 10:30:45,212 - INFO - INSERT INTO niveles (nivel, created_at, updated_at) VALUES (%(nivel)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:30:45,212 - INFO - [generated in 0.00130s] {'nivel': 'Nuevo nivel', 'created_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317), 'updated_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 91317)}
+2023-07-26 10:30:45,221 - INFO - COMMIT
+2023-07-26 10:30:45,228 - INFO - HTTP Request: POST http://testserver/Niveles/insertar_niveles "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,228 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,236 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,236 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,236 - INFO - [cached since 0.05589s ago] {'nivel_1': 'Nuevo nivel', 'param_1': 1}
+2023-07-26 10:30:45,244 - INFO - UPDATE niveles SET nivel=%(nivel)s WHERE niveles.id = %(niveles_id)s
+2023-07-26 10:30:45,244 - INFO - [generated in 0.00134s] {'nivel': 'Rapido', 'niveles_id': 19}
+2023-07-26 10:30:45,244 - INFO - COMMIT
+2023-07-26 10:30:45,254 - INFO - HTTP Request: PUT http://testserver/Niveles/actualizar_niveles/Nuevo%20nivel/Rapido "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,260 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,267 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,270 - INFO - SELECT niveles.id AS niveles_id, niveles.nivel AS niveles_nivel, niveles.created_at AS niveles_created_at, niveles.updated_at AS niveles_updated_at 
+FROM niveles 
+WHERE niveles.nivel = %(nivel_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,271 - INFO - [cached since 0.08392s ago] {'nivel_1': 'Rapido', 'param_1': 1}
+2023-07-26 10:30:45,276 - INFO - DELETE FROM niveles WHERE niveles.id = %(id)s
+2023-07-26 10:30:45,276 - INFO - [generated in 0.00145s] {'id': 19}
+2023-07-26 10:30:45,277 - INFO - COMMIT
+2023-07-26 10:30:45,283 - INFO - HTTP Request: DELETE http://testserver/Niveles/apagar_niveles/Rapido "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,291 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,294 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:45,302 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,302 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,310 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,324 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,327 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores
+2023-07-26 10:30:45,327 - INFO - [generated in 0.00160s] {}
+2023-07-26 10:30:45,335 - INFO - HTTP Request: GET http://testserver/Profesores/ver "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,342 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,351 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor LIKE %(nombre_profesor_1)s
+2023-07-26 10:30:45,351 - INFO - [generated in 0.00172s] {'nombre_profesor_1': '%Mar%'}
+2023-07-26 10:30:45,351 - INFO - HTTP Request: GET http://testserver/Profesores/busqueda_profesor?profesores=Mar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,360 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,367 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,367 - INFO - [generated in 0.00173s] {'nombre_profesor_1': 'Luisa', 'param_1': 1}
+2023-07-26 10:30:45,375 - INFO - INSERT INTO profesores (nombre_profesor, created_at, updated_at) VALUES (%(nombre_profesor)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:30:45,376 - INFO - [generated in 0.00144s] {'nombre_profesor': 'Luisa', 'created_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 107487), 'updated_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 107487)}
+2023-07-26 10:30:45,376 - INFO - COMMIT
+2023-07-26 10:30:45,384 - INFO - HTTP Request: POST http://testserver/Profesores/insertar "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:45,390 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,395 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,395 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,395 - INFO - [cached since 0.02884s ago] {'nombre_profesor_1': 'Luisa', 'param_1': 1}
+2023-07-26 10:30:45,400 - INFO - UPDATE profesores SET nombre_profesor=%(nombre_profesor)s WHERE profesores.id = %(profesores_id)s
+2023-07-26 10:30:45,400 - INFO - [generated in 0.00135s] {'nombre_profesor': 'MariaDB', 'profesores_id': 21}
+2023-07-26 10:30:45,404 - INFO - COMMIT
+2023-07-26 10:30:45,410 - INFO - HTTP Request: PUT http://testserver/Profesores/actualizar/Luisa/MariaDB "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:45,416 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,424 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,426 - INFO - SELECT profesores.id AS profesores_id, profesores.nombre_profesor AS profesores_nombre_profesor, profesores.created_at AS profesores_created_at, profesores.updated_at AS profesores_updated_at 
+FROM profesores 
+WHERE profesores.nombre_profesor = %(nombre_profesor_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,427 - INFO - [cached since 0.05728s ago] {'nombre_profesor_1': 'MariaDB', 'param_1': 1}
+2023-07-26 10:30:45,427 - INFO - DELETE FROM profesores WHERE profesores.id = %(id)s
+2023-07-26 10:30:45,427 - INFO - [generated in 0.00129s] {'id': 21}
+2023-07-26 10:30:45,432 - INFO - COMMIT
+2023-07-26 10:30:45,436 - INFO - HTTP Request: DELETE http://testserver/Profesores/eliminar/MariaDB "HTTP/1.1 202 Accepted"
+2023-07-26 10:30:45,443 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,455 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:45,457 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,461 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,468 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,479 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,482 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles
+2023-07-26 10:30:45,482 - INFO - [generated in 0.00163s] {}
+2023-07-26 10:30:45,485 - INFO - SELECT count(usuarios.id) AS count_1 
+FROM usuarios 
+WHERE usuarios.rol_id = %(rol_id_1)s
+2023-07-26 10:30:45,490 - INFO - [generated in 0.00147s] {'rol_id_1': 1}
+2023-07-26 10:30:45,490 - INFO - Se han listado los roles.
+2023-07-26 10:30:45,490 - INFO - HTTP Request: GET http://testserver/Roles/listar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,501 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,511 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:30:45,513 - INFO - [generated in 0.00196s] {'pk_1': 18}
+2023-07-26 10:30:45,513 - ERROR - Se ha intentado mostrar el rol 18, pero no existe.
+2023-07-26 10:30:45,515 - INFO - HTTP Request: GET http://testserver/Roles/ver/id/18 "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,523 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,532 - INFO - INSERT INTO roles (nombre_rol, created_at, updated_at) VALUES (%(nombre_rol)s, %(created_at)s, %(updated_at)s)
+2023-07-26 10:30:45,534 - INFO - [generated in 0.00241s] {'nombre_rol': 'Nuevo rol', 'created_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 108033), 'updated_at': datetime.datetime(2023, 7, 26, 10, 30, 44, 108033)}
+2023-07-26 10:30:45,534 - INFO - ROLLBACK
+2023-07-26 10:30:45,534 - ERROR - El rol Nuevo rol se ha intentado grabar, pero ya existía
+2023-07-26 10:30:45,543 - INFO - HTTP Request: POST http://testserver/Roles/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,548 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,557 - INFO - BEGIN (implicit)
+2023-07-26 10:30:45,557 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:30:45,561 - INFO - [cached since 0.05036s ago] {'pk_1': 18}
+2023-07-26 10:30:45,563 - INFO - HTTP Request: PUT http://testserver/Roles/actualizar/id/18/Escritor "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,571 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,577 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.id = %(pk_1)s
+2023-07-26 10:30:45,577 - INFO - [cached since 0.06859s ago] {'pk_1': 18}
+2023-07-26 10:30:45,584 - INFO - HTTP Request: DELETE http://testserver/Roles/borrar/id/18 "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,592 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,602 - INFO - HTTP Request: GET http://testserver/ "HTTP/1.1 307 Temporary Redirect"
+2023-07-26 10:30:45,605 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,609 - INFO - HTTP Request: GET http://testserver/docs "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,616 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,627 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id
+2023-07-26 10:30:45,627 - INFO - [generated in 0.00181s] {}
+2023-07-26 10:30:45,631 - INFO - HTTP Request: GET http://testserver/Usuarios/listar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,638 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,647 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,647 - INFO - [generated in 0.00235s] {'id_1': 15, 'param_1': 1}
+2023-07-26 10:30:45,652 - ERROR - Se ha intentado ver un usuario que no existe.
+2023-07-26 10:30:45,654 - INFO - HTTP Request: GET http://testserver/Usuarios/ver/id/15 "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,662 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,670 - INFO - SELECT roles.id AS roles_id, roles.nombre_rol AS roles_nombre_rol, roles.created_at AS roles_created_at, roles.updated_at AS roles_updated_at 
+FROM roles 
+WHERE roles.nombre_rol = %(nombre_rol_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,673 - INFO - [generated in 0.00203s] {'nombre_rol_1': 'Escritor', 'param_1': 1}
+2023-07-26 10:30:45,678 - INFO - HTTP Request: POST http://testserver/Usuarios/insertar "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,678 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,693 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at 
+FROM usuarios 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,693 - INFO - [generated in 0.00236s] {'id_1': '15', 'param_1': 1}
+2023-07-26 10:30:45,698 - INFO - HTTP Request: PUT http://testserver/Usuarios/actualizar/id/15 "HTTP/1.1 200 OK"
+2023-07-26 10:30:45,703 - DEBUG - Using proactor: IocpProactor
+2023-07-26 10:30:45,711 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at 
+FROM usuarios 
+WHERE usuarios.id = %(id_1)s 
+ LIMIT %(param_1)s
+2023-07-26 10:30:45,711 - INFO - [cached since 0.02193s ago] {'id_1': '18', 'param_1': 1}
+2023-07-26 10:30:45,711 - ERROR - El usuario 18 se ha intntado eliminar, pero no existe.
+2023-07-26 10:30:45,720 - INFO - HTTP Request: DELETE http://testserver/Usuarios/eliminar/id/18 "HTTP/1.1 200 OK"
