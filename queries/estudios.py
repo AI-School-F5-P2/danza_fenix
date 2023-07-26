@@ -165,7 +165,10 @@ def wq_get_descuentos(dni_alumno):
         total_precio -= descuento
 
     # se devuelve el precio total
-    return f"el total a pagar es de {total_precio} euros"
+    if check_familiar:
+        return f"Descuento familiar: 10%, el total a pagar es de {total_precio} euros"
+    else:
+        return f"El total a pagar es de {total_precio} euros"
 
 
 
