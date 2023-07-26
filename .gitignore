@@ -15,3 +15,6 @@ danza_fenix.code-workspace
 Trello.weblock
 /logs
 requirements.txt
+test/__pycache__
+__pycache__
+/test/__pycache__

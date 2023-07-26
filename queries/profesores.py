@@ -41,10 +41,12 @@ def qw_put_profesores(nombre_profesor, nuevo_profesor):
     try:
         profesor = session.query(Profesor).filter(Profesor.nombre_profesor == nombre_profesor).first()
         if profesor is None:
-            return JSONResponse(content={"message": "Error: El profesor ya existe."}, status_code=404)
+            return JSONResponse(content={"message": "Error: El profesor especificado no existe."}, status_code=404)
+        profesor.nombre_profesor = nuevo_profesor
+        session.commit()
     except Exception as e:
-        return JSONResponse(content={"message": f"No se ha podido añadir el profesor/a.{e}"}, status_code=400)
-    return JSONResponse(content={"message": "El profesor/a ha sido añadir."}, status_code=202)
+        return JSONResponse(content={"message": f"No se ha podido actualizar el profesor/a.{e}"}, status_code=400)
+    return JSONResponse(content={"message": "El profesor/a ha sido actualizado."}, status_code=202)
 
 def qw_delete_profesores(borrar_profesor):
     try:

@@ -22,13 +22,12 @@ def qw_create_compile(compile_input):
         return f"No se ha podido grabar el alumno.{e}"
     return out
 
-def qw_mostrar_compile():
+def qw_mostrar_inscripciones():
     information = session.query(Estudios).all()
     if len(information) == 0:
         return "No se han encontrado alumnos."
     return information
 
-from sqlalchemy import func
 
 
 # funcion para inscribir a un nuevo alumno y calcular el precio de la inscripcion
@@ -78,6 +77,8 @@ def wq_get_descuentos(dni_alumno):
     information = session.query(Estudios).filter(Estudios.dni_alumno == dni_alumno).all()
     check_grupo = session.query(Curso).all()
 
+    
+
     for info in information:
         if (info.nombre_curso == "Bachata" or info.nombre_curso == "Salsa" or info.nombre_curso == 'Kizomba' or info.nombre_curso == "Role Rotation") and (info.grupo == "Relax"):
             count_group_one += 1
@@ -88,13 +89,60 @@ def wq_get_descuentos(dni_alumno):
 
     # return count_group_one, count_group_two, count_group_three
 
-    if count_group_one == 4 and info.grupo == "Relax":
-        print("hola")
-        information[0].precio = 35
-        information[1].precio = 17.5
-        information[2].precio = 8.75
-        information[3].precio = 8.75
+    # GENERA EL DESCUENTO PARA LA PRIMERA CLASE
+    if count_group_one == 4:
+        for info in information:
+            if info.grupo == "Relax":
+                info.precio = 17.50
+    elif count_group_one == 3:
+        for info in information:
+            if info.grupo == "Relax":
+                info.precio = 20.41
+    elif count_group_one == 2:
+        for info in information:
+            if info.grupo == "Relax":
+                info.precio = 26,25
+    elif count_group_one == 1:
+        for info in information:
+            if info.grupo == "Relax":
+                info.precio = 35.00
+
+    # GENERA EL DESCUENTO PARA LA SEGUNDA CLASE
+    if count_group_two == 4:
+        for info in information:
+            if info.grupo == "Chicha":
+                info.precio = 40.00
+    elif count_group_two == 3:
+        for info in information:
+            if info.grupo == "Chicha":
+                info.precio = 23.33
+    elif count_group_two == 2:
+        for info in information:
+            if info.grupo == "Chicha":
+                info.precio = 30.00
+    elif count_group_two == 1:
+        for info in information:
+            if info.grupo == "Chicha":
+                info.precio = 40.00
+
     
+    # GENERA EL DESCUENTO PARA LA TERCERA CLASE
+    if count_group_three == 4:
+        for info in information:
+            if info.grupo == "Dem":
+                info.precio = 40.00
+    elif count_group_three == 3:
+        for info in information:
+            if info.grupo == "Dem":
+                info.precio = 23.33
+    elif count_group_three == 2:
+        for info in information:
+            if info.grupo == "Dem":
+                info.precio = 30.00
+    elif count_group_three == 1:
+        for info in information:
+            if info.grupo == "Dem":
+                info.precio = 40.00
 
     # Commit the changes to the database
     session.commit()
@@ -118,3 +166,19 @@ def wq_get_descuentos(dni_alumno):
 
     # se devuelve el precio total
     return f"el total a pagar es de {total_precio} euros"
+
+
+
+
+
+
+# funcion para eliminar una inscripcion
+def qw_delete_inscripcion(dni_alumno, nombre_curso, nivel):
+    try:
+        information = session.query(Estudios).filter(Estudios.dni_alumno == dni_alumno, Estudios.nombre_curso == nombre_curso, Estudios.nivel == nivel).first()
+        session.delete(information)
+        session.commit()
+        out = "El alumno ha sido eliminado."
+    except Exception as e:
+        return f"No se ha podido eliminar el alumno.{e}"
+    return out   
