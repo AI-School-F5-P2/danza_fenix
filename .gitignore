@@ -1,6 +1,26 @@
+<<<<<<< HEAD
 app\__pycache__
 __pycache__
 \fenix
 app\conexion\config.py
 config.py
+<<<<<<< HEAD
 \venv_fenix 
+=======
+=======
+/danza_fenix_env
+/fenix
+/venv/fenix
+/env
+/__pycache__
+/classes/__pycache__
+/apis/__pycache__
+/queries/__pycache__
+/connection/__pycache__
+/models/__pycache__
+danza_fenix.code-workspace
+/.pytest_cache
+/docs
+
+>>>>>>> e51c9465146e1a0b814a96e22228a369a0e6a45a
+>>>>>>> e450d1738ac705d304944217cec83dd33e456f12
