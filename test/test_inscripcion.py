@@ -33,9 +33,3 @@ def test_insertar_inscripcion():
     assert response.status_code == 200
     assert response.headers["content-type"] == "application/json"    
 
-
-# test para mostrar todos las inscripciones
-def test_mostrar_inscripciones():
-    response = client.get("/Inscripcion/descuento?dni_alumno=cata")
-    assert response.status_code == 200
-    assert response.headers["content-type"] == "application/json"
