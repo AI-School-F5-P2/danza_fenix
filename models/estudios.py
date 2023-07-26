@@ -5,14 +5,19 @@ from datetime import datetime
 
 Base = declarative_base()
 
-class Curso(Base): # Tabla de cursos
-    __tablename__ = "cursos"
+class Estudios(Base): # Tabla de cursos
+    __tablename__ = "estudios"
     id = Column("id", Integer, primary_key = True, nullable = False)
+    dni_alumno = Column("dni_alumno", String, nullable = False)
     nombre_curso = Column("nombre_curso", String, nullable = False)
-    precio = Column("precio", Float(precision = 5, asdecimal = True, decimal_return_scale = 2), nullable = False)
-    id_grupo = Column("id_grupo", String, nullable = False)
+    nivel = Column("nivel", String,  nullable = False)
+    profesor = Column("profesor", String, nullable = False)
+    precio = Column("precio", Float,  nullable = False)
+    fecha_inicio = Column("fecha_inicio", DateTime, nullable = False)
+    fecha_fin = Column("fecha_final", DateTime, nullable = False)
     created_at = Column("created_at", DateTime, nullable = False)
     updated_at = Column("updated_at", DateTime)
+    grupo = Column("grupo", String, nullable=False)
     
     #grupo = relationship("Grupo")  # Establecer la relación con la clase Grupo
     #niveles = relationship("Nivel", secondary = cursos_niveles, backref = "cursos")
@@ -20,13 +25,9 @@ class Curso(Base): # Tabla de cursos
     #alumnos = relationship("Alumno", secondary = estudios, backref = "cursos_alumnos")
     #titulares = relationship("Profesor", secondary = estudios, backref = "alumnos_profesores")
     
-    def __init__(self, nombre_curso, precio, id_grupo, created_at = datetime.now(), updated_at = datetime.now()):
+    def __init__( self, dni_alumno, nombre_curso, nivel, profesor):
+        self.dni_alumno = dni_alumno
         self.nombre_curso = nombre_curso
-        self.precio = precio
-        self.id_grupo = id_grupo
-        self.created_at = created_at
-        self.updated_at = updated_at
-
-    def __repr__(self):
-        return f"Curso {self.id} de {self.nombre_curso}. Pertenece al grupo {self.grupo.nombre_grupo}.El precio es {self.precio}"
-
+        self.nivel = nivel
+        self.profesor = profesor
+        

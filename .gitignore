@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 app\__pycache__
 __pycache__
 \fenix
@@ -8,6 +9,8 @@ config.py
 \venv_fenix 
 =======
 =======
+=======
+>>>>>>> a36d9d458a0cbdfea784a1c0dae2b0db2d0c84c1
 /danza_fenix_env
 /fenix
 /venv/fenix
@@ -21,6 +24,16 @@ config.py
 danza_fenix.code-workspace
 /.pytest_cache
 /docs
+<<<<<<< HEAD
 
 >>>>>>> e51c9465146e1a0b814a96e22228a369a0e6a45a
 >>>>>>> e450d1738ac705d304944217cec83dd33e456f12
+=======
+/dumps
+Trello.weblock
+/logs
+requirements.txt
+test/__pycache__
+__pycache__
+/test/__pycache__
+>>>>>>> a36d9d458a0cbdfea784a1c0dae2b0db2d0c84c1

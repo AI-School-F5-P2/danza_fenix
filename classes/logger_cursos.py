@@ -5,7 +5,7 @@ import json
 # Configurar el logger
 class Logger:
     logger = None
-    def setup_logger(cls, archivo = "./logs/logs.json"):
+    def setup_logger(cls):
         if cls.logger is None:
             cls.logger = logging.getLogger() # Se crea un objeto de la clase Logging de la biblioteca logging
             # Para crearlo es necesario hacerlo a través del método getLogger().
@@ -54,7 +54,7 @@ class Logger:
             # Cargamos las variables de entorno
             with open('./conf/logs_cursos.json', 'r') as jsonfile:
                 data = json.load(jsonfile)
-            log_file_path = archivo # La ruta del archivo de logs
+            log_file_path = data["LOG_FILE_PATH"] # La ruta del archivo de logs
             output = data["OUTPUT"] # La dirección de salida de los logs
             # 0 = archivo
             # 1 = terminal
@@ -71,39 +71,37 @@ class Logger:
                 console_handler.setFormatter(formatter)
                 # Agregar el controlador de consola al logger
                 cls.logger.addHandler(console_handler)
-            else:
-                log_file_path = archivo
-                
+
     @classmethod
-    def debug(cls, msg, archivo):
-        cls.setup_logger(cls, archivo)
+    def debug(cls, msg):
+        cls.setup_logger(cls)
         cls.logger.debug(msg)
 
     @classmethod
-    def info(cls, msg, archivo):
-        cls.setup_logger(cls, archivo)
+    def info(cls, msg):
+        cls.setup_logger(cls)
         cls.logger.info(msg)
 
     @classmethod
-    def warning(cls, msg, archivo):
-        cls.setup_logger(cls, archivo)
+    def warning(cls, msg):
+        cls.setup_logger(cls)
         cls.logger.warning(msg)
 
     @classmethod
-    def error(cls, msg, archivo):
-        cls.setup_logger(cls, archivo)
+    def error(cls, msg):
+        cls.setup_logger(cls)
         cls.logger.error(msg)
 
     @classmethod
-    def critical(cls, msg, archivo):
-        cls.setup_logger(cls, archivo)
+    def critical(cls, msg):
+        cls.setup_logger(cls)
         cls.logger.critical(msg)
 
 
 # Ejemplos de registros
 '''
-Logger.info("Esto es un mensaje de información")
 Logger.debug("Esto es un mensaje de depuración")
+Logger.info("Esto es un mensaje de información")
 Logger.warning("Esto es un mensaje de advertencia")
 Logger.error("Esto es un mensaje de error")
 Logger.critical("Esto es un mensaje crítico")

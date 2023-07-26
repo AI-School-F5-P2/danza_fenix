@@ -11,6 +11,8 @@ from models.niveles import Nivel
 from models.profesores import Profesor
 from models.roles import Rol
 from models.usuarios import Usuario
+from models.estudios import Estudios
+
 
 Base = declarative_base()
 
@@ -52,5 +54,4 @@ estudios_descuentos = Table('estudios_descuentos', Base.metadata,
     Column('updated_at', DateTime)
 )
 '''
-# DEFINIMOS LAS CLASES DE LAS TABLAS MAESTRAS.
    
