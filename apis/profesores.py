@@ -7,8 +7,8 @@ router = APIRouter()
 
 @router.get("/ver", tags = ["Profesores"])
 def mostrar_profesores ():
-    ''' <h1> Método para buscar a un solo profesor</h1>'''
-    ''' <p>Este método devuelve el profesor buscado</p>'''
+    ''' <h1> Método para buscar a todos los profesores</h1>'''
+    ''' <p>Este método devuelve a todos los profesores con su ID</p>'''
     return qw_get_profesores()
 
 @router.post("/insertar", tags = ["Profesores"])
@@ -19,8 +19,8 @@ def insertar_profesor(profesor: ProfesorValidator):
 
 @router.get("/busqueda_profesor", tags=["Profesores"])
 def busqueda_profesor (profesores: str):
-    ''' <h1>Método para buscar rofesores</h1>'''
-    ''' <p>Este método buscar profesores</p>'''
+    ''' <h1>Método para buscar un solo profesor/a</h1>'''
+    ''' <p>Este método buscar un solo profesor/a</p>'''
     return qw_list_profesores(profesores)
 
 @router.post("/insertar", tags = ["Profesores"])
