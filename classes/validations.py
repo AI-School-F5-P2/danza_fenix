@@ -33,10 +33,10 @@ class ProfesorValidator(BaseModel):
 class CursoValidator(BaseModel):
     nombre_curso : str
     precio : float
-    id_grupo : int
+    id_grupo : str
     
 class InscripcionValidator(BaseModel):
-    dni_usuario : str
-    cursos : str
+    dni_alumno : str
+    nombre_curso : str
     nivel : str
     profesor : str

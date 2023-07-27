@@ -4,8 +4,9 @@ from classes.validations import CursoValidator
 
 router = APIRouter()
 
-# funcion para mostrar todos los cursos
-@router.get("/listar", tags=["Cursos"])
+# funcion para mostrar todos los grupos
+#@router.get("/listar", tags=["cursos"])
+@router.get("/mostrar_cursos", tags=["Cursos"])
 def mostrar_cursos():
     """
     <h1>METODO PARA LISTAR TODOS LOS CURSOS</h1>
@@ -13,12 +14,8 @@ def mostrar_cursos():
     """
     return qw_get_cursos()
 
-# funcion para mostrar un solo curso
-@router.get("/mostrar/{nombre_del_curso}", tags=["Cursos"])
-def mostrar_curso(nombre_del_curso: str):
-    return qw_mostrar_curso(nombre_del_curso)
-
-@router.get("/ver", tags=["Cursos"])
+# funcion para mostrar un solo curso 
+@router.get("/mostrar_curso", tags=["Cursos"])
 def mostrar_curso(nombre_del_curso: str):
     """
     <h1 style="text-align: center;" >METODO PARA MOSTRAR UN UNICO CURSO</h1>
@@ -39,10 +36,6 @@ def insertar_cursos(rol: CursoValidator):
     return qw_create_curso(rol.dict())
 
 # funcion para modificar un curso
-@router.put("/actualizar/{nombre_del_curso}/{nuevo_nombre}/{nuevo_precio}", tags=["Cursos"])
-def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float):
-    return qw_update_curso(nombre_del_curso, nuevo_nombre, nuevo_precio)
-
 @router.put("/actualizar", tags=["Cursos"])
 def modificar_cursos(nombre_del_curso: str, nuevo_nombre: str, nuevo_precio: float, nombre_grupo: str):
     """
