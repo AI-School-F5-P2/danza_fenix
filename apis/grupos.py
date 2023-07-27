@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from classes.queries import qw_list_grupos, qw_get_grupo, qw_create_grupo, qw_update_grupo, qw_delete_grupo
+from classes.queries import qw_list_grupos, qw_csv_grupos, qw_get_grupo, qw_create_grupo, qw_update_grupo, qw_delete_grupo
 from classes.validations import GrupoValidator
 
 router = APIRouter()
@@ -7,6 +7,10 @@ router = APIRouter()
 @router.get("/listar", tags=["Grupos"])
 def grupos_listar():
     return qw_list_grupos()
+
+@router.get("/csv", tags=["Grupos"])
+def grupos_csv():
+    return qw_csv_grupos()
 
 @router.get("/ver/{dato}/{valor}", tags=["Grupos"])
 def grupos_ver(dato, valor):

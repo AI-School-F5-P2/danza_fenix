@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from classes.queries import qw_list_roles, qw_get_rol, qw_create_rol, qw_update_rol, qw_delete_rol
+from classes.queries import qw_list_roles, qw_get_rol, qw_create_rol, qw_update_rol, qw_delete_rol, qw_csv_roles
 from classes.validations import RolValidator
 
 router = APIRouter()
@@ -7,6 +7,10 @@ router = APIRouter()
 @router.get("/listar", tags=["Roles"])
 def roles_listar():
     return qw_list_roles()
+
+@router.get("/csv", tags = ["Roles"])
+def roles_csv():
+    return qw_csv_roles()
 
 @router.get("/ver/{dato}/{valor}", tags=["Roles"])
 def roles_ver(dato, valor):

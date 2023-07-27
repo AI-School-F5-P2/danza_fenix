@@ -1,0 +1,15 @@
+2023-07-27 21:56:32,306 - INFO - Se han listado los usuarios.
+2023-07-27 22:02:20,552 - INFO - Se han listado los usuarios.
+2023-07-27 22:02:35,856 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id
+2023-07-27 22:02:35,856 - INFO - [cached since 15.31s ago] {}
+2023-07-27 22:02:36,955 - INFO - SELECT usuarios.id AS usuarios_id, usuarios.login AS usuarios_login, usuarios.email AS usuarios_email, usuarios.password AS usuarios_password, usuarios.rol_id AS usuarios_rol_id, usuarios.activo AS usuarios_activo, usuarios.created_at AS usuarios_created_at, usuarios.updated_at AS usuarios_updated_at, roles.nombre_rol AS roles_nombre_rol 
+FROM usuarios INNER JOIN roles ON usuarios.rol_id = roles.id
+2023-07-27 22:02:36,955 - INFO - [cached since 16.41s ago] {}
+2023-07-27 22:06:09,124 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:10:06,877 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:10:46,676 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:13:44,219 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:14:26,789 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:16:37,894 - INFO - Se han listado los usuarios en CSV.
+2023-07-27 22:17:47,966 - INFO - Se han listado los usuarios en CSV.

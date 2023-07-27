@@ -2,7 +2,6 @@ from fastapi import APIRouter
 from classes.queries import qw_get_profesores, qw_post_profesores, qw_put_profesores, qw_delete_profesores, qw_list_profesores
 from classes.validations import ProfesorValidator
 
-
 router = APIRouter()
 
 @router.get("/ver", tags = ["Profesores"])
@@ -10,12 +9,6 @@ def mostrar_profesores ():
     ''' <h1> Método para buscar a todos los profesores</h1>'''
     ''' <p>Este método devuelve a todos los profesores con su ID</p>'''
     return qw_get_profesores()
-
-@router.post("/insertar", tags = ["Profesores"])
-def insertar_profesor(profesor: ProfesorValidator):
-    ''' <h1>Método para insertar a un profesor</h1>'''
-    ''' <p>Este método inserta un profesor</p>'''
-    return qw_post_profesores(profesor.dict())
 
 @router.get("/busqueda_profesor", tags=["Profesores"])
 def busqueda_profesor (profesores: str):

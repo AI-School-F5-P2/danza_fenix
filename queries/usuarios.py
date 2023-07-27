@@ -1,11 +1,10 @@
 from datetime import datetime
+import csv
 
 from classes.models import Usuario, Rol
 from classes.logger import Logger
 from classes.encryption import Encryption
-
 from connection.connection import *
-
 
 ############## USUARIOS #################
 # Crear un nuevo usuario
@@ -54,6 +53,30 @@ def qw_list_usuarios():
         result.append(usuario_dict)
     Logger.info("Se han listado los usuarios.", "./logs/logs_usuarios.txt")
     return result
+
+# Generar un CSV con los usuarios
+def qw_csv_usuarios():
+    # Obtenemos la lista de usuarios, incluyendo el nombre de su rol
+    usuarios = session.query(Usuario, Rol.nombre_rol).join(Rol, Usuario.rol_id == Rol.id).all()
+    if len(usuarios) == 0:
+        Logger.error("Se han intentado sacar los usuarios en CSV, pero no hay ninguno.", "./logs/logs_usuarios.txt")
+        return "No se han encontrado usuarios."
+    with open("./csv/usuarios.csv", "w", encoding = "utf8") as csv_file:
+        escritor = csv.writer(csv_file, delimiter = ";")
+        cabeceras = ["ID", "LOGIN", "EMAIL", "ROL", "CREACIÓN", "ACTUALIZACIÓN"]
+        escritor.writerow(cabeceras)
+        for usuario, nombre_rol in usuarios:
+            fila = [
+                usuario.id, 
+                usuario.login, 
+                usuario.email, 
+                nombre_rol, 
+                usuario.created_at, 
+                usuario.updated_at
+            ]
+            escritor.writerow(fila)
+    Logger.info("Se han listado los usuarios en CSV.", "./logs/logs_usuarios.txt")
+    return "Se ha generado el CSV de Usuarios."    
 
 # Listar los datos de un usuario localizado a partir de un dato, que puede 
 # ser el id, el login o el email.

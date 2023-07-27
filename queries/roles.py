@@ -1,6 +1,6 @@
 from sqlalchemy import func
 from datetime import datetime
-
+import csv
 from classes.models import Rol, Usuario
 from classes.logger import Logger
 from connection.connection import *
@@ -59,6 +59,24 @@ def qw_list_roles():
         rol.num_usuarios = num_usuarios
     Logger.info("Se han listado los roles.", "./logs/logs_roles.txt")
     return roles
+
+# Generar un CSV con los roles
+def qw_csv_roles():
+    roles = session.query(Rol).all()
+    if len(roles) == 0:
+        Logger.error("Se han intentado sacar los roles en CSV, pero no hay ninguno.", "./logs/logs_roles.txt")
+        return "No se han encontrado roles."
+    with open("./csv/roles.csv", "w", encoding = "utf8") as csv_file:
+        escritor = csv.writer(csv_file, delimiter = ";")
+        cabeceras = ["ID", "ROL", "USUARIOS", "CREACIÓN", "ACTUALIZACIÓN"]
+        escritor.writerow(cabeceras)
+        for rol in roles:
+            num_usuarios = session.query(func.count(Usuario.id)).filter(Usuario.rol_id == rol.id).scalar()
+            rol.num_usuarios = num_usuarios
+            fila = [rol.id, rol.nombre_rol, rol.num_usuarios, rol.created_at, rol.updated_at]
+            escritor.writerow(fila)
+    Logger.info("Se han listado los roles en CSV.", "./logs/logs_roles.txt")
+    return "Se ha generado el CSV de Roles."    
 
 # Actualizar un rol por id o por su nombre actual.
 def qw_update_rol(dato, valor, nuevo_nombre):

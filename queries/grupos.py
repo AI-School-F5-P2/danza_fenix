@@ -1,5 +1,6 @@
 from sqlalchemy import func
 from datetime import datetime
+import csv
 
 from classes.models import Grupo, Curso
 from classes.logger import Logger
@@ -55,6 +56,23 @@ def qw_list_grupos():
         grupo.num_cursos = num_cursos
         Logger.info("Se han listado los grupos.", "./logs/logs_grupos.txt")
     return grupos
+
+# Obtener el csv de los grupos.
+def qw_csv_grupos():
+    grupos = session.query(Grupo).all()
+    if len(grupos) == 0:
+        Logger.error("Se ha intentado sacar el CSV de los grupos, pero no los hay.", "./logs/logs_grupos.txt")
+        return "No se han encontrado grupos."
+    with open("./csv/grupos.csv", "w", encoding = "utf8") as csv_file:
+        escritor = csv.writer(csv_file, delimiter = ";")
+        cabeceras = ["ID", "GRUPO", "CURSOS", "CREACIÓN", "EDICIÓN"]
+        escritor.writerow(cabeceras)
+        for grupo in grupos:
+            num_cursos = session.query(func.count(Curso.id)).filter(Curso.id_grupo == grupo.id).scalar()
+            fila = [grupo.id, grupo.nombre_grupo, num_cursos, grupo.created_at, grupo.updated_at]
+            escritor.writerow(fila)
+        Logger.info("Se ha obtenido el CSV los grupos.", "./logs/logs_grupos.txt")
+    return "Se ha obtenido el CSV los grupos."
 
 # Actualizar un grupo por id o por su nombre actual.
 def qw_update_grupo(dato, valor, nuevo_nombre):

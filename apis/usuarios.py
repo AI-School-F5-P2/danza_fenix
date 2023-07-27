@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from classes.queries import qw_list_usuarios, qw_show_usuario, qw_create_usuario, qw_update_usuario, qw_delete_usuario
+from classes.queries import qw_list_usuarios, qw_csv_usuarios, qw_show_usuario, qw_create_usuario, qw_update_usuario, qw_delete_usuario
 from classes.validations import UserValidator
 
 router = APIRouter()
@@ -7,6 +7,10 @@ router = APIRouter()
 @router.get("/listar", tags=["Usuarios"])
 def usuarios_listar():
     return qw_list_usuarios()
+
+@router.get("/csv", tags=["Usuarios"])
+def csv_usuarios():
+    return qw_csv_usuarios()
 
 @router.get("/ver/{dato}/{valor}", tags=["Usuarios"])
 def usuarios_ver(dato: str, valor: str):

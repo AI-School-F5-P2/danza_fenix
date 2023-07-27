@@ -7178,3 +7178,16 @@ WHERE usuarios.id = %(id_1)s
 2023-07-26 12:49:37,079 - INFO - [cached since 0.01159s ago] {'id_1': '18', 'param_1': 1}
 2023-07-26 12:49:37,080 - ERROR - El usuario 18 se ha intntado eliminar, pero no existe.
 2023-07-26 12:49:37,083 - INFO - HTTP Request: DELETE http://testserver/Usuarios/eliminar/id/18 "HTTP/1.1 200 OK"
+2023-07-27 22:22:00,439 - INFO - Se han listado los grupos.
+2023-07-27 22:22:00,440 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-27 22:22:00,441 - INFO - [cached since 0.01037s ago] {'id_grupo_1': 5}
+2023-07-27 22:22:00,441 - INFO - Se han listado los grupos.
+2023-07-27 22:22:00,442 - INFO - SELECT count(cursos.id) AS count_1 
+FROM cursos 
+WHERE cursos.id_grupo = %(id_grupo_1)s
+2023-07-27 22:22:00,442 - INFO - [cached since 0.0119s ago] {'id_grupo_1': 7}
+2023-07-27 22:22:00,443 - INFO - Se han listado los grupos.
+2023-07-27 22:26:59,916 - INFO - Se ha obtenido el CSV los grupos.
+2023-07-27 22:27:38,503 - INFO - Se ha obtenido el CSV los grupos.
