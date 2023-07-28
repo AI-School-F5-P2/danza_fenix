@@ -19,7 +19,6 @@ danza_fenix.code-workspace
 /docs
 /dumps
 Trello.weblock
-/logs
 test/__pycache__
 __pycache__
 /test/__pycache__
