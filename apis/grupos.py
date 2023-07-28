@@ -2,6 +2,8 @@ from fastapi import APIRouter
 from classes.queries import qw_list_grupos, qw_get_grupo, qw_create_grupo, qw_update_grupo, qw_delete_grupo
 from classes.validations import GrupoValidator
 
+#Tabla profesores
+
 router = APIRouter()
 
 @router.get("/listar", tags=["Grupos"])
